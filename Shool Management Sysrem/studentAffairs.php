@@ -16,6 +16,7 @@ class studentAffairs{
     private $fatherJob;
     private $gender;
     private $nationalNumber;
+    private $class;
     
     
 
@@ -185,34 +186,13 @@ public function getName(){
         return $this->nationalNumber;
     }
 
+    public function setClass($class){
+        $this->class = $class;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
-     
-    
-    
-
-
-
-
+    public function getClass(){
+        return $this->class;
+    }
 
 }
 ?>
