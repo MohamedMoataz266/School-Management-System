@@ -50,12 +50,49 @@
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
-                   
-                    <div class="wrap-input100 validate-input">
+
+					<div class="wrap-input100 validate-input">
 						<select class="sN" name='sN'>
                         <option value='Select Name'>Select Name</option>
                            <?php
                             $sql = mysqli_query($conn, "SELECT name FROM Students WHERE class='".$_POST['sC']."'");
+                            while($row = mysqli_fetch_array($sql)){
+                                ?>
+                                <option value='<?php echo $row['name'] ?>'><?php echo $row['name']; ?></option>
+                            <?php
+                            }
+                           ?>
+                        </select>
+                    	<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+                   
+
+                    <div class="wrap-input100 validate-input">
+						<select class="tN" name='tN'>
+                        <option value='Select Class'>Select Name</option>
+                           <?php
+                            $sql = mysqli_query($conn, "SELECT name FROM personnelAffairs WHERE job='Teacher'");
+                            while($row = mysqli_fetch_array($sql)){
+                                ?>
+                                <option value='<?php echo $row['name'] ?>'><?php echo $row['name']; ?></option>
+                            <?php
+                            }
+                           ?>
+                        </select>
+                    	<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+                   
+                    <div class="wrap-input100 validate-input">
+						<select class="sAN" name='sAN'>
+                        <option value='Select Name'>Select Name</option>
+                           <?php
+                            $sql = mysqli_query($conn, "SELECT name FROM personnelAffairs WHERE job='studentAffairs'");
                             while($row = mysqli_fetch_array($sql)){
                                 ?>
                                 <option value='<?php echo $row['name'] ?>'><?php echo $row['name']; ?></option>
@@ -90,6 +127,30 @@
 
 <?php
 include 'dB.php';
+session_start();
 if(isset($_POST['sub'])){
+	if($_POST['sT'] == 'Teacher'){
+	$sql = mysqli_query($conn, "SELECT name, nationalNumber FROM personnelAffairs WHERE name='".$_POST['tN']."' AND nationalNumber='".$_POST['nN']."'");
+	if(mysqli_num_rows($sql) == 0){
+		echo '<script>alert("Error, Data is Not True")</script>';
+		return;
+	}
+	else{
+		$_SESSION['name'] = $_POST['tN'];
+		header("Location: teacherfrontEnd.php");
+	}
+  }
+  if($_POST['sT'] == 'Student Affairs Employee'){
+	$sql = mysqli_query($conn, "SELECT name, nationalNumber FROM personnelAffairs WHERE name='".$_POST['tN']."' AND nationalNumber='".$_POST['nN']."'");
+	if(mysqli_num_rows($sql) == 0){
+		echo '<script>alert("Error, Data is Not True")</script>';
+		return;
+	}
+	else{
+		$_SESSION['name'] = $_POST['tN'];
+		header("Location: teacherfrontEnd.php");
+	}
+  }
+  
 }
 ?>
