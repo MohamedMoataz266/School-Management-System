@@ -109,7 +109,7 @@
                   
 
                             <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary">Register</button>
+                                <button id="submit" type="submit" class="btn btn-primary">Add this student</button>
                             </div>
                         </form>
                     </div>
