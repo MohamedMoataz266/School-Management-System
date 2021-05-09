@@ -8,7 +8,7 @@ include "studentmenu.php";
   <style>
 <?php include "Styles/sa.css"; ?>
 body{
-		background-image: url('Images/banner_img.png');;
+		background-image: url('Images/banner_img.png');
 	}
 </style>
 </head>
