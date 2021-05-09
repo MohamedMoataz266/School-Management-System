@@ -6,10 +6,24 @@ $(document).ready(function(){
     $(".sT").change(function() {
         if ($(this).val() == 'Student'){
             $(".sC").show();
-        } else{
+        }else{
             $('.sC').hide();
             $('.sN').hide();
-            
+        }
+        if($(this).val() == 'Teacher'){
+            $(".tN").show();
+        }else{
+            $('.tN').hide();
+        }
+        if($(this).val() == 'Student Affairs Employee'){
+            $(".sAN").show();
+        }else{
+            $('.sAN').hide();
+        }
+        if($(this).val() == 'Personnel Affairs Employee'){
+            $(".pAN").show();
+        }else{
+            $('.pAN').hide();
         }
       });
 
@@ -20,6 +34,7 @@ $(document).ready(function(){
             $('.sN').hide();
         }
       });
+
 
 }); 
  
