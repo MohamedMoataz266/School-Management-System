@@ -1,130 +1,225 @@
-<head>
-<style>
-  <?php 
-  include "Styles/AddStudent.css";
-  include "studentaffaires.php";
-  ?>
-</style>
-</head>
-<body>
+<?php
+class studentAffairs{
+    private $firstName;
+    private $secondName;
+    private $thirdName;
+    private $fourthName;
+    private $registrationNumber;
+    private $nationality;
+    private $religion;
+    private $placeOfBirth;
+    private $dateOfBirth;
+    private $dateFromOctober; // lsa 3ayz at2aakd mnha 
+    private $motherName;
+    private $address;
+    private $phoneNumber;
+    private $fatherJob;
+    private $gender;
+    private $nationalNumber;
+    private $class;
+    
+    
+
+    public function validationData(){
+        $flag = true;
+        if($this->firstName == '' || 
+           $this->secondName == '' || 
+           $this->thirdName == '' || 
+           $this->fourthName == '' ||
+           $this->registrationNumber == '' ||
+           $this->nationality == ''||
+           $this->religion == '' ||
+           $this->placeOfBirth == ''||
+           $this->dateOfBirth == ''||
+           $this->dateFromOctober == '' ||
+           $this->motherName == ''||
+           $this->address == ''||
+           $this->fatherJob == ''||
+           $this->gender == ''){
+           return $flag;
+        }
+        else if (strlen($this->nationalNumber) >= 15 || 
+                 strlen($this->nationalNumber) <= 13 ||
+                 strlen($this->phoneNumber) >= 13    ||
+                 strlen($this->phoneNumber) <= 10){
+            return $flag;
+        }
+        include "dB.php";   
+        $sql = mysqli_query($conn, "SELECT nationalNumber FROM Registration");
+        while($row = mysqli_fetch_array($sql)){
+            if($row['nationalNumber'] == $this->nationalNumber){
+                return $flag;
+            }
+        }
+            $flag = false;
+            return $flag;
+    }
+
+public function setFirstName($firstName){
+    $this->firstName = $firstName;
+}
+public function setSecondName($secondName){
+    $this->secondName = $secondName;
+}
+public function setThirdName($thirdName){
+    $this->thirdName = $thirdName;
+}
+public function setFourthName($fourthName){
+    $this->fourthName = $fourthName;
+}
+public function getName(){
+    return ($this->firstName.$this->secondName.$this->thirdName.$this->fourthName);
+}
+
+//full name return
+    
+    public function setRegistrationNumber($registrationNumber){
+        $this->registrationNumber = $registrationNumber;
+    }
+
+    public function getRegistrationNumber(){
+        return $this->registrationNumber;
+    }
+
+    public function setNationality($nationality){
+        $this->nationality = $nationality;
+    }
+
+    public function getNationality(){
+        return $this->nationality;
+    }
+
+    public function setReligion($religion){
+        $this->religion = $religion;
+    }
+
+    public function getReligion(){
+        return $this->religion;
+    }
+
+    public function setPlaceOfBirth($placeOfBirth){
+        $this->placeOfBirth = $placeOfBirth;
+    }
+
+    public function getPlaceOfBirth(){
+        return $this->placeOfBirth;
+    }
+
+    public function setDateOfBirth($dateOfBirth){
+        $this->dateOfBirth = $dateOfBirth;
+    }
+    public function getDateOfBirth(){
+        return $this->dateOfBirth;
+    }
+    public function getAgeInOctober(){
+
+        $token = strtok($this->dateOfBirth, "/");
+        $bN = array(); 
+        while ($token !== false){
+            $bN[] = $token;
+            $token = strtok("/");
+        }
+    if($bN[0] > 1){
+        $bN[0] = $bN[0] - 1 + 30;
+        }
+    else if($bN[0] == 1){
+        $bN[0] = date('d');
+        }
+    if($bN[1] > 10){
+        $bN[1] = $bN[1] - 10;
+        }
+    else if($bN[1] < 10){
+        $bN[1] = 10 - $bN[1];
+        }
+    if($bN[2] > date('Y')){
+        $bN[2] = $bN[2] - date('Y');
+        }
+    else if($bN[2] < date('Y')){
+        $bN[2] = date('Y') - $bN[2];
+        }
+            return $bN;
+        }
 
 
-    <div class="form-body">
-        <div class="row">
-            <div class="form-holder">
-                <div class="form-content">
-                    <div class="form-items">
-                        <h3>Add Student</h3>
-                       
-                        <form class="requires-validation" novalidate>
+    public function setMotherName($motherName){
+        $this->motherName = $motherName;
+    }
 
-                            <div class="col-md-12">
-                               <input class="form-control" type="text" name="fn" placeholder="Firstname" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                               <input class="form-control" type="text" name="sn" placeholder="second name" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                               <input class="form-control" type="text" name="tn" placeholder="third name" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                               <input class="form-control" type="text" name="fn" placeholder="forth name" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                               <div class="col-md-12">
-                               <input class="form-control" type="text" name="regnumber" placeholder="Registration number" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                               <div class="col-md-12">
-                               <input class="form-control" type="text" name="nationality" placeholder="nationality" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                               <div class="col-md-12">
-                               <input class="form-control" type="text" name="religion" placeholder="Religion" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                               <div class="col-md-12">
-                               <input class="form-control" type="text" name="birthplace" placeholder="place of birth" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                               <br>
-                               <div class="col-md-12">
-                               <input class="form-control" type="date" name="dateofbirth" placeholder="dateofbirth" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                               <br>
-                               <div class="col-md-12">
-                               <input class="form-control" type="date" name="ageoctober" placeholder="Age in October" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
-                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="mothername" placeholder="mother's name" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
+    public function getMotherName(){
+        return $this->motherName;
+    }
 
-                               <div class="col-md-12">
-                               <input class="form-control" type="text" name="address" placeholder="address" required>
-                               <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                               </div>
+    public function setAddress($address){
+        $this->address = $address;
+    }
+
+    public function getAddress(){
+        return $this->address;
+    }
+
+    public function setPhoneNumber($phoneNumber){
+        $this->phoneNumber = $phoneNumber;
+    }
+    public function getPhoneNumber(){
+        return $this->phoneNumber;
+    }
+
+    public function setFatherJob($fatherJob){
+        $this->fatherJob = $fatherJob;
+    }
+    public function getFatherJob(){
+        return $this->fatherJob;
+    }
+
+    public function setGender($gender){
+        $this->gender = $gender;
+    }
+    public function getGender(){
+        return $this->gender;
+    }
+
+    public function setNationalNumber($nationalNumber){
+        $this->nationalNumber = $nationalNumber;
+    }
+
+    public function getNationalNumber(){
+        return $this->nationalNumber;
+    }
+
+    public function setClass($class){
+        $this->class = $class;
+    }
+
+    public function getClass(){
+        return $this->class;
+    }
 
 
 
-                            <div class="col-md-12">
-                                <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
-                                 <!-- <div class="valid-feedback">Email field is valid!</div> -->
-                                 </div>
 
-                                 <div class="col-md-12">
-                                <input class="form-control" type="text" name="number" placeholder="phone number" required>
-                                 <!-- <div class="valid-feedback">Email field is valid!</div> -->
-                                 </div>
 
-                                 <div class="col-md-12">
-                                <input class="form-control" type="text" name="father" placeholder="father's job" required>
-                                 <!-- <div class="valid-feedback">Email field is valid!</div> -->
-                                 </div>
 
-                           <div class="col-md-12">
-                                <select class="form-select mt-3" required>
-                                      <option selected disabled value="">class</option>
-                                      <option value="jweb">---</option>
-                                      <option value="sweb">---</option>
-                                      <option value="pmanager">---</option>
-                               </select>
-                                <!-- <div class="valid-feedback">You selected a position! </div> -->
-                                
-                            </div>
 
-                           
 
-                           <br>
-                           <div class="col-md-12 mt-3">
-                            <label class="mb-3 mr-1" for="gender">Gender: </label>
 
-                            <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
 
-                            <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
 
-                            
-                               <!-- <div class="valid-feedback">You selected a gender!</div> -->
-                               <br>
-                                
-                            </div>
 
-                        
-                        
-                  
 
-                            <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary">Register</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-</body>
+
+
+
+    
+    
+    
+     
+    
+    
+
+
+
+
+
+}
+?>
