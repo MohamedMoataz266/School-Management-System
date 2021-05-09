@@ -2,7 +2,7 @@
 <style>
   <?php 
   include "Styles/AddStudent.css";
-  include "studentaffaires.php";
+  include "studentmenu.php";
   ?>
 </style>
 </head>
