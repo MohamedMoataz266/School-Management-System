@@ -71,8 +71,8 @@ public function getRegistrationNumber(){
     return $this->registrationNumber;
 }
 private function validate(){
+    include 'dB.php';
     $flag = true;
-  
     if($this->nationality == '' || $this->religion == '' || $this->placeOfBirth == '' || 
        $this->motherName == '' ||  $this->address == ''    || $this->phoneNumber == '' ||
        $this->fatherJob == '' || $this->registrationNumber == '' || $this->class == ''){
@@ -80,6 +80,11 @@ private function validate(){
     }
     if (strlen($this->phoneNumber) >= 12 || strlen($this->phoneNumber) <= 10){
         return $flag;
+    }
+    $sql = mysqli_query($conn, "SELECT phoneNumber, registrationNumber FROM Students WHERE phoneNumber='".$this->getPhoneNumber()."' OR registrationNumber='".$this->getRegistrationNumber()."'");
+    if(mysqli_num_rows($sql) > 0){
+        echo '<script>alert("Error, Phone Number OR Registration Number Is Not Correct")</script>';
+        return;
     }
     else{
         $flag = false;
@@ -102,7 +107,7 @@ public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m,
             echo '<script>alert("Error, Data Is Not")</script>';
             return;
         }
-        if(parent::validationData()){
+        if(parent::validationDataStudent()){
             echo '<script>alert("Error, Data Is Not")</script>';
             return;
         }
