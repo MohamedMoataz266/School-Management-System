@@ -46,7 +46,7 @@ public function getMotherName(){
     return $this->motherName;
 }
 public function getClass(){
-    $this->class;
+    return $this->class;
 }
 
 public function getAddress(){
@@ -104,11 +104,11 @@ public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m,
         $this->class = $c;
         $this->registrationNumber = $regis;
         if($this->validate()){
-            echo '<script>alert("Error, Data Is Not")</script>';
+            echo '<script>alert("Error, Data Is Not True")</script>';
             return;
         }
         if(parent::validationDataStudent()){
-            echo '<script>alert("Error, Data Is Not")</script>';
+            echo '<script>alert("Error, Data Is Not True")</script>';
             return;
         }
         else{
