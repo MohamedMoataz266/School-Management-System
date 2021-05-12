@@ -18,11 +18,6 @@ public function setData($firstName, $secondName, $thirdName, $fourthName, $natio
     $this->birthDate = $birthDate;
     $this->gender = $gender;
     $this->type = $type;
-    if($this->validationData()){
-       echo '<script>alert("Error, In Data")</script>';
-       return 0; 
-    }
-
 }
 public function getFirstName(){
     return $this->firstName;
@@ -53,7 +48,7 @@ public function getFullName(){
     return ($this->firstName.$this->secondName.$this->thirdName.$this->fourthName);
   }
 
-private function validationData(){
+protected function validationDataStudent(){
     $flag = true;
     if($this->firstName == '' || 
        $this->secondName == '' || 
@@ -68,7 +63,7 @@ private function validationData(){
         return $flag;
     }
     include "dB.php";   
-    $sql = mysqli_query($conn, "SELECT nationalNumber FROM Registration");
+    $sql = mysqli_query($conn, "SELECT nationalNumber FROM Students");
     while($row = mysqli_fetch_array($sql)){
         if($row['nationalNumber'] == $this->nationalNumber){
             return $flag;
