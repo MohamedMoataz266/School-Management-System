@@ -99,11 +99,11 @@ public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m,
         $this->class = $c;
         $this->registrationNumber = $regis;
         if($this->validate()){
-            echo '<script>alert("Error, Data Is Not Correct Validate Data")</script>';
+            echo '<script>alert("Error, Data Is Not")</script>';
             return;
         }
         if(parent::validationData()){
-            echo '<script>alert("Error, Data Is Not Correct Validation Data")</script>';
+            echo '<script>alert("Error, Data Is Not")</script>';
             return;
         }
         else{
