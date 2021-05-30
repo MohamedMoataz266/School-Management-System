@@ -1,6 +1,6 @@
 <?php
 class User{
-    //Comment Joo
+    //Comment Philip
     private $firstName;
     private $secondName;
     private $thirdName;
