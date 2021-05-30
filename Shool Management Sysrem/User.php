@@ -1,6 +1,6 @@
 <?php
 class User{
-    // SE for life
+    // Comment
     
     private $firstName;
     private $secondName;
