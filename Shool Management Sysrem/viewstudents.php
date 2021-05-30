@@ -1,4 +1,4 @@
-<?php  include "studentAffairesFrontEnd.php"; ?>
+<?php  include "teacherfrontEnd.php"; ?>
 <?php include "dB.php"; ?>
 
 <div class ="content"> 

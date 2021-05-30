@@ -24,8 +24,8 @@
 					session_start();
 					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome<br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['name'];
 				?></h3>
-  				<a href="">view students profile</a>
-				<a href="">add assigments</a>
+  				<a href="viewstudents.php">view students profile</a>
+				<a href="addQuestions.php">add assigments</a>
 				<a href="">add grades</a> 
                 <a href="">add video or link</a> 
 				<a href='logout.php'>LogOut</a>	

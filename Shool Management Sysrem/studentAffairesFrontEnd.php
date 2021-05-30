@@ -28,7 +28,7 @@
   	            <a href="studentAffairesFrontEnd.php">Home</a>
 				<a href="AddStudent.php">AddStudent</a>
 				<a href="removestudent.php">RemoveStudents</a>
-				<a href="viewstudents.php">ViewStudents</a> 
+				<a href="viewStudentsStudentAffairs.php">ViewStudents</a> 
 				<a href='homepage.php'>LogOut</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
