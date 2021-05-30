@@ -1,7 +1,5 @@
 <?php
 class User{
-    // kareem
-    // Joo
     private $firstName;
     private $secondName;
     private $thirdName;

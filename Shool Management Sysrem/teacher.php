@@ -1,7 +1,7 @@
 <?php
 include 'user.php';
 class Teacher extends User{
-    function addTeacher($fiN, $sN, $tN, $fN, $nN, $bD, $g){
+    public function addTeacher($fiN, $sN, $tN, $fN, $nN, $bD, $g){
         parent::setFirstName($fiN);
         parent::setSecondName($sN);
         parent::setThirdName($tN);
