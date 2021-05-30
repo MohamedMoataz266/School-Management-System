@@ -25,10 +25,10 @@
 					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome<br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['personnelAffairs'];
 				?>
 				</h3>
-  				<a href="AddTeacher.php">add teacher</a>
-				<a href="removeteacher.php">remove teacher</a>
-				<a href="viewteachers.php">view teachers</a> 
-				<a href='homepage.php'>LogOut</a>	
+  				<a href="AddTeacher.php">Add Teacher</a>
+				<a href="removeteacher.php">Remove Teacher</a>
+				<a href="viewteachers.php">View Teachers</a> 
+				<a href='homepage.php'>Log Out</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
  </div>

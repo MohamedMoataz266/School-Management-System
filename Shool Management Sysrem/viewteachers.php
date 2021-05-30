@@ -26,32 +26,30 @@
   <tr>
   
    <td style="visibility:hidden;"><b>ID</b></td>
-   <td><b>name</b></td>
-    <td><b>code</b></td>
-<td><b>arabicName</b></td>
-<td><b>religion</b></td>
-<td><b>nationality</b></td>
-<td><b>gender</b></td>
-<td><b>birthDate</b></td>
-<td><b>nationalNumber</b></td>
-<td><b>foreginerNumber</b></td>
-<td><b>address</b></td>
-<td><b>phoneNumber</b></td>
-<td><b>qualification</b></td>
-<td><b>graduationYear</b></td>
-<td><b>graduationGrade</b></td>
-<td><b>expYears</b></td>
-<td><b>job</b></td>
-<td><b>specialization</b></td>
-<td><b>department</b></td>
-<td><b>contractDate</b></td>
-<td><b>insuranceNumber</b></td>
-<td><b>insuranceDate</b></td>
-<td><b>insuranceEndDate</b></td>
-<td><b>systemRole</b></td>
-<td><b>notes</b></td>
-  
-
+   <td><b>Name</b></td>
+    <td><b>Code</b></td>
+<td><b>Name in Arabic</b></td>
+<td><b>Religion</b></td>
+<td><b>Nationality</b></td>
+<td><b>Gender</b></td>
+<td><b>BirthDate</b></td>
+<td><b>NationalNumber</b></td>
+<td><b>Foreginer Number</b></td>
+<td><b>Address</b></td>
+<td><b>Phone Number</b></td>
+<td><b>Qualification</b></td>
+<td><b>Graduation Year</b></td>
+<td><b>Graduation Grade</b></td>
+<td><b>Experienced Years</b></td>
+<td><b>Job</b></td>
+<td><b>Specialization</b></td>
+<td><b>Department</b></td>
+<td><b>Contract Date</b></td>
+<td><b>Insurance Number</b></td>
+<td><b>Insurance Date</b></td>
+<td><b>Insurance EndDate</b></td>
+<td><b>System Role</b></td>
+<td><b>Notes</b></td>
   
   </tr>
 
