@@ -181,7 +181,7 @@
 <?php
 include 'dB.php';
 if(isset($_POST['sub'])){
-    mysqli_query($conn, "INSERT INTO personnelAffairs (name, code, 
+    mysqli_query($conn, "INSERT INTO personnelaffairs (name, code, 
                                             arabicName, religion, 
                                             nationality, gender, 
                                             birthDate, nationalNumber, 
