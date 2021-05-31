@@ -1,94 +1,124 @@
 <?php include "studentAffairesFrontEnd.php";?>
-<!DOCTYPE html>
 <html>
-<head>
-  <title>students</title>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sa</title>  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-typeahead.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
   <style>
-        <?php include "Styles/deletestudents.css";?>
-    </style>
- 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
-</head>
-<body>
-  <form action='' method='POST'>  
-  <?php include "dB.php"; ?>
-  <div class="sa">
-    <h1>students</h1>
-  
-   <p style="visibility:hidden;"><b>ID</b></p>
-  <?php
-  $result = mysqli_query($conn, "SELECT * FROM Students ");
-
-      // output data of each row
-      while($row = mysqli_fetch_array($result)){
-        $id = $row['ID'];  
-        $name = $row['name'];
-        $registrationno = $row['registrationNumber'];
-        $nationality = $row['nationality'];
-        $religion = $row['religion']; 
-        $placeOfBirth = $row['placeOfBirth'];  
-        $dateOfBirth = $row['dateOfBirth'];
-        $mothername=$row['motherName'];
-        $address=$row['address'];
-        $phonenumber=$row['phoneNumber'];
-        $fatherJob=$row['fatherJob'];
-        $gender=$row['gender'];
-        $nationalNumber=$row['nationalNumber'];
-        $class=$row['class'];
-        ?>
-       
-        <br><br>
-        <p style="visibility:hidden;"><?= $id ?></p>
-       <?php
-        echo "name: " .$name. "<br>"; 
-         echo "registrationNumber: " .$registrationno. "<br>"; 
-         echo "nationality: " .$nationality. "<br>"; 
-          echo "religion: " .  $religion. "<br>";
-           echo "placeOfBirth: " . $placeOfBirth. "<br>";  
-           echo "dateOfBirth: " . $dateOfBirth. "<br>";
-            echo "motherName: " . $mothername . "<br>";
-             echo "address: " . $address . "<br>";
-             echo "phoneNumber " . $phonenumber. "<br>";
-             echo "fatherJob " .$fatherJob. "<br>";
-             echo "gender " .$gender. "<br>";
-             echo "nationalNumber " .$nationalNumber. "<br>";
-              echo "class " .$class. "<br>";
-
-
-
-
-
-
-
-         ?>
-        
-        Select Student: <input type='checkbox' name='delete[]' value='<?= $id ?>' >
-  
-  
-     <?php
-   }
-  ?>    
-
-<div class ="r">
-<br><br><input type= 'submit' name='sub' value="Delete">
-</div>
-  </div>
-</form>
-</body>
-</html>
-<?php
-include 'studentAffairs.php';
-$sA = new studentAffairs();
-  if(isset($_POST['sub'])){
-    if(isset($_POST['delete'])){
-      foreach($_POST['delete'] as $dele){
-        $sA->removeStudent($dele);
-      }
+  .bootstrap-tagsinput {
+   width: 100%;
   }
-  header("Refresh: 0.1");
-}  
-?>
+  body
+  {
+      color:white;
+      background-image: url('Images/banner_img.png');
+  }
+  .t{
+    background-color: black;
+  }
+  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th { 
+  background-color: black; } 
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <br />
+   <br />
+   <br />
+   <h2 align="center">STUDENTS</h2><br />
+   <div class="form-group">
+    <div class="row">
+     <div class="col-md-10">
+      <input type="text" id="tags" class="form-control" data-role="tagsinput" />
+     </div>
+     <div class="col-md-2">
+      <button type="button" name="search" class="btn btn-primary" id="search">Search</button>
+     </div>
+    </div>
+   </div>
+   <br />
+   <div class="table-responsive">
+    <div align="right">
+     <p><b>TotalRecords:- <span id="total_records"></span></b></p>
+    </div>
+    <div class="t">
+    <table class="table table-hover">
+     <thead>
+      <tr>
+       <th>name</th>
+       <th>address</th>
+       <th>registrationNumber</th>
+       <th>select</th>
+      
+      
+      </tr>
+     </thead>
+     <tbody>
+     </tbody>
+    </table>
+</div>
+   </div>
+  </div>
+  <div style="clear:both"></div>
+  <br />
+  
+  <br />
+  <br />
+  <br />
+ </body>
+</html>
+
+
+<script>
+$(document).ready(function(){
+ 
+ load_data();
+
+ function load_data(query)
+ {
+  $.ajax({
+   url:"actionthree.php",
+   method:"POST",
+   data:{query:query},
+   dataType:"json",
+   success:function(data)
+   {
+    $('#total_records').text(data.length);
+    var html = '';
+    if(data.length > 0)
+    {
+     for(var count = 0; count < data.length; count++)
+     {
+      html += '<tr>';
+      html += '<td>'+data[count].name+'</td>';
+      html += '<td>'+data[count].address+'</td>';
+      html += '<td>'+data[count].registrationNumber+'</td>';
+      html += '<td>' +data[count].<input type='checkbox' name='delete[]' value='<?= $ID ?>' >+'</td>';
+     
+     
+     }
+    }
+    else
+    {
+     html = '<tr><td colspan="5">No Data Found</td></tr>';
+    }
+    $('tbody').html(html);
+   }
+  })
+ }
+
+ $('#search').click(function(){
+  var query = $('#tags').val();
+  load_data(query);
+ });
+
+});
+
+</script>
+<input type= 'submit' name='sub' value="Delete">
 
