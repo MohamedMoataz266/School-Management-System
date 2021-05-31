@@ -152,6 +152,7 @@
                                 </div>
                                 <div class="col-md-12">
                                 <select class="form-control" type="text" name="educationSystem" placeholder="Education System" required>
+                                  <option value='education System'>Education System</option>
                                   <option value='alleducation'>All</option>
                                   <option value='default'>Default</option>
                                   </select>
