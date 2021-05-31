@@ -15,7 +15,7 @@
                     <div class="form-items">
                         <h3>Add Professions</h3>
                        
-                        <form class="requires-validation" novalidate>
+                        <form class="requires-validation" novalidate method= 'POST' action ="" >
 
                             <div class="col-md-12">
                                <input class="form-control" type="text" name="name" placeholder="Full Name (till fourth name)" required>
@@ -38,14 +38,9 @@
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <div class="col-md-12 mt-3">
-	                            <label class="mb-3 mr-1" for="gender">Gender: </label>
-
-	                            <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-	                            <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
-
-	                            <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-	                            <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
-
+	                            Gender:
+                              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
+                              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
                                <!-- <div class="valid-feedback">You selected a gender!</div> -->
                                <br>
                             	</div>
@@ -181,7 +176,7 @@
 <?php
 include 'dB.php';
 if(isset($_POST['sub'])){
-    mysqli_query($conn, "INSERT INTO personnelaffairs (name, code, 
+    mysqli_query($conn, "INSERT INTO personnelAffairs (name, code, 
                                             arabicName, religion, 
                                             nationality, gender, 
                                             birthDate, nationalNumber, 
@@ -197,12 +192,15 @@ if(isset($_POST['sub'])){
     ('$_POST[name]', '$_POST[code]', 
     '$_POST[nameInArabic]', '$_POST[religion]', 
     '$_POST[nationality]', '$_POST[gender]', 
-    '$_POST[dob]', '$_POST[nationalNumber]', '$_POST[foreignerNumber]', 
-    '$_POST[address]', '$_POST[phoneNumber]', 
-    '$_POST[qual]', '$_POST[gradyear]', '$_POST[gradgrade]'
-    '$_POST[expyears]', '$POST[job]', '$_POST[specialization]', 
+    '$_POST[dob]', '$_POST[nationalNumber]', 
+    '$_POST[foreignerNumber]', '$_POST[address]',
+    '$_POST[phoneNumber]', '$_POST[qual]', 
+    '$_POST[gradyear]', '$_POST[gradgrade]'
+    '$_POST[expyears]', '$_POST[job]', '$_POST[specialization]', 
     '$_POST[department]', '$_POST[contrDate]', '$_POST[inNum]',
-    '$_POST[indate]', '$_POST[inenddate]', '$_POST[systemrole]','$POST[educationSystem]', '$_POST[notes]')");
+    '$_POST[indate]', '$_POST[inenddate]', 
+    '$_POST[systemrole]','$_POST[educationSystem]', 
+    '$_POST[notes]')");
     echo '<script>alert("Done, Data Inserted")</script>';
 }
 ?>
