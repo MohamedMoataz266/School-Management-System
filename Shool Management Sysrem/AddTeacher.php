@@ -189,7 +189,8 @@ if(isset($_POST['sub'])){
                                             graduationYear, graduationGrade, 
                                             expYears, job, specialization,
                                             department, contractDate, insuranceNumber,
-                                            insuranceDate, insuranceEndDate, systemRole, educationSystem,
+                                            insuranceDate, insuranceEndDate,
+                                            systemRole, educationSystem,
                                             notes)
     VALUES 
     ('$_POST[name]', '$_POST[code]', 
