@@ -173,6 +173,18 @@ if(isset($_POST['sub'])){
 		return;
  	}
    }
+   else if($_POST['sT'] == 'Personnel Affairs Employee'){
+	$sql = mysqli_query($conn, "SELECT name, nationalNumber FROM personnelAffairs WHERE name='".$_POST['pAN']."' AND nationalNumber='".$_POST['nN']."'");
+	if(mysqli_num_rows($sql) > 0){
+		session_start();
+		$_SESSION['personnelAffairs'] = $_POST['pAN'];
+		header("Location: personal.php");
+	}
+	else{
+		echo '<script>alert("Error, Data is Not True")</script>';
+		return;
+ 	}
+   }
  }
 
 ?>

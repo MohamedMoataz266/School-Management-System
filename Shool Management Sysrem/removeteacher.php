@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>teacher</title>
+  <title>Removing a teacher</title>
   <style>
         <?php include "Styles/removeteacher.css";?>
     </style>
@@ -16,7 +16,7 @@
   <form action='' method='POST'>  
   <?php include "dB.php"; ?>
   <div class="sa">
-    <h1>teachers</h1>
+    <h1>Teachers</h1>
   
    <p style="visibility:hidden;"><b>ID</b></p>
   <?php
@@ -57,34 +57,30 @@ $notes= $row['notes'];
         <br><br>
         <p style="visibility:hidden;"><?= $id ?></p>
        <?php
-        echo "name: " .$name. "<br>"; 
-         echo "code: " .$code. "<br>"; 
-         echo "arabicName: " .$arabicName. "<br>"; 
-          echo "religion: " .  $religion. "<br>";
-           echo "nationality: " . $nationality. "<br>";  
-           echo "gender: " . $gender. "<br>";
-            echo "birthDate: " . $birthDate . "<br>";
-             echo "address: " . $address . "<br>";
-             echo "phoneNumber " . $phoneNumber. "<br>";
-             echo "qualification " .$qualification. "<br>";
+        echo "Name: " .$name. "<br>"; 
+         echo "Code: " .$code. "<br>"; 
+         echo "Name in Arabic: " .$arabicName. "<br>"; 
+          echo "Religion: " .  $religion. "<br>";
+           echo "Nationality: " . $nationality. "<br>";  
+           echo "Gender: " . $gender. "<br>";
+            echo "Birth Date: " . $birthDate . "<br>";
+             echo "Address: " . $address . "<br>";
+             echo "Phone Number: " . $phoneNumber. "<br>";
+             echo "Qualification: " .$qualification. "<br>";
 
-
-             echo " graduationYear" .$graduationYear. "<br>";
-             echo "graduationGrade " .$graduationGrade. "<br>";
-              echo "expYears " .$expYears. "<br>";
-               echo "job " .$job. "<br>";
-                 echo "specialization " .$specialization. "<br>";
-                     echo "department" .$department. "<br>";
-                      echo "contractDate" .$contractDate. "<br>";
-                        echo "insuranceNumber" .$insuranceNumber. "<br>";
-                           echo "insuranceDate" .$insuranceDate. "<br>";
-                              echo "insuranceEndDate" .$insuranceEndDate. "<br>";
-                                echo "systemRole" .$systemRole. "<br>";
-                                 echo "notes" .$notes. "<br>";
+             echo "Graduation Year: " .$graduationYear. "<br>";
+             echo "Graduation Grade: " .$graduationGrade. "<br>";
+              echo "Experienced Years: " .$expYears. "<br>";
+               echo "Job: " .$job. "<br>";
+                 echo "Specialization: " .$specialization. "<br>";
+                     echo "Department: " .$department. "<br>";
+                      echo "Contract Date: " .$contractDate. "<br>";
+                        echo "Insurance Number: " .$insuranceNumber. "<br>";
+                           echo "Insurance Date: " .$insuranceDate. "<br>";
+                              echo "Insurance EndDate: " .$insuranceEndDate. "<br>";
+                                echo "System Role: " .$systemRole. "<br>";
+                                 echo "Notes: " .$notes. "<br>";
                               
-                              
-
-
 
 /*
 
@@ -115,10 +111,6 @@ insuranceEndDate
 systemRole
 notes
 */
-
-
-
-
 
          ?>
         
