@@ -36,3 +36,17 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 echo json_encode($data);
 
 ?>
+
+<?php
+  if(isset($_POST['sub'])){
+    if(isset($_POST['delete'])){
+      foreach($_POST['delete'] as $dele){
+        mysqli_query($conn, "DELETE FROM students WHERE ID = '" .$dele. "'");
+     }
+   }  
+      else{
+         echo "ERROR U SHOULD SELECT USER TO DELETE IT";
+        }
+        header("refresh: 0.1");  
+  }  
+?>
