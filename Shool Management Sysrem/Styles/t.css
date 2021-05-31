@@ -9,12 +9,7 @@ body{
 	transition: all 0.3s ease;
 	margin-left: 300px;
    }
-   p{
-	background-color: #FF5B33;
-	color: #FFEADC;
-	width: 20px;
-	border-radius: 30px;
-  }
+  
    .sidemenu{
 	position: fixed;
 	top: 0px;

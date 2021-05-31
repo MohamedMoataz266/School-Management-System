@@ -1,97 +1,124 @@
 <?php  include "teacherfrontEnd.php"; ?>
-<?php include "dB.php"; ?>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sa</title>  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-typeahead.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-<div class ="content"> 
-<div class = wrapper> 
-<head>
+  <style>
+  .bootstrap-tagsinput {
+   width: 100%;
+  }
+  body
+  {
+      color:white;
+      background-image: url('Images/banner_img.png');
+  }
+  .t{
+    background-color: black;
+  }
+  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th { 
+  background-color: black; } 
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <br />
+   <br />
+   <br />
+   <h2 align="center">STUDENTS</h2><br />
+   <div class="form-group">
+    <div class="row">
+     <div class="col-md-10">
+      <input type="text" id="tags" class="form-control" data-role="tagsinput" />
+     </div>
+     <div class="col-md-2">
+      <button type="button" name="search" class="btn btn-primary" id="search">Search</button>
+     </div>
+    </div>
+   </div>
+   <br />
+   <div class="table-responsive">
+    <div align="right">
+     <p><b>TotalRecords:- <span id="total_records"></span></b></p>
+    </div>
+    <div class="t">
+    <table class="table table-hover">
+     <thead>
+      <tr>
+       <th>name</th>
+       <th>religion</th>
+       <th>registrationNumber</th>
+       <th>class</th>
+
+      
+      
+      </tr>
+     </thead>
+     <tbody>
+     </tbody>
+    </table>
+</div>
+   </div>
+  </div>
+  <div style="clear:both"></div>
+  <br />
   
-<title>send Message</title>
-<style>
-        <?php include "Styles/viewstudents.css";
-        ?>
-    </style>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   
-</head>
-<br>
-<body>
-<form method="POST" action="">
-<div class="register">
-  
+  <br />
+  <br />
+  <br />
+ </body>
+</html>
 
-<br><br>
 
-<table class="table table-hover">
-  <tr>
-  
-   <td style="visibility:hidden;"><b>ID</b></td>
-   <td><b>name</b></td>
-    <td><b>registrationNumber</b></td>
-    <td><b>nationality</b></td>
-    <td><b>religion</b></td>
-     <td><b>placeOfBirth</b></td>
-    <td><b>dateOfBirth</b></td>
-    <td><b>mothername</b></td>
-     <td><b>address</b></td>
-      <td><b>phonenumber</b></td>
-       <td><b>fatherjob</b></td>
-        <td><b>gender</b></td>
-        <td><b>rationalnumber</b></td>
-        <td><b>class</b></td>
-
-  
-  </tr>
-
-  <?php
-$result = mysqli_query($conn, "SELECT * FROM Students");
-
-// output data of each row
-while($row = mysqli_fetch_array($result)){
-        $id = $row['ID'];  
-        $name = $row['name'];
-        $registrationno = $row['registrationNumber'];
-        $nationality = $row['nationality'];
-        $religion = $row['religion']; 
-        $placeOfBirth = $row['placeOfBirth'];  
-        $dateOfBirth = $row['dateOfBirth'];
-        $mothername=$row['motherName'];
-        $address=$row['address'];
-        $phonenumber=$row['phoneNumber'];
-        $fatherJob=$row['fatherJob'];
-        $gender=$row['gender'];
-        $nationalNumber=$row['nationalNumber'];
-        $class=$row['class'];
-  ?>
-  <br><br>
-  <td style="visibility:hidden;"><?= $id ?></td>
-  <td><?=  $name ?></td>
-  <td><?=  $registrationno ?></td>
-  <td><?=  $nationality ?></td>
- <td><?=  $religion ?></td>
- <td><?= $placeOfBirth  ?></td>
- <td><?=  $dateOfBirth ?></td>
- <td><?=$mothername  ?></td>
- <td><?=   $address ?></td>
- <td><?=$phonenumber  ?></td>
- <td><?=  $fatherJob ?></td>
- <td><?= $gender ?></td>
- <td><?= $nationalNumber  ?></td>
- <td><?=   $class ?></td>
-
-		
-  
+<script>
+$(document).ready(function(){
  
-  
-</tr>
-<?php
-}
-?>
-</table>
-</div>
+ load_data();
 
-</form>
-</body>
-</div>
-</div>
+ function load_data(query)
+ {
+  $.ajax({
+   url:"actiontwo.php",
+   method:"POST",
+   data:{query:query},
+   dataType:"json",
+   success:function(data)
+   {
+    $('#total_records').text(data.length);
+    var html = '';
+    if(data.length > 0)
+    {
+     for(var count = 0; count < data.length; count++)
+     {
+      html += '<tr>';
+      html += '<td>'+data[count].name+'</td>';
+      html += '<td>'+data[count].religion+'</td>';
+      html += '<td>'+data[count].registrationNumber+'</td>';
+      html += '<td>'+data[count].class+'</td>';
+    
+    
+     
+     }
+    }
+    else
+    {
+     html = '<tr><td colspan="5">No Data Found</td></tr>';
+    }
+    $('tbody').html(html);
+   }
+  })
+ }
+
+ $('#search').click(function(){
+  var query = $('#tags').val();
+  load_data(query);
+ });
+
+});
+</script>
+
