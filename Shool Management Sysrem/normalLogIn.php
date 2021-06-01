@@ -148,6 +148,20 @@
 <?php	
 	
 if(isset($_POST['sub'])){
+
+	if($_POST['sT'] == 'Student'){
+		$sql = mysqli_query($conn, "SELECT name, nationalNumber FROM Students WHERE name='".$_POST['tN']."' AND nationalNumber='".$_POST['nN']."'");
+	if(mysqli_num_rows($sql) > 0){
+		session_start();
+		$_SESSION['name'] = $_POST['tN'];
+		header("Location: studentFrontEnd.php");
+	}
+	else{
+		echo '<script>alert("Error, Data is Not True")</script>';
+		return;	
+	}
+}
+
 	if($_POST['sT'] == 'Teacher'){
 		$sql = mysqli_query($conn, "SELECT name, nationalNumber FROM personnelAffairs WHERE name='".$_POST['tN']."' AND nationalNumber='".$_POST['nN']."'");
 	if(mysqli_num_rows($sql) > 0){

@@ -2,7 +2,7 @@
 
 
 
-$connect = new PDO("mysql:host=localhost;dbname=school", "root", "");
+$connect = new PDO("mysql:host=localhost;dbname=School", "root", "");
 
 $output = '';
 
@@ -12,7 +12,7 @@ if(isset($_POST["query"]))
 {
  $search = str_replace(",", "|", $_POST["query"]);
  $query = "
- SELECT * FROM students 
+ SELECT * FROM Students 
  WHERE name REGEXP '".$search."' 
  OR religion REGEXP '".$search."' 
  OR registrationNumber REGEXP '".$search."'
