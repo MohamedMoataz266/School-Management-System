@@ -47,11 +47,11 @@ body {
 
 
 .bg-gra-01 {
-  background: -webkit-gradient(linear, left bottom, left top, from(#9EADB8), to(#60727F));
-  background: -webkit-linear-gradient(bottom, #9EADB8 0%, #60727F 100%);
-  background: -moz-linear-gradient(bottom, #9EADB8 0%, #60727F 100%);
-  background: -o-linear-gradient(bottom, #9EADB8 0%, #60727F 100%);
-  background: linear-gradient(to top, #9EADB8 0%, #60727F 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(black), to(black));
+  background: -webkit-linear-gradient(bottom, black 0%, black 100%);
+  background: -moz-linear-gradient(bottom,black 0%, black 100%);
+  background: -o-linear-gradient(bottom, black 0%, black 100%);
+  background: linear-gradient(to top, black 0%, black 100%);
 }
 
 /* ==========================================================================
@@ -85,7 +85,7 @@ body {
   padding: 0 33px;
   font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
   cursor: pointer;
-  color: #fff;
+  color:white;
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -106,7 +106,7 @@ body {
 }
 
 .btn--green {
-  background: #57b846;
+  background:blue;
 }
 
 .btn--green:hover {
@@ -350,7 +350,7 @@ input {
 }
 
 .card-3 .card-heading {
-  background: url("Images/logo.jpg") top/cover no-repeat;
+  background: url("Images/banner_img.png") top/cover no-repeat;
   display: table-cell;
   width: 50%;
 }
