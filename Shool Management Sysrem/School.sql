@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 02, 2021 at 12:37 AM
+-- Generation Time: Jun 02, 2021 at 01:57 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -41,9 +41,10 @@ CREATE TABLE `addQuestions` (
 --
 
 INSERT INTO `addQuestions` (`ID`, `email`, `question`) VALUES
-(1, 'KareemAliOmarHassan', 'What is Your Name ?'),
-(2, 'KareemAliOmarHassan', 'How Are You ?'),
-(3, 'KareemAliOmarHassan', 'What is your favorite class ?');
+(4, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'How Old R U ?'),
+(5, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'How R U ?'),
+(6, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'What is your favorite class ?'),
+(7, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Good Day ?');
 
 -- --------------------------------------------------------
 
@@ -63,9 +64,25 @@ CREATE TABLE `Answers` (
 --
 
 INSERT INTO `Answers` (`ID`, `email`, `answer`) VALUES
-(1, 'MohamedMoatazKamelFouad@amounegypt.com', 'Mohamed'),
-(2, 'MohamedMoatazKamelFouad@amounegypt.com', 'Fine'),
-(3, 'MohamedMoatazKamelFouad@amounegypt.com', 'History');
+(22, 'MohamedMoatazKamelFouad@amounegypt.com', '20'),
+(23, 'MohamedMoatazKamelFouad@amounegypt.com', 'Fine'),
+(24, 'MohamedMoatazKamelFouad@amounegypt.com', 'History'),
+(25, 'MohamedMoatazKamelFouad@amounegypt.com', 'No');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Grades`
+--
+
+DROP TABLE IF EXISTS `Grades`;
+CREATE TABLE `Grades` (
+  `ID` int(255) NOT NULL,
+  `teacher` varchar(80) NOT NULL,
+  `student` varchar(80) NOT NULL,
+  `subject` varchar(80) NOT NULL,
+  `grade` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -137,7 +154,8 @@ CREATE TABLE `Registration` (
 
 INSERT INTO `Registration` (`ID`, `firstName`, `secondName`, `thirdName`, `forthName`, `email`, `nationalNumber`, `birthDate`, `gender`, `user`) VALUES
 (64, 'Mohamed', 'Moataz', 'Kamel', 'Fouad', 'MohamedMoatazKamelFouad@amounegypt.com', '12345678912345', '06/08/2000', 'Male', 1),
-(65, 'Kareem', 'Ehab', 'Abdelrazek', 'Dahab', 'KareemEhabAbdelrazekDahab@amounegypt.com', '12345678912344', '6/11/1999', 'Male', 2);
+(65, 'Kareem', 'Ehab', 'Abdelrazek', 'Dahab', 'KareemEhabAbdelrazekDahab@amounegypt.com', '12345678912344', '6/11/1999', 'Male', 2),
+(66, 'Philip', 'George', 'Fayek', 'Barsoum', 'PhilipGeorgeFayekBarsoum@amounegypt.com', '12345678912303', '25/12/1999', 'Male', 3);
 
 -- --------------------------------------------------------
 
@@ -178,6 +196,12 @@ ALTER TABLE `Answers`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `Grades`
+--
+ALTER TABLE `Grades`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `personnelAffairs`
 --
 ALTER TABLE `personnelAffairs`
@@ -204,13 +228,19 @@ ALTER TABLE `userType`
 -- AUTO_INCREMENT for table `addQuestions`
 --
 ALTER TABLE `addQuestions`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `Answers`
 --
 ALTER TABLE `Answers`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `Grades`
+--
+ALTER TABLE `Grades`
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `personnelAffairs`
@@ -222,7 +252,7 @@ ALTER TABLE `personnelAffairs`
 -- AUTO_INCREMENT for table `Registration`
 --
 ALTER TABLE `Registration`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `userType`
