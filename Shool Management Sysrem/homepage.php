@@ -18,7 +18,16 @@
         <div class="logo">
             <img src="Images/amoun.jpg" alt="">
         </div>
+<<<<<<< HEAD
 
+=======
+<ul class="nav-area">
+<li><a href="homepage.php">Home</a></li>
+<li><a href="Registration.php">Sign Up</a></li>
+<li><a href="logIn.php">Log In</a></li>
+
+</ul>
+>>>>>>> d966c5d369d457af9344a266f49af332c834efaf
 </div>
 <div class="welcome-text">
 <h1> <span>Amoun Language School</span></h1>
