@@ -42,13 +42,26 @@ public function logIn($email, $pass){
         return;
     }
     else{
-        $sql = mysqli_query($conn, "SELECT email, nationalNumber FROM Registration WHERE email='$email' 
+        $sql = mysqli_query($conn, "SELECT email, nationalNumber, user FROM Registration WHERE email='$email' 
         AND nationalNumber='$pass'");
-        if(mysqli_num_rows($sql) > 0){
+        if($row = mysqli_fetch_assoc($sql)){
+            if($row['email'] == $email){
             session_start();
             $_SESSION['email'] = $email;
+            if($row['user'] == 1){
             header('Location: studentFrontEnd.php');
-          }
+           }
+           else if ($row['user'] == 2){
+            header('Location: teacherfrontEnd.php');
+           }
+           else if ($row['user'] == 3){
+            header('Location: studentAffairsFrontEnd.php');
+           }  
+           else if ($row['user'] == 4){
+            // personnel menu
+        }
+         }
+        }
           else{
             echo '<script>alert("Error, Data Is Not Correct")</script>';
             return;
