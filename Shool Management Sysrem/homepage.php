@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include "homemenu.php";?>
 <!--Code by Divinector (www.divinectorweb.com)-->
 <html lang="en">
 <head>
@@ -17,12 +18,7 @@
         <div class="logo">
             <img src="Images/amoun.jpg" alt="">
         </div>
-<ul class="nav-area">
-<li><a href="homepage.php">Home</a></li>
-<li><a href="Registration.php">Sign Up</a></li>
-<li><a href="logIn.php">Log In</a></li>
-<li><a href="normalLogIn.php">Already a user ?</a></li>
-</ul>
+
 </div>
 <div class="welcome-text">
 <h1> <span>Amoun Language School</span></h1>
