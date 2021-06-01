@@ -60,7 +60,7 @@
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name='gender'>
-                                    <option disabled="disabled" selected="selected"'>Gender</option>
+                                    <option disabled="disabled" selected="selected">Gender</option>
                                     <option>Male</option>
                                     <option>Female</option>
                                     
@@ -71,7 +71,8 @@
                        
                         <div class="p-t-10">
                             <button class="btn btn--pill btn--green" type="submit" name="sub">Create Account</button>
-                        </div>
+                        </div><br>
+                        <a href="logIn.php">Already a student?Login</a>
                     </form>
                 </div>
             </div>

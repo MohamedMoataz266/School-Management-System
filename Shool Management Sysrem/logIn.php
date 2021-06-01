@@ -1,5 +1,9 @@
 <title>Log In</title>
-<link href="Styles/logIn.css" rel="stylesheet" id="bootstrap-css">
+<style>
+	<?php
+include "Styles/logIn.css";
+	?>
+</style>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="Js/logIn.js"></script>
 <!------ Include the above in your HEAD tag ---------->
