@@ -1,7 +1,6 @@
 body{
     margin: 0;
    padding: 0;
-   background:url(../Images/banner_img.png);
    background-size: cover;
    overflow: auto;
    font-family: sans-serif;
@@ -17,7 +16,7 @@ background: rgb(0,0,0,0.5);
 width: 1000px;
 height: 500px;
 padding: 10px;
-transform: translate(5%, -20%);
+transform: translate(40%, 20%);
 
 }
 span{

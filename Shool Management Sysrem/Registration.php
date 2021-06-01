@@ -95,12 +95,11 @@
 </html>
 
 <?php
-include "student.php";
+include "User.php";
     if(isset($_POST['sub'])){
         if(!empty($_POST['gender'])){
-    $student = new Student();
-    $student->addStudent($_POST['fN'], $_POST['sN'], $_POST['tN'], $_POST['foN'], $_POST['nN'], $_POST['birthday'], $_POST['gender']);     
-    header('Location:logIn.php');    
+    $student = new User();
+    $student->addUser($_POST['fN'], $_POST['sN'], $_POST['tN'], $_POST['foN'], $_POST['nN'], $_POST['birthday'], $_POST['gender'], 1);     
   }
 }
 ?>

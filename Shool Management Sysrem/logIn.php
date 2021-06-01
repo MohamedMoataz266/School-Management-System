@@ -51,32 +51,11 @@
 	</div>
 
 <?php
+include 'User.php';
 if(isset($_POST['sub'])){
-    if($_POST['email'] == '' || $_POST['pass'] == ''){
-        echo '<script>alert("Error, Fill All Requirements")</script>';
-        return;
-    }
-    else{
-        include "dB.php";
-        $sql = mysqli_query($conn, "SELECT email, password, user FROM Registration WHERE email='".$_POST['email']."' AND 
-        password='".$_POST['pass']."'");
-        if($row = mysqli_fetch_assoc($sql)){
-            if($row['email'] == $_POST['email'] && $row['password'] == $_POST['pass'] && $row['user'] == '1'){
-                echo 'DONE Student';
-            }
-            elseif($row['email'] == $_POST['email'] && $row['password'] == $_POST['pass'] && $row['user'] == '2'){
-                echo 'DONE Teacher';
-                
-            }
-          }
-          else{
-            echo '<script>alert("Error, Data Is Not True")</script>';
-            return;
-         
-          }
-          
-        }
-    }
+	$student = new User();
+	$student->logIn($_POST['email'], $_POST['pass']);
+}
 
 
 ?>

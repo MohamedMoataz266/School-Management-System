@@ -7,6 +7,7 @@ public function addQuestion($name, $question){
     header("refresh: 0.1");    
     return;
   }
+public function   
 }
 
 ?>

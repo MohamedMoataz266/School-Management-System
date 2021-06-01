@@ -34,7 +34,7 @@ include "studentFrontEnd.php";
       die();
       }
       else{
-        mysqli_query($conn, "DELETE FROM Answers WHERE name='".$_SESSION['name']."'");
+        mysqli_query($conn, "DELETE FROM Answers WHERE name='".$_SESSION['email']."'");
       }
       $sql = mysqli_query($conn, "SELECT question FROM addQuestions");
       while($row=mysqli_fetch_array($sql)){

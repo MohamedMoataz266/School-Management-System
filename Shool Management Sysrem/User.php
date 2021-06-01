@@ -9,7 +9,7 @@ class User{
     private $gender;
     private $type;
 
-public function setData($firstName, $secondName, $thirdName, $fourthName, $nationalNumber, $birthDate, $gender, $type){
+private function setData($firstName, $secondName, $thirdName, $fourthName, $nationalNumber, $birthDate, $gender, $type){
     $this->firstName = $firstName;
     $this->secondName = $secondName;
     $this->thirdName = $thirdName;
@@ -19,34 +19,48 @@ public function setData($firstName, $secondName, $thirdName, $fourthName, $natio
     $this->gender = $gender;
     $this->type = $type;
 }
-public function getFirstName(){
-    return $this->firstName;
+
+public function addUser($fN, $sN, $tN, $foN, $nN, $bD, $g, $t){
+    include 'dB.php';
+    $this->setData($fN, $sN, $tN, $foN, $nN, $bD, $g, $t);
+    if($this->validationDataStudent()){
+        echo '<script>alert("Error, Data Is Repeated")</script>';
+        return;
+    }
+    else{
+    mysqli_query($conn, "INSERT INTO Registration (firstName, secondName, thirdName, forthName, email, nationalNumber, birthDate, gender, user)
+    VALUES
+    ('$this->firstName', '$this->secondName', '$this->thirdName', '$this->fourthName', '".$this->getEmail()."', '$this->nationalNumber', '$this->birthDate', '$this->gender', '$this->type')");
+    echo '<script>alert("Done, Data Saved Successfully You Can Logged In Now")</script>';
+    header('Location:logIn.php');  
+  }
 }
-public function getSecondName(){
-    return $this->secondName;
-}
-public function getThirdName(){
-    return $this->thirdName;
-}
-public function getFourthName(){
-    return $this->fourthName;
-}
-public function getNationalNumber(){
-    return $this->nationalNumber;
-}
-public function getBirthDate(){
-    return $this->birthDate;
-}
-public function getGender(){
-    return $this->gender;
-}
-public function getType(){
-    return $this->type;
+public function logIn($email, $pass){
+    include "dB.php";
+    if($email == '' || $pass == ''){
+        echo '<script>alert("Error, Fill All Requirements")</script>';
+        return;
+    }
+    else{
+        $sql = mysqli_query($conn, "SELECT email, nationalNumber FROM Registration WHERE email='$email' 
+        AND nationalNumber='$pass'");
+        if(mysqli_num_rows($sql) > 0){
+            session_start();
+            $_SESSION['email'] = $email;
+            header('Location: studentFrontEnd.php');
+          }
+          else{
+            echo '<script>alert("Error, Data Is Not Correct")</script>';
+            return;
+         
+          }
+          
+        }
 }
 
-public function getFullName(){
-    return ($this->firstName.$this->secondName.$this->thirdName.$this->fourthName);
-  }
+private function getEmail(){
+    return ($this->firstName.$this->secondName.$this->thirdName.$this->fourthName.'@amounegypt.com');
+}
 
 protected function validationDataStudent(){
     $flag = true;
@@ -63,9 +77,12 @@ protected function validationDataStudent(){
         return $flag;
     }
     include "dB.php";   
-    $sql = mysqli_query($conn, "SELECT nationalNumber FROM Students");
+    $sql = mysqli_query($conn, "SELECT nationalNumber, email FROM Registration");
     while($row = mysqli_fetch_array($sql)){
         if($row['nationalNumber'] == $this->nationalNumber){
+            return $flag;
+        }
+        if($row['email'] == $this->getEmail()){
             return $flag;
         }
     }
