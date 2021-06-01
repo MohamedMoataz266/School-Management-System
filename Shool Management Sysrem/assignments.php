@@ -14,7 +14,7 @@ include "studentFrontEnd.php";
     <div class="in">
     <?php
      
-      $res = mysqli_query($conn, "SELECT name FROM Answers");
+      $res = mysqli_query($conn, "SELECT email FROM Answers");
       $resq = mysqli_query($conn, "SELECT question FROM addQuestions");
      
       $noQ=0;
@@ -24,7 +24,7 @@ include "studentFrontEnd.php";
       }
       $noA=0;
       while($row=mysqli_fetch_array($res)){
-        if($row['name'] == $_SESSION['name']){
+        if($row['email'] == $_SESSION['email']){
             $noA++;
         }
       }
@@ -66,7 +66,7 @@ include "studentFrontEnd.php";
       }
     }
     foreach($_POST['answer'] as $a){
-       mysqli_query($conn, "INSERT INTO Answers (name, answer) VALUES ('$_SESSION[name]', '$a')");
+       mysqli_query($conn, "INSERT INTO Answers (email, answer) VALUES ('$_SESSION[email]', '$a')");
     }
     echo '<script>alert("Done, Answers Inserted successfully")</script>';
     header("refresh: 0.1");
