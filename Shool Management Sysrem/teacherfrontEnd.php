@@ -27,7 +27,8 @@
   				<a href="viewstudents.php">view students profile</a>
 				<a href="addQuestions.php">add assigments</a>
 				<a href="">add grades</a> 
-                <a href="">add video or link</a> 
+                <a href="">add video or link</a>
+				<a href="viewAnswers.php">view Answers</a>
 				<a href='logout.php'>LogOut</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
