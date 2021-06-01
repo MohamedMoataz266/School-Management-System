@@ -35,7 +35,7 @@
         }
     } 
       foreach($_POST['array'] as $a){
-         $assignment->addQuestion($_SESSION['name'], $a);
+         $assignment->addQuestion($_SESSION['email'], $a);
     }
  } 
 

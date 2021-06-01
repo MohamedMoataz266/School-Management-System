@@ -13,14 +13,11 @@ include "studentFrontEnd.php";
   <div class ="box">
     <div class="in">
     <?php
-     
       $res = mysqli_query($conn, "SELECT email FROM Answers");
       $resq = mysqli_query($conn, "SELECT question FROM addQuestions");
-     
       $noQ=0;
-
-      while($row=mysqli_fetch_array($resq)){
-        $noQ++;
+     while($row=mysqli_fetch_array($resq)){
+         $noQ++;
       }
       $noA=0;
       while($row=mysqli_fetch_array($res)){
@@ -31,10 +28,10 @@ include "studentFrontEnd.php";
 
       if($noA == $noQ){
         echo "<h1> There Are Not New Question</h1>";
-      die();
+        die();
       }
       else{
-        mysqli_query($conn, "DELETE FROM Answers WHERE name='".$_SESSION['email']."'");
+        mysqli_query($conn, "DELETE FROM Answers WHERE email='".$_SESSION['email']."'");
       }
       $sql = mysqli_query($conn, "SELECT question FROM addQuestions");
       while($row=mysqli_fetch_array($sql)){
@@ -57,8 +54,9 @@ include "studentFrontEnd.php";
 
 
 <?php 
-
+  include 'classAssignments.php';
    if(isset($_POST['sub'])){
+     $assignment = new Assignment();
       foreach($_POST['answer'] as $a){
         if($a == ''){
         echo '<script>alert("Error, Answer all questions")</script>';
@@ -66,12 +64,8 @@ include "studentFrontEnd.php";
       }
     }
     foreach($_POST['answer'] as $a){
-       mysqli_query($conn, "INSERT INTO Answers (email, answer) VALUES ('$_SESSION[email]', '$a')");
-    }
-    echo '<script>alert("Done, Answers Inserted successfully")</script>';
-    header("refresh: 0.1");
-    return;
-    
+       $assignment->addAnswer($_SESSION['email'], $a);
+      } 
 }  
 
 

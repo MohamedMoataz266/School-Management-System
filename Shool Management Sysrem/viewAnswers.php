@@ -43,7 +43,7 @@ echo"<h2>Answers</h2>";
     
 <br><br>
 
-    <input type="email" name="email[]" value='<?php echo $rows['name'] ?>' readonly>
+    <input type="email" name="email[]" value='<?php echo $rows['email'] ?>' readonly class='email'>
 
     <input type="text" name="ans[]" value='<?php echo $ne.'- ' .$rows['answer'] ?>' readonly>
     <br>

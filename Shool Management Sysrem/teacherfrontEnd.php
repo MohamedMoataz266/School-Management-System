@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin</title>
+  <title>Teacher</title>
   <style>
 <?php include "Styles/t.css"; ?>
 </style>

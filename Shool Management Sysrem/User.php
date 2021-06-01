@@ -55,7 +55,7 @@ public function logIn($email, $pass){
             header('Location: teacherfrontEnd.php');
            }
            else if ($row['user'] == 3){
-            header('Location: studentAffairsFrontEnd.php');
+            header('Location: studentAffairesFrontEnd.php');
            }  
            else if ($row['user'] == 4){
             // personnel menu
