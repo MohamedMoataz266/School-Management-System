@@ -21,7 +21,7 @@
 <li><a href="homepage.php">Home</a></li>
 <li><a href="Registration.php">Sign Up</a></li>
 <li><a href="logIn.php">Log In</a></li>
-<li><a href="normalLogIn.php">Already a user ?</a></li>
+
 </ul>
 </div>
 <div class="welcome-text">
