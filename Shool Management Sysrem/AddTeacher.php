@@ -38,12 +38,19 @@
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <div class="col-md-12 mt-3">
-	                            Gender:
-                              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-                              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+                            <label class="mb-3 mr-1" for="gender">Gender: </label>
+
+                            <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+
+                            <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off">
+                            <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+
+                            
                                <!-- <div class="valid-feedback">You selected a gender!</div> -->
                                <br>
-                            	</div>
+                                
+                            </div>
                                <br>
                                <label class="mb-3 mr-1" for="dateofbirth"><b>Birth Date:</b></label>
                                <div class="col-md-12">
@@ -176,7 +183,7 @@
 <?php
 include 'dB.php';
 if(isset($_POST['sub'])){
-    mysqli_query($conn, "INSERT INTO personnelAffairs (name, code, 
+    mysqli_query($conn, "INSERT INTO personnelaffairs (name, code, 
                                             arabicName, religion, 
                                             nationality, gender, 
                                             birthDate, nationalNumber, 
@@ -191,7 +198,7 @@ if(isset($_POST['sub'])){
     VALUES 
     ('$_POST[name]', '$_POST[code]', 
     '$_POST[nameInArabic]', '$_POST[religion]', 
-    '$_POST[nationality]', '$_POST[gender]', 
+    '$_POST[nationality]', '$_POST[genderr]', 
     '$_POST[dob]', '$_POST[nationalNumber]', 
     '$_POST[foreignerNumber]', '$_POST[address]',
     '$_POST[phoneNumber]', '$_POST[qual]', 
