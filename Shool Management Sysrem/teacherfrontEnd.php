@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin</title>
+  <title>Teacher</title>
   <style>
 <?php include "Styles/t.css"; ?>
 </style>
@@ -22,12 +22,13 @@
 
 				<h3><?php  
 					session_start();
-					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome<br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['name'];
+					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome<br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['email'];
 				?></h3>
   				<a href="viewstudents.php">view students profile</a>
 				<a href="addQuestions.php">add assigments</a>
 				<a href="">add grades</a> 
-                <a href="">add video or link</a> 
+                <a href="">add video or link</a>
+				<a href="viewAnswers.php">view Answers</a>
 				<a href='logout.php'>LogOut</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>

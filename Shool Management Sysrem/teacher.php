@@ -1,23 +1,7 @@
 <?php
-include 'user.php';
+include 'User.php';
 class Teacher extends User{
-    public function addTeacher($fiN, $sN, $tN, $fN, $nN, $bD, $g){
-        parent::setFirstName($fiN);
-        parent::setSecondName($sN);
-        parent::setThirdName($tN);
-        parent::setForthName($fN);
-        parent::setNationalNumber($nN);
-        parent::setBirthDate($bD);
-        parent::setGender($g);
-
-        if(parent::validationData()){
-            echo '<script>alert("Error, Data Is Not Correct")</script>';
-            return;
-        }
-        else{
-        $this->insertDataIntoDataBase();
-      }
-    }
+   
 
     private function insertDataIntoDataBase(){
         include "dB.php";

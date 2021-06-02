@@ -25,8 +25,9 @@
 
 <?php 
  include "dB.php";
-
+ include 'classAssignments.php';
    if(isset($_POST['sub'])){
+     $assignment = new Assignment();  
     foreach($_POST['array'] as $a){
         if($a == ''){
             echo '<script>alert("Error, Fill All requirments")</script>';
@@ -34,12 +35,8 @@
         }
     } 
       foreach($_POST['array'] as $a){
-        $sql = mysqli_query($conn, "INSERT INTO addQuestions (name, question) VALUES ('$_SESSION[name]', '$a')");
+         $assignment->addQuestion($_SESSION['email'], $a);
     }
-    echo '<script>alert("Done, Data Inserted successfully")</script>';
-
-    header("refresh: 0.1");    
-    return;
  } 
 
 
