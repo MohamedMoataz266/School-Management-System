@@ -26,7 +26,7 @@
 				?></h3>
   				<a href="assignments.php">Assignments</a>
 				<a href="">View grades</a> 
-                <a href="">See Videos</a>
+                <a href="viewvideocourse.php">See Videos</a>
 				<a href="">Send Message</a>
 				<a href='logout.php'>LogOut</a>	
 			</nav>
