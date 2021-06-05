@@ -29,6 +29,8 @@
 				<a href="">add grades</a> 
                 <a href="addvideocourse.php">add video or link</a>
 				<a href="viewAnswers.php">view Answers</a>
+				<a href="teacherMessageFrontEnd.php">Send Message</a>
+				<a href="viewMessageTeacher.php">View Messages</a>
 				<a href='logout.php'>LogOut</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
