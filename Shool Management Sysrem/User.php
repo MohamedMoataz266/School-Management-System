@@ -58,7 +58,7 @@ public function logIn($email, $pass){
             header('Location: studentAffairesFrontEnd.php');
            }  
            else if ($row['user'] == 4){
-            // personnel menu
+            header('Location: personal.php');
         }
          }
         }
