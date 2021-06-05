@@ -20,14 +20,15 @@
 					</div>
   <div id="menu" class="sidemenu">
 
-				<h3><?php  
+  				<h3><?php  
 					session_start();
 					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome<br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['email'];
 				?></h3>
   				<a href="assignments.php">Assignments</a>
 				<a href="">View grades</a> 
                 <a href="viewvideocourse.php">See Videos</a>
-				<a href="">Send Message</a>
+				<a href="studentMessageFrontEnd.php">Send Message</a>
+				<a href="viewMessageStudent.php">View Messages</a>
 				<a href='logout.php'>LogOut</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
