@@ -24,9 +24,9 @@
 					session_start();
 					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome<br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['email'];
 				?></h3>
-  				<a href="addvideocourse.php">add</a>
-				<a href="deletevideocourse.php">delete</a>
-				<a href="">update</a> 
+  				<a href="addvideocourse.php">Add</a>
+				<a href="deletevideocourse.php">Delete</a>
+				<a href="updateVideoCourse.php">Update</a> 
 				<a href='logout.php'>LogOut</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
