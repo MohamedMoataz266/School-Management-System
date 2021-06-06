@@ -3,6 +3,9 @@ body{
 	margin: 20px 40px;
 	background-image: url('banner_img.png');
    }
+   strong{
+	   color: red;
+	}
    #mainbox{
 	font-size: 24px;
 	cursor: pointer;

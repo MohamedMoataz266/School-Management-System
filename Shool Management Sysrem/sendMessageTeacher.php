@@ -44,6 +44,14 @@ while($row = mysqli_fetch_array($result)){
   echo $row['message']. '<br>';
 }
 echo '</p>';
+$result = mysqli_query($conn, "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."'");
+// output data of each receiver
+echo '<p class="rece">';
+while($row = mysqli_fetch_array($result)){
+ echo $row['message']. '<br>';
+}
+echo '</p>';
+
  ?>
  </div>
 
@@ -62,7 +70,6 @@ echo '</p>';
 
 
 <?php
-  include 'Chatting.php';
    if(isset($_POST['sub'])){
       if(empty($_POST['M'])){
          echo "ERROR U Don't Enter Message";

@@ -30,7 +30,18 @@
                 <a href="addvideocourse.php">add video or link</a>
 				<a href="viewAnswers.php">view Answers</a>
 				<a href="teacherMessageFrontEnd.php">Send Message</a>
-				<a href="viewMessageTeacher.php">View Messages</a>
+				<a href="viewMessageTeacher.php">View Messages
+				<?php
+				  include 'Chatting.php';
+				  $no = new Chatting();
+				  if($no->getNumberOfMessages() > 0)
+				   echo '<strong>&nbsp&nbsp&nbsp&nbsp' .$no->getNumberOfMessages(). '</strong>';
+				   else{
+					 echo '';   
+				   }
+				?>
+				
+				</a>
 				<a href='logout.php'>LogOut</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>

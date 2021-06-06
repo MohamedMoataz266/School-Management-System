@@ -49,6 +49,15 @@ public function updateMessage(){
         include 'dB.php';
         $res = mysqli_query($conn, "UPDATE Chat SET messageType='Read' WHERE Sender='".$_GET['<!?>']."' AND Receiver='".$_SESSION['email']."'");
    }
+ public function getNumberOfMessages(){
+        include 'dB.php';
+        $sql = mysqli_query($conn, "SELECT message FROM Chat WHERE Receiver= '".$_SESSION['email']."' AND messageType='Delivered'");
+        $count = 0;
+        while($row = mysqli_fetch_array($sql)){
+            $count++;
+        }
+        return $count;
+   }
 
 
 }

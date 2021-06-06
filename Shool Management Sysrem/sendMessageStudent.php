@@ -1,6 +1,6 @@
 <div class="wrapper">
 <?php include "dB.php"; 
-  ob_start();
+ob_start();
 include "studentFrontEnd.php";
  ?>
 
@@ -70,7 +70,6 @@ echo '</p>';
 
 
 <?php
-  include 'Chatting.php';
    if(isset($_POST['sub'])){
       if(empty($_POST['M'])){
          echo '<script>alert("ERROR U Do not Enter Message")</script>';

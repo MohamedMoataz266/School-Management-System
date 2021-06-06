@@ -69,7 +69,6 @@ echo '</p>';
 
 
 <?php
-    include 'Chatting.php';
     $message = new Chatting();
     $message->updateMessage();
     if(isset($_POST['sub'])){
