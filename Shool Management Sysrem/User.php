@@ -41,24 +41,26 @@ public function logIn($email, $pass){
         echo '<script>alert("Error, Fill All Requirements")</script>';
         return;
     }
+    
     else{
+        session_start();  
         $sql = mysqli_query($conn, "SELECT email, nationalNumber, user FROM Registration WHERE email='$email' 
         AND nationalNumber='$pass'");
         if($row = mysqli_fetch_assoc($sql)){
             if($row['email'] == $email){
-            session_start();
             $_SESSION['email'] = $email;
+
             if($row['user'] == 1){
-            header('Location: studentFrontEnd.php');
-           }
+                header('Location: studentFrontEnd.php');
+            }
            else if ($row['user'] == 2){
             header('Location: teacherfrontEnd.php');
-           }
+        }
            else if ($row['user'] == 3){
             header('Location: studentAffairesFrontEnd.php');
            }  
            else if ($row['user'] == 4){
-            // personnel menu
+            header('Location: personal.php');
         }
          }
         }

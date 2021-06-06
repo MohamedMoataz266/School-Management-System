@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 05, 2021 at 08:27 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- Host: localhost
+-- Generation Time: Jun 05, 2021 at 11:24 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `school`
+-- Database: `School`
 --
-CREATE DATABASE IF NOT EXISTS `school` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `school`;
+CREATE DATABASE IF NOT EXISTS `School` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `School`;
 
 -- --------------------------------------------------------
 
@@ -50,21 +50,21 @@ INSERT INTO `addcoursevideo` (`ID`, `email`, `instructorname`, `course`, `course
 -- --------------------------------------------------------
 
 --
--- Table structure for table `addquestions`
+-- Table structure for table `addQuestions`
 --
 
-DROP TABLE IF EXISTS `addquestions`;
-CREATE TABLE `addquestions` (
+DROP TABLE IF EXISTS `addQuestions`;
+CREATE TABLE `addQuestions` (
   `ID` int(11) NOT NULL,
   `email` varchar(80) NOT NULL,
   `question` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `addquestions`
+-- Dumping data for table `addQuestions`
 --
 
-INSERT INTO `addquestions` (`ID`, `email`, `question`) VALUES
+INSERT INTO `addQuestions` (`ID`, `email`, `question`) VALUES
 (4, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'How Old R U ?'),
 (5, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'How R U ?'),
 (6, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'What is your favorite class ?'),
@@ -92,6 +92,35 @@ INSERT INTO `answers` (`ID`, `email`, `answer`) VALUES
 (23, 'MohamedMoatazKamelFouad@amounegypt.com', 'Fine'),
 (24, 'MohamedMoatazKamelFouad@amounegypt.com', 'History'),
 (25, 'MohamedMoatazKamelFouad@amounegypt.com', 'No');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Chat`
+--
+
+DROP TABLE IF EXISTS `Chat`;
+CREATE TABLE `Chat` (
+  `ID` int(11) NOT NULL,
+  `Sender` varchar(80) NOT NULL,
+  `Receiver` varchar(80) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `messageType` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `Chat`
+--
+
+INSERT INTO `Chat` (`ID`, `Sender`, `Receiver`, `message`, `messageType`) VALUES
+(4, 'KareemEhabAbdelrazekDahab@amounegypt.com      ', 'MohamedMoatazKamelFouad@amounegypt.com    ', 'Hi Mohamed', 'Read'),
+(5, 'KareemEhabAbdelrazekDahab@amounegypt.com      ', 'MohamedMoatazKamelFouad@amounegypt.com    ', 'How R U ?', 'Read'),
+(6, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Hi Kareem', 'Read'),
+(8, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Iam fine', 'Read'),
+(9, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Tell me about your life', 'Read'),
+(14, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Every thing is ok ', 'Read'),
+(15, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Are U Okay ?', 'Read'),
+(16, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Yes bro', 'Delivered');
 
 -- --------------------------------------------------------
 
@@ -156,11 +185,11 @@ INSERT INTO `personnelaffairs` (`ID`, `name`, `code`, `arabicName`, `religion`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `registration`
+-- Table structure for table `Registration`
 --
 
-DROP TABLE IF EXISTS `registration`;
-CREATE TABLE `registration` (
+DROP TABLE IF EXISTS `Registration`;
+CREATE TABLE `Registration` (
   `ID` int(255) NOT NULL,
   `firstName` varchar(30) NOT NULL,
   `secondName` varchar(30) NOT NULL,
@@ -174,10 +203,10 @@ CREATE TABLE `registration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `registration`
+-- Dumping data for table `Registration`
 --
 
-INSERT INTO `registration` (`ID`, `firstName`, `secondName`, `thirdName`, `forthName`, `email`, `nationalNumber`, `birthDate`, `gender`, `user`) VALUES
+INSERT INTO `Registration` (`ID`, `firstName`, `secondName`, `thirdName`, `forthName`, `email`, `nationalNumber`, `birthDate`, `gender`, `user`) VALUES
 (64, 'Mohamed', 'Moataz', 'Kamel', 'Fouad', 'MohamedMoatazKamelFouad@amounegypt.com', '12345678912345', '06/08/2000', 'Male', 1),
 (65, 'Kareem', 'Ehab', 'Abdelrazek', 'Dahab', 'KareemEhabAbdelrazekDahab@amounegypt.com', '12345678912344', '6/11/1999', 'Male', 2),
 (66, 'Philip', 'George', 'Fayek', 'Barsoum', 'PhilipGeorgeFayekBarsoum@amounegypt.com', '12345678912303', '25/12/1999', 'Male', 3);
@@ -185,20 +214,20 @@ INSERT INTO `registration` (`ID`, `firstName`, `secondName`, `thirdName`, `forth
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usertype`
+-- Table structure for table `userType`
 --
 
-DROP TABLE IF EXISTS `usertype`;
-CREATE TABLE `usertype` (
+DROP TABLE IF EXISTS `userType`;
+CREATE TABLE `userType` (
   `ID` int(5) NOT NULL,
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `usertype`
+-- Dumping data for table `userType`
 --
 
-INSERT INTO `usertype` (`ID`, `name`) VALUES
+INSERT INTO `userType` (`ID`, `name`) VALUES
 (1, 'Student'),
 (2, 'Teacher'),
 (3, 'Student Affairs'),
@@ -215,15 +244,21 @@ ALTER TABLE `addcoursevideo`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `addquestions`
+-- Indexes for table `addQuestions`
 --
-ALTER TABLE `addquestions`
+ALTER TABLE `addQuestions`
   ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `answers`
 --
 ALTER TABLE `answers`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `Chat`
+--
+ALTER TABLE `Chat`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -239,16 +274,16 @@ ALTER TABLE `personnelaffairs`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `registration`
+-- Indexes for table `Registration`
 --
-ALTER TABLE `registration`
+ALTER TABLE `Registration`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `user` (`user`);
 
 --
--- Indexes for table `usertype`
+-- Indexes for table `userType`
 --
-ALTER TABLE `usertype`
+ALTER TABLE `userType`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -262,9 +297,9 @@ ALTER TABLE `addcoursevideo`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `addquestions`
+-- AUTO_INCREMENT for table `addQuestions`
 --
-ALTER TABLE `addquestions`
+ALTER TABLE `addQuestions`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
@@ -272,6 +307,12 @@ ALTER TABLE `addquestions`
 --
 ALTER TABLE `answers`
   MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `Chat`
+--
+ALTER TABLE `Chat`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `grades`
@@ -286,15 +327,15 @@ ALTER TABLE `personnelaffairs`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `registration`
+-- AUTO_INCREMENT for table `Registration`
 --
-ALTER TABLE `registration`
+ALTER TABLE `Registration`
   MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
--- AUTO_INCREMENT for table `usertype`
+-- AUTO_INCREMENT for table `userType`
 --
-ALTER TABLE `usertype`
+ALTER TABLE `userType`
   MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
@@ -302,10 +343,10 @@ ALTER TABLE `usertype`
 --
 
 --
--- Constraints for table `registration`
+-- Constraints for table `Registration`
 --
-ALTER TABLE `registration`
-  ADD CONSTRAINT `Registration_ibfk_1` FOREIGN KEY (`user`) REFERENCES `usertype` (`ID`);
+ALTER TABLE `Registration`
+  ADD CONSTRAINT `Registration_ibfk_1` FOREIGN KEY (`user`) REFERENCES `userType` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
