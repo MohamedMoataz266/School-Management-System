@@ -39,7 +39,7 @@
                           <p>The stages prepare students from kindergarten to the end of high school.
                           The joint school is keen on developing the Egyptian personality morally, morally, scientifically and psychologically.
                             The school is interested in breaking out of stereotypes through its constant quest for renewal by introducing everything new in the educational process.
-                         School activity has a big side in the mind and conscience of Amun School, as it always works to encourage multiple talents in various activities.</p>
+                         School activity has a big side in the mind and conscience of Amoun Language Schools, as it always works to encourage multiple talents in various activities.</p>
                         </div>
                         <br><br>
                          <div class="secondfull">
