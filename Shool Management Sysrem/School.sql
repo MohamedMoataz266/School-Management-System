@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 05, 2021 at 11:24 PM
+-- Generation Time: Jun 07, 2021 at 02:10 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -33,19 +33,10 @@ DROP TABLE IF EXISTS `addcoursevideo`;
 CREATE TABLE `addcoursevideo` (
   `ID` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `instructorname` varchar(255) NOT NULL,
   `course` varchar(255) NOT NULL,
-  `coursename` varchar(255) NOT NULL,
   `videoname` varchar(255) NOT NULL,
   `video` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `addcoursevideo`
---
-
-INSERT INTO `addcoursevideo` (`ID`, `email`, `instructorname`, `course`, `coursename`, `videoname`, `video`) VALUES
-(4, 'moataz@gmail.com', 'moo', 'op', 'csc123', 'lecture one', 'vid1.mp4');
 
 -- --------------------------------------------------------
 
@@ -68,30 +59,32 @@ INSERT INTO `addQuestions` (`ID`, `email`, `question`) VALUES
 (4, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'How Old R U ?'),
 (5, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'How R U ?'),
 (6, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'What is your favorite class ?'),
-(7, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Good Day ?');
+(7, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Good Day ?'),
+(8, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'What is Your Opinion about school ?');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `answers`
+-- Table structure for table `Answers`
 --
 
-DROP TABLE IF EXISTS `answers`;
-CREATE TABLE `answers` (
+DROP TABLE IF EXISTS `Answers`;
+CREATE TABLE `Answers` (
   `ID` int(255) NOT NULL,
   `email` varchar(80) NOT NULL,
   `answer` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `answers`
+-- Dumping data for table `Answers`
 --
 
-INSERT INTO `answers` (`ID`, `email`, `answer`) VALUES
-(22, 'MohamedMoatazKamelFouad@amounegypt.com', '20'),
-(23, 'MohamedMoatazKamelFouad@amounegypt.com', 'Fine'),
-(24, 'MohamedMoatazKamelFouad@amounegypt.com', 'History'),
-(25, 'MohamedMoatazKamelFouad@amounegypt.com', 'No');
+INSERT INTO `Answers` (`ID`, `email`, `answer`) VALUES
+(26, 'MohamedMoatazKamelFouad@amounegypt.com', '20'),
+(27, 'MohamedMoatazKamelFouad@amounegypt.com', 'Fine'),
+(28, 'MohamedMoatazKamelFouad@amounegypt.com', 'History'),
+(29, 'MohamedMoatazKamelFouad@amounegypt.com', 'No'),
+(30, 'MohamedMoatazKamelFouad@amounegypt.com', 'Not Good');
 
 -- --------------------------------------------------------
 
@@ -120,7 +113,16 @@ INSERT INTO `Chat` (`ID`, `Sender`, `Receiver`, `message`, `messageType`) VALUES
 (9, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Tell me about your life', 'Read'),
 (14, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Every thing is ok ', 'Read'),
 (15, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Are U Okay ?', 'Read'),
-(16, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Yes bro', 'Delivered');
+(16, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Yes bro', 'Read'),
+(17, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Hi ', 'Read'),
+(18, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'How R U ?', 'Read'),
+(19, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Fine', 'Read'),
+(20, 'KareemEhabAbdelrazekDahab@amounegypt.com      ', 'MohamedMoatazKamelFouad@amounegypt.com    ', 'Good', 'Read'),
+(21, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Test ?', 'Read'),
+(22, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Good Day OR NOT ?', 'Read'),
+(23, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Not', 'Read'),
+(24, 'KareemEhabAbdelrazekDahab@amounegypt.com      ', 'MohamedMoatazKamelFouad@amounegypt.com    ', 'Hi', 'Read'),
+(25, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Hi', 'Delivered');
 
 -- --------------------------------------------------------
 
@@ -207,9 +209,42 @@ CREATE TABLE `Registration` (
 --
 
 INSERT INTO `Registration` (`ID`, `firstName`, `secondName`, `thirdName`, `forthName`, `email`, `nationalNumber`, `birthDate`, `gender`, `user`) VALUES
-(64, 'Mohamed', 'Moataz', 'Kamel', 'Fouad', 'MohamedMoatazKamelFouad@amounegypt.com', '12345678912345', '06/08/2000', 'Male', 1),
 (65, 'Kareem', 'Ehab', 'Abdelrazek', 'Dahab', 'KareemEhabAbdelrazekDahab@amounegypt.com', '12345678912344', '6/11/1999', 'Male', 2),
-(66, 'Philip', 'George', 'Fayek', 'Barsoum', 'PhilipGeorgeFayekBarsoum@amounegypt.com', '12345678912303', '25/12/1999', 'Male', 3);
+(66, 'Philip', 'George', 'Fayek', 'Barsoum', 'PhilipGeorgeFayekBarsoum@amounegypt.com', '12345678912303', '25/12/1999', 'Male', 3),
+(67, 'Saad', 'Kareem', 'Omar', 'Hassan', 'SaadKareemOmarHassan@amounegypt.com', '12589631204597', '06/08/2000', 'Male', 1),
+(70, 'Mohamed', 'Moataz', 'Kamel', 'Fouad', 'MohamedMoatazKamelFouad@amounegypt.com', '12345678912345', '6/8/2000', 'on', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Students`
+--
+
+DROP TABLE IF EXISTS `Students`;
+CREATE TABLE `Students` (
+  `ID` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `registrationNumber` varchar(100) NOT NULL,
+  `nationality` varchar(100) NOT NULL,
+  `religion` varchar(20) NOT NULL,
+  `placeOfBirth` varchar(100) NOT NULL,
+  `dateOfBirth` varchar(100) NOT NULL,
+  `ageInOctober` varchar(255) NOT NULL,
+  `motherName` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `phoneNumber` varchar(15) NOT NULL,
+  `fatherJob` varchar(50) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `nationalNumber` varchar(20) NOT NULL,
+  `class` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `Students`
+--
+
+INSERT INTO `Students` (`ID`, `name`, `registrationNumber`, `nationality`, `religion`, `placeOfBirth`, `dateOfBirth`, `ageInOctober`, `motherName`, `address`, `phoneNumber`, `fatherJob`, `gender`, `nationalNumber`, `class`) VALUES
+(5, 'MohamedMoatazKamelFouad', '1254', 'Egyption', 'Musilim', 'Cairo', '6/8/2000', '21 Year 2 Month 35 Day ', 'Sara Ahmed Adel', 'Elkhalefa elmamoun', '01003654587', 'Engineer', 'on', '12345678912345', '1/5');
 
 -- --------------------------------------------------------
 
@@ -250,9 +285,9 @@ ALTER TABLE `addQuestions`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `answers`
+-- Indexes for table `Answers`
 --
-ALTER TABLE `answers`
+ALTER TABLE `Answers`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -281,6 +316,12 @@ ALTER TABLE `Registration`
   ADD KEY `user` (`user`);
 
 --
+-- Indexes for table `Students`
+--
+ALTER TABLE `Students`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `userType`
 --
 ALTER TABLE `userType`
@@ -294,25 +335,25 @@ ALTER TABLE `userType`
 -- AUTO_INCREMENT for table `addcoursevideo`
 --
 ALTER TABLE `addcoursevideo`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `addQuestions`
 --
 ALTER TABLE `addQuestions`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `answers`
+-- AUTO_INCREMENT for table `Answers`
 --
-ALTER TABLE `answers`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+ALTER TABLE `Answers`
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `Chat`
 --
 ALTER TABLE `Chat`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `grades`
@@ -330,7 +371,13 @@ ALTER TABLE `personnelaffairs`
 -- AUTO_INCREMENT for table `Registration`
 --
 ALTER TABLE `Registration`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+
+--
+-- AUTO_INCREMENT for table `Students`
+--
+ALTER TABLE `Students`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `userType`

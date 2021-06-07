@@ -26,9 +26,7 @@
   
    <td style="visibility:hidden;"><b>ID</b></td>
    <td><b>email</b></td>
-    <td><b>instructorname</b></td>
     <td><b>course</b></td>
-    <td><b>coursename</b></td>
     <td><b>video</b></td>
     <td><b>videoname</b></td>
     <td><b>select</b></td>
@@ -43,20 +41,15 @@ $result = mysqli_query($conn, "SELECT * FROM addcoursevideo");
 while($row = mysqli_fetch_array($result)){
   $id = $row['ID'];  
   $email=$row['email'];
-  $instructorname=$row['instructorname'];
   $course=$row['course'];
-  $coursename=$row['coursename'];
   $video=$row['video'];
-
-  $videoname=$row['videoname'];
+$videoname=$row['videoname'];
 
   ?>
   <br><br>
   <td style="visibility:hidden;"><?= $id ?></td>
   <td><?= $email ?></td>
-  <td><?= $instructorname ?></td>
   <td><?= $course ?></td>
-  <td><?= $coursename ?></td>
   <td><?= $video ?></td>
   <td><?= $videoname ?></td>
   <td> <input type='checkbox' name='delete[]' value='<?= $id ?>' ></td>
@@ -88,6 +81,6 @@ while($row = mysqli_fetch_array($result)){
       else{
          echo "ERROR U SHOULD SELECT USER TO DELETE IT";
         }
-        header("refresh: 0.1");  
+        header("Refresh: 0.1");  
   }  
 ?>

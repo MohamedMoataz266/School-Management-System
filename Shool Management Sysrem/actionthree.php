@@ -2,7 +2,7 @@
 
 
 
-$connect = new PDO("mysql:host=localhost;dbname=school", "root", "");
+$connect = new PDO("mysql:host=localhost;dbname=School", "root", "");
 
 $output = '';
 
@@ -12,7 +12,7 @@ if(isset($_POST["query"]))
 {
  $search = str_replace(",", "|", $_POST["query"]);
  $query = "
- SELECT * FROM students 
+ SELECT * FROM Students 
  WHERE name REGEXP '".$search."' 
  OR address REGEXP '".$search."' 
  OR registrationNumber REGEXP '".$search."' 
@@ -21,7 +21,7 @@ if(isset($_POST["query"]))
 else
 {
  $query = "
- SELECT * FROM students ORDER BY ID
+ SELECT * FROM Students ORDER BY ID
  ";
 }
 
@@ -41,7 +41,7 @@ echo json_encode($data);
   if(isset($_POST['sub'])){
     if(isset($_POST['delete'])){
       foreach($_POST['delete'] as $dele){
-        mysqli_query($conn, "DELETE FROM students WHERE ID = '" .$dele. "'");
+        mysqli_query($conn, "DELETE FROM Students WHERE ID = '" .$dele. "'");
      }
    }  
       else{

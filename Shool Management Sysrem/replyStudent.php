@@ -1,5 +1,5 @@
 <?php include "dB.php"; 
- include "teacherfrontEnd.php";
+ include "studentFrontEnd.php";
 
 ?>
 <style>
