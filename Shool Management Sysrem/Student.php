@@ -93,7 +93,7 @@ private function validate(){
 }
  
 public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m, $a, $ph, $f, $c, $regis){
-        parent::setData($fiN, $sN, $tN, $fN, $nN, $bD, $g, '1');
+        parent::setStudentData($fiN, $sN, $tN, $fN, $nN, $bD, $g, '1');
         $this->nationality = $n;
         $this->religion = $r;
         $this->placeOfBirth = $p; 
@@ -104,10 +104,6 @@ public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m,
         $this->class = $c;
         $this->registrationNumber = $regis;
         if($this->validate()){
-            echo '<script>alert("Error, Data Is Not True")</script>';
-            return;
-        }
-        if(parent::validationDataStudent()){
             echo '<script>alert("Error, Data Is Not True")</script>';
             return;
         }
@@ -136,6 +132,20 @@ public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m,
                 return;
             }
        else{
+        echo $fullName. '<br>';
+        echo $rN. '<br>';
+        echo $N. '<br>';
+        echo $R. '<br>';
+        echo $pB. '<br>';
+        echo $bD. '<br>';
+        echo $aO. '<br>';
+        echo $mN. '<br>';
+        echo $A. '<br>';
+        echo $pN. '<br>';
+        echo $fJ. '<br>';
+        echo $g. '<br>';
+        echo $nN. '<br>';
+        echo $c. '<br>';
         mysqli_query($conn, "INSERT INTO Students (name, registrationNumber, 
             nationality, religion, 
             placeOfBirth, dateOfBirth, 

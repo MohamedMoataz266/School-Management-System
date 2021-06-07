@@ -1,35 +1,26 @@
 <?php 
-
  include "dB.php";
-  include "menuvideo.php"; 
+ include "menuvideo.php"; 
  $errors = array();
 
  $id = "";
  $email= "";
- $instructorname= "";
  $course= "";
- $coursename= "";
  $video= "";
  $videoname="";
 
  
 function getPosts(){
      $posts = array();
-     $posts[0] = $_POST['email'];
-     $posts[1] = $_POST['instructorname'];
-     $posts[2] = $_POST['course'];
-     $posts[3] = $_POST['coursename'];
-     $posts[4]=$_POST['video'];
-     $posts[4]=$_POST['videoname'];
+     $posts[0] = $_POST['course'];
+     $posts[1]=$_POST['video'];
+     $posts[2]=$_POST['videoname'];
      return $posts;
  }
  // insert
  if(isset($_POST['insert']))
  {
-    if (empty($_POST['email']) || 
-      empty($_POST['instructorname']) || 
-      empty($_POST['course']) || 
-      empty($_POST['coursename'])|| 
+    if (empty($_POST['course']) || 
       empty($_POST['video'])|| 
       empty($_POST['videoname'])){
     array_push($errors, "Please fill in all requirements!");  
@@ -46,7 +37,7 @@ function getPosts(){
  		}
  	}
      $data = getPosts();
-     $insertQuery = "INSERT INTO addcoursevideo (`email`, `instructorname`,`course`,`coursename`,`videoname`,`video`) VALUES ('$data[0]', '$data[1]','$data[2]','$data[3]','$data[4]','$_POST[video]')";
+     $insertQuery = "INSERT INTO addcoursevideo (`email`,`course`,`videoname`,`video`) VALUES ('$_SESSION[email]','$data[0]','$data[2]','$_POST[video]')";
      try
   {
      $insertResult = mysqli_query($conn, $insertQuery);
@@ -54,10 +45,13 @@ function getPosts(){
      if($insertResult)
      {
          if(mysqli_affected_rows($conn) > 0){
-             print "item inserted";
+             echo '<script>alert("Done, Video Inseted Successfully")</script>';
+             return;
          }else{
-             print "item not inserted";
-         }
+            echo '<script>alert("Error, Video Not Inseted")</script>';
+             return;
+          
+        }
      }
  }catch(Exception $ex){
        print "error insert" .$ex->getMessage();  
@@ -84,21 +78,8 @@ function getPosts(){
                     <h3>Add video</h3>
                    
                     <form class="requires-validation" novalidate method='POST' action=''>
-
-                        <div class="col-md-12">
-                           <input class="form-control" type="text" name="email" placeholder="email" value="<?php print $email; ?>" >
-                           
-                           </div>
-                           <div class="col-md-12">
-                           <input class="form-control" type="text" name="instructorname" placeholder="instructorname" value="<?php print $instructorname; ?>">
-                           
-                           </div>
-                           <div class="col-md-12">
+                       <div class="col-md-12">
                            <input class="form-control" type="text" name="course" placeholder="course" value="<?php print $course; ?>">
-                           <!-- <div class="valid-feedback">Username field is valid!</div> -->
-                           </div>
-                           <div class="col-md-12">
-                           <input class="form-control" type="text" name="coursename" placeholder="coursename" value="<?php print $coursename; ?>">
                            <!-- <div class="valid-feedback">Username field is valid!</div> -->
                            </div>
                      

@@ -97,11 +97,11 @@
                            <div class="col-md-12 mt-3">
                             <label class="mb-3 mr-1" for="gender">Gender: </label>
 
-                            <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off">
-                            <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+                            <input type="radio" class="btn-check" name="gender" value='Female' id="male">
+                            <label class="btn btn-sm btn-outline-secondary">Male</label>
 
-                            <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off">
-                            <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+                            <input type="radio" class="btn-check" value= 'Male' name="gender" id="female">
+                            <label class="btn btn-sm btn-outline-secondary">Female</label>
 
                             
                                <!-- <div class="valid-feedback">You selected a gender!</div> -->
@@ -136,5 +136,6 @@ if(isset($_POST['sub'])){
                     $_POST['nationalNumber'], $_POST['dateofbirth'], $_POST['gender'], $_POST['nationality'],
                     $_POST['religion'], $_POST['birthplace'], $_POST['mothername'], $_POST['address'], 
                     $_POST['number'], $_POST['father'], $_POST['clas'], $_POST['regnumber']);
+                    echo $_POST['gender'];
 }
 ?>

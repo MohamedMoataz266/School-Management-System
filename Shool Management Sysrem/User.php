@@ -19,6 +19,29 @@ private function setData($firstName, $secondName, $thirdName, $fourthName, $nati
     $this->gender = $gender;
     $this->type = $type;
 }
+public function setStudentData($firstName, $secondName, $thirdName, $fourthName, $nationalNumber, $birthDate, $gender, $type){
+    $this->firstName = $firstName;
+    $this->secondName = $secondName;
+    $this->thirdName = $thirdName;
+    $this->fourthName = $fourthName;
+    $this->nationalNumber = $nationalNumber;
+    $this->birthDate = $birthDate;
+    $this->gender = $gender;
+    $this->type = $type;
+
+}
+public function getFullName(){
+  return $this->firstName.$this->secondName.$this->thirdName.$this->fourthName;
+}
+public function getNationalNumber(){
+    return $this->nationalNumber;
+}
+public function getBirthDate(){
+    return $this->birthDate;
+}
+public function getGender(){
+    return $this->gender;
+}
 
 public function addUser($fN, $sN, $tN, $foN, $nN, $bD, $g, $t){
     include 'dB.php';
