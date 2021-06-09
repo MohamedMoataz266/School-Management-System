@@ -21,7 +21,7 @@ include "teacherfrontEnd.php";
 $result = mysqli_query($conn, "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."' AND messageType= 'Delivered'");
 // output data of each row
 if(mysqli_num_rows($result) == 0){
-  echo "<h1>There are no new Messages</h1>";
+  echo "<h1>No new messages</h1>";
 }
 while($row = mysqli_fetch_array($result)){
   $id = $row['ID'];  

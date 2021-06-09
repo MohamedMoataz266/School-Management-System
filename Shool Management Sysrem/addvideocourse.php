@@ -45,10 +45,10 @@ function getPosts(){
      if($insertResult)
      {
          if(mysqli_affected_rows($conn) > 0){
-             echo '<script>alert("Done, Video Inseted Successfully")</script>';
+             echo '<script>alert("Done, the video has been inserted successfully")</script>';
              return;
          }else{
-            echo '<script>alert("Error, Video Not Inseted")</script>';
+            echo '<script>alert("Error, the video has not been inserted successfully")</script>';
              return;
           
         }
@@ -60,7 +60,6 @@ function getPosts(){
 }
 ?>
 
-
 <html>
 <head>
 <style>
@@ -68,7 +67,6 @@ function getPosts(){
 </style>
 </head>
 <body>
-
 
 <div class="form-body">
     <div class="row">
@@ -79,18 +77,18 @@ function getPosts(){
                    
                     <form class="requires-validation" novalidate method='POST' action=''>
                        <div class="col-md-12">
-                           <input class="form-control" type="text" name="course" placeholder="course" value="<?php print $course; ?>">
+                           <input class="form-control" type="text" name="course" placeholder="Course Name" value="<?php print $course; ?>">
                            <!-- <div class="valid-feedback">Username field is valid!</div> -->
                            </div>
                      
 
                            <div class="col-md-12">
-                           <input class="form-control" type="file" name="video" placeholder="video"value="<?php print $video; ?>">
+                           <input class="form-control" type="file" name="video" placeholder="Video"value="<?php print $video; ?>">
                            
                            <!-- <div class="valid-feedback">Username field is valid!</div> -->
                            </div>
                            <div class="col-md-12">
-                           <input class="form-control" type="text" name="videoname" placeholder="videoname"value="<?php print $videoname; ?>">
+                           <input class="form-control" type="text" name="videoname" placeholder="Video Name"value="<?php print $videoname; ?>">
                            <!-- <div class="valid-feedback">Username field is valid!</div> -->
                            </div>
                            

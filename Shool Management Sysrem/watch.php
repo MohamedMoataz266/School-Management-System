@@ -8,7 +8,7 @@ if(isset($_GET['ID'])){
     $res=mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($res);
     $video=$row['video'];
-    echo "<h1>you are watching:".$video."</h1>";
+    echo "<h1>You are watching:".$video."</h1>";
     ?>
     <video width="615" height="315" controls>
     <source src="video/<?php echo $video; ?>" type="video/mp4">

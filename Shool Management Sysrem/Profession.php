@@ -124,7 +124,7 @@ private function validate(){
     }
     $sql = mysqli_query($conn, "SELECT name, nationalNumber FROM personnelaffairs WHERE name='".$this->getName()."' OR nationalNumber='".$this->getNationalNumber()."'");
     if(mysqli_num_rows($sql) > 0){
-        echo '<script>alert("Error, Data Entry Is Not Correct")</script>';
+        echo '<script>alert("Error, data entry is not correct")</script>';
         return;
     }
     else{
@@ -158,11 +158,11 @@ public function insertProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr,
        $this->educationSystem = $eS; 
        $this->notes = $notes;
         if($this->validate()){
-            echo '<script>alert("Error, Data Is Not True")</script>';
+            echo '<script>alert("Error, Data is not true")</script>';
             return;
         }
         if(parent::validationDataProfession()){
-            echo '<script>alert("Error, Data Is Not True")</script>';
+            echo '<script>alert("Error, Data is not True")</script>';
             return;
         }
         else{
@@ -198,7 +198,7 @@ public function insertProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr,
             $notes = $this->getNotes();
 
             if($this->checkProfession($eN, $nN)){
-                echo '<script>alert("Error, User Inserted Before")</script>';
+                echo '<script>alert("Error, someone has used those credentials before")</script>';
                 return;
             }
        else{
@@ -221,7 +221,7 @@ public function insertProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr,
     '$pN', '$q', '$gY', '$gG', '$expY', '$j',
     '$spec', '$dep', '$cDate', '$iNo', '$iDate', '$iEDate',
     '$sR', '$eS', '$notes')");
-        echo '<script>alert("Done, Profession Added Successfully")</script>';
+        echo '<script>alert("Done, new profession has been added successfully")</script>';
         return;
     }
 }

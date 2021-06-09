@@ -25,11 +25,11 @@
   <tr>
   
    <td style="visibility:hidden;"><b>ID</b></td>
-   <td><b>email</b></td>
-    <td><b>instructorname</b></td>
-    <td><b>course</b></td>
-    <td><b>coursename</b></td>
-    <td><b>video</b></td>
+   <td><b>Email</b></td>
+    <td><b>Instructor name</b></td>
+    <td><b>Course</b></td>
+    <td><b>Course name</b></td>
+    <td><b>Video</b></td>
     <
     
   
@@ -83,7 +83,7 @@ while($row = mysqli_fetch_array($result)){
      }
    }  
       else{
-         echo "ERROR U SHOULD SELECT USER TO DELETE IT";
+         echo "Error, please select the video you want to delete";
         }
         header("refresh: 0.1");  
   }  

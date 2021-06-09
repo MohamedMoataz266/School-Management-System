@@ -11,7 +11,7 @@
     
   <div class="box">
     <br><div class="wra">
-      <h1>send message</h1>
+      <h1>Send Message</h1>
       <br><br><br>
       <div class="from">
 <h4>From:
@@ -61,7 +61,7 @@ echo '</p>';
 
 </div>
 
-    <textarea placeholder="Type Message Here" name="M"></textarea><br><br><br>
+    <textarea placeholder="Type your message here" name="M"></textarea><br><br><br>
     <input type="submit" name="sub" value="Send Message">
   </div>
 </div>
@@ -73,7 +73,7 @@ echo '</p>';
     $message->updateMessage();
     if(isset($_POST['sub'])){
       if(empty($_POST['M'])){
-         echo "ERROR U Don't Enter Message";
+         echo "Error, no message is inserted to be sent";
          return;
       }
       else {

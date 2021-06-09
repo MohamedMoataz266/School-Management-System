@@ -11,7 +11,7 @@ class Chatting{
         $this->message = $message;
         $this->messageType = $messageType;
         if($this->validateData()){
-            echo '<script>alret("Error, Data Is Not True")</script>';
+            echo '<script>alret("Error, the data entered is not true")</script>';
             return;
         }
        

@@ -27,7 +27,7 @@
   				<a href="addvideocourse.php">Add</a>
 				<a href="deletevideocourse.php">Delete</a>
 				<a href="updateVideoCourse.php">Update</a> 
-				<a href='logout.php'>LogOut</a>	
+				<a href='logout.php'>Log out</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
  </div>

@@ -27,7 +27,7 @@ include "studentFrontEnd.php";
       }
 
       if($noA == $noQ){
-        echo "<h1> There Are Not New Question</h1>";
+        echo "<h1>No questions are available right now</h1>";
         die();
       }
       else{
@@ -37,12 +37,12 @@ include "studentFrontEnd.php";
       while($row=mysqli_fetch_array($sql)){
       ?>
         <input type="text" name="ques[]" value='<?php echo $row['question'] ?>' readonly>
-        <input type="text" name="answer[]" placeholder="Enter Answer Here"><br>
+        <input type="text" name="answer[]" placeholder="Enter your answer here"><br>
         
         <?php
       }  
     ?>
-    <input type="submit" name="sub" value="Submit Your Answer">
+    <input type="submit" name="sub" value="Submit your answer">
   </div>
 </div>
 </div>
@@ -59,7 +59,7 @@ include "studentFrontEnd.php";
      $assignment = new Assignment();
       foreach($_POST['answer'] as $a){
         if($a == ''){
-        echo '<script>alert("Error, Answer all questions")</script>';
+        echo '<script>alert("Error, please answer all questions")</script>';
         return;
       }
     }

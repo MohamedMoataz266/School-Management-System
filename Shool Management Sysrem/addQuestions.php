@@ -7,7 +7,7 @@
 
 <form method="POST" action="">
     <div class="input-file">
-    <input type="text" placeholder="Write Question Here" name="array[]"><span> +</span><br>
+    <input type="text" placeholder="Write down a question" name="array[]"><span> +</span><br>
     <input type="submit" name="sub" value="Add Question">
 </div>
 
@@ -16,7 +16,7 @@
     $(document).ready(function(){
         "use strict";
         $(".input-file").delegate("span", "click", function(){
-       $("<br><input type='text' placeholder='Write Question Here' name='array[]'><span> +</span>").insertAfter($(this)); 
+       $("<br><input type='text' placeholder='Write down a question' name='array[]'><span> +</span>").insertAfter($(this)); 
     });
     }); 
 </script>
@@ -30,7 +30,7 @@
      $assignment = new Assignment();  
     foreach($_POST['array'] as $a){
         if($a == ''){
-            echo '<script>alert("Error, Fill All requirments")</script>';
+            echo '<script>alert("Error, Fill all the requirments")</script>';
             return;
         }
     } 

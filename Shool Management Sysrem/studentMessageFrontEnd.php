@@ -1,7 +1,7 @@
 <?php include "studentFrontEnd.php"; ?>
 <?php include "dB.php"; ?>
 <head>
-<title>send Message</title>
+<title>Send Message</title>
  
     <style>
       <?php include "Styles/sendmessage.css";?>

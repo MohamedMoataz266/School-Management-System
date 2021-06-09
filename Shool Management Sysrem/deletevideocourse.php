@@ -79,7 +79,7 @@ $videoname=$row['videoname'];
      }
    }  
       else{
-         echo "ERROR U SHOULD SELECT USER TO DELETE IT";
+         echo "Error, please select the video you want to delete";
         }
         header("Refresh: 0.1");  
   }  

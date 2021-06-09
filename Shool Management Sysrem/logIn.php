@@ -3,7 +3,6 @@
 <script src="Js/logIn.js"></script>
 <style>
 	<?php
-
 	 ob_start();
       include "Styles/logIn.css";
 ?>

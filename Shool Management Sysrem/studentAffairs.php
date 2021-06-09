@@ -20,11 +20,11 @@ public function addStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m, $a
     include "dB.php";
     if($this->checkStudent($id)){
         mysqli_query($conn, "DELETE FROM Students WHERE ID='$id'");
-        echo '<script>alert("Done, Student Removed Successfully")</script>';
+        echo '<script>alert("Done, student has been removed successfully")</script>';
         return;
     }
     else{
-        echo '<script>alert("Error, Student Not Removed")</script>';
+        echo '<script>alert("Error, student has not been removed")</script>';
         return;
     }
   }   

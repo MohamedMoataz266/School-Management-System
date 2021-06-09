@@ -5,7 +5,7 @@
 <div class = wrapper> 
 <head>
   
-<title>send Message</title>
+<title>Send Message</title>
 <style>
         <?php include "Styles/viewteachers.css";
         ?>
@@ -49,6 +49,7 @@
 <td><b>Insurance Date</b></td>
 <td><b>Insurance EndDate</b></td>
 <td><b>System Role</b></td>
+<td><b>Education System</b></td>
 <td><b>Notes</b></td>
   
   </tr>
@@ -82,6 +83,7 @@ $insuranceNumber= $row['insuranceNumber'];
 $insuranceDate= $row['insuranceDate'];
 $insuranceEndDate= $row['insuranceEndDate'];
 $systemRole= $row['systemRole'];
+$educationSystem= $row['educationSystem'];
 $notes= $row['notes'];
   ?>
   <br><br>
@@ -109,16 +111,10 @@ $notes= $row['notes'];
        <td><?=  $insuranceDate ?></td>
         <td><?=  $insuranceEndDate ?></td>
           <td><?=  $systemRole ?></td>
+          <td><?=  $educationSystem ?></td>
           <td><?=  $notes ?></td>
 
 
-
-    
-
-		
-  
- 
-  
 </tr>
 <?php
 }

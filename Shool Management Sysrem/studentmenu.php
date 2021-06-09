@@ -20,10 +20,10 @@
 
   	            <a href="studentHome.php">Home</a>
 
-  				<a href="AddStudent.php">AddStudent</a>
-				<a href="removestudent.php">RemoveStudents</a>
-				<a href="viewstudents.php">ViewStudents</a> 
-				<a href='logOut.php'>LogOut</a>	
+  				<a href="AddStudent.php">Add Student</a>
+				<a href="removestudent.php">Remove Student</a>
+				<a href="viewstudents.php">View Students</a> 
+				<a href='logOut.php'>Log out</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
  </div>

@@ -20,10 +20,10 @@
 					</div>
   <div id="menu" class="sidemenu">
   				
-                <a href="homepage.php">home</a>
-  	            <a href="logIn.php">log in</a>
-				<a href="Registration.php">signup</a>
-				<a href="normalLogIn.php">already a user</a>
+                <a href="homepage.php">Home</a>
+  	            <a href="logIn.php">Log In</a>
+				<a href="Registration.php">Sign Up</a>
+				<a href="normalLogIn.php">Already a user?</a>
 				
 				
 			</nav>

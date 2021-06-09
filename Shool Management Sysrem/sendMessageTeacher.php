@@ -12,7 +12,7 @@ include "teacherfrontEnd.php";
 
 <form method="POST" action="">
 <div class="box">  
-<h1>send Message</h1>
+<h1>Send Message</h1>
 
 <br><div class="wra">
 
@@ -59,7 +59,7 @@ echo '</p>';
 
 
 
-    <textarea placeholder="Type Message Here" name="M"></textarea><br><br><br>
+    <textarea placeholder="Type your message here" name="M"></textarea><br><br><br>
     <input type="submit" name="sub" value="Send Message">
     </div>  
     </div>
@@ -72,7 +72,7 @@ echo '</p>';
 <?php
    if(isset($_POST['sub'])){
       if(empty($_POST['M'])){
-         echo "ERROR U Don't Enter Message";
+         echo "Error, no message is inserted to be sent";
          return;
       }
       else{

@@ -48,6 +48,7 @@ $insuranceNumber= $row['insuranceNumber'];
 $insuranceDate= $row['insuranceDate'];
 $insuranceEndDate= $row['insuranceEndDate'];
 $systemRole= $row['systemRole'];
+$educationSystem= $row['educationSystem'];
 $notes= $row['notes'];
        
 
@@ -79,6 +80,7 @@ $notes= $row['notes'];
                            echo "Insurance Date: " .$insuranceDate. "<br>";
                               echo "Insurance EndDate: " .$insuranceEndDate. "<br>";
                                 echo "System Role: " .$systemRole. "<br>";
+                                echo "System Role: " .$educationSystem. "<br>";
                                  echo "Notes: " .$notes. "<br>";
                               
 
@@ -109,6 +111,7 @@ insuranceNumber
 insuranceDate
 insuranceEndDate
 systemRole
+educationSystem
 notes
 */
 
@@ -136,7 +139,7 @@ notes
      }
    }  
       else{
-         echo "ERROR U SHOULD SELECT USER TO DELETE IT";
+         echo "Error, please select the teacher you want to remove";
         }
         header("refresh: 0.1");  
   }  

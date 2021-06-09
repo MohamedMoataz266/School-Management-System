@@ -47,21 +47,21 @@ public function addUser($fN, $sN, $tN, $foN, $nN, $bD, $g, $t){
     include 'dB.php';
     $this->setData($fN, $sN, $tN, $foN, $nN, $bD, $g, $t);
     if($this->validationDataStudent()){
-        echo '<script>alert("Error, Data Is Repeated")</script>';
+        echo '<script>alert("Error, data has been inserted before")</script>';
         return;
     }
     else{
     mysqli_query($conn, "INSERT INTO Registration (firstName, secondName, thirdName, forthName, email, nationalNumber, birthDate, gender, user)
     VALUES
     ('$this->firstName', '$this->secondName', '$this->thirdName', '$this->fourthName', '".$this->getEmail()."', '$this->nationalNumber', '$this->birthDate', '$this->gender', '$this->type')");
-    echo '<script>alert("Done, Data Saved Successfully You Can Logged In Now")</script>';
+    echo '<script>alert("Done, data have been saved successfully. You can log in now")</script>';
     header('Location:logIn.php');  
   }
 }
 public function logIn($email, $pass){
     include "dB.php";
     if($email == '' || $pass == ''){
-        echo '<script>alert("Error, Fill All Requirements")</script>';
+        echo '<script>alert("Error, please fill in all the requirements")</script>';
         return;
     }
     
@@ -88,7 +88,7 @@ public function logIn($email, $pass){
          }
         }
           else{
-            echo '<script>alert("Error, Data Is Not Correct")</script>';
+            echo '<script>alert("Error, the data entered is not correct")</script>';
             return;
          
           }

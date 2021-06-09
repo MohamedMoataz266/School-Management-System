@@ -43,7 +43,7 @@
 include "student.php";
     if(isset($_POST['sub'])){
         if(strlen($_POST['nN']) <= 13 || strlen($_POST['nN']) >= 15){
-            echo '<script>alert("Error, Invalid National Number")</script>';
+            echo '<script>alert("Error, the national number you have entered is invalid")</script>';
             return;
         }
     

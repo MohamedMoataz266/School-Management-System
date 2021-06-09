@@ -20,11 +20,11 @@ public function addProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $p
     include "dB.php";
     if($this->checkProfession($id)){
         mysqli_query($conn, "DELETE FROM personnelaffairs WHERE ID='$id'");
-        echo '<script>alert("Done, Employee Removed Successfully")</script>';
+        echo '<script>alert("Done, Employee has been removed successfully")</script>';
         return;
     }
     else{
-        echo '<script>alert("Error, Employee Not Removed")</script>';
+        echo '<script>alert("Error, Employee has not been removed")</script>';
         return;
     }
   }   

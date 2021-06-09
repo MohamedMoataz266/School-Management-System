@@ -83,7 +83,7 @@ private function validate(){
     }
     $sql = mysqli_query($conn, "SELECT phoneNumber, registrationNumber FROM Students WHERE phoneNumber='".$this->getPhoneNumber()."' OR registrationNumber='".$this->getRegistrationNumber()."'");
     if(mysqli_num_rows($sql) > 0){
-        echo '<script>alert("Error, Phone Number OR Registration Number Is Not Correct")</script>';
+        echo '<script>alert("Error, Phone number or registration number you entered is not correct")</script>';
         return;
     }
     else{
@@ -104,7 +104,7 @@ public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m,
         $this->class = $c;
         $this->registrationNumber = $regis;
         if($this->validate()){
-            echo '<script>alert("Error, Data Is Not True")</script>';
+            echo '<script>alert("Error, the data entry is not true")</script>';
             return;
         }
         else{
@@ -128,7 +128,7 @@ public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m,
             $fJ = $this->getFatherJob();
             $c = $this->getClass();
             if($this->checkStudent($fullName, $nN)){
-                echo '<script>alert("Error, Student Already Inserted Before")</script>';
+                echo '<script>alert("Error, these credentials had been used before")</script>';
                 return;
             }
        else{
@@ -157,7 +157,7 @@ public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m,
     ('$fullName', '$rN', '$N', '$R', 
     '$pB', '$bD', '$aO', '$mN', '$A', '$pN', 
     '$fJ', '$g', '$nN', '$c')");
-        echo '<script>alert("Done, Student Added Successfully")</script>';
+        echo '<script>alert("Done, new student has been added successfully")</script>';
         return;
     }
 }

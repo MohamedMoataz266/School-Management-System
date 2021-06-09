@@ -44,16 +44,16 @@
    <br />
    <div class="table-responsive">
     <div align="right">
-     <p><b>TotalRecords:- <span id="total_records"></span></b></p>
+     <p><b>TotalRecords: <span id="total_records"></span></b></p>
     </div>
     <div class="t">
     <table class="table table-hover">
      <thead>
       <tr>
-       <th>name</th>
-       <th>address</th>
-       <th>registrationNumber</th>
-       <th>select</th>
+       <th>Name</th>
+       <th>Address</th>
+       <th>Registration number</th>
+       <th>Select</th>
       
       
       </tr>
@@ -105,7 +105,7 @@ $(document).ready(function(){
     }
     else
     {
-     html = '<tr><td colspan="5">No Data Found</td></tr>';
+     html = '<tr><td colspan="5">No data found</td></tr>';
     }
     $('tbody').html(html);
    }

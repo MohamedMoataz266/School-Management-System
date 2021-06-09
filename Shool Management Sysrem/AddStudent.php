@@ -42,7 +42,7 @@
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="nationality" placeholder="nationality">
+                               <input class="form-control" type="text" name="nationality" placeholder="Nationality">
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <div class="col-md-12">
@@ -50,17 +50,17 @@
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="birthplace" placeholder="place of birth">
+                               <input class="form-control" type="text" name="birthplace" placeholder="Birth Place">
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <br>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="dateofbirth" placeholder="dateofbirth">
+                               <input class="form-control" type="text" name="dateofbirth" placeholder="Date of Birth">
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <br>
                                 <div class="col-md-12">
-                               <input class="form-control" type="text" name="mothername" placeholder="mother's name">
+                               <input class="form-control" type="text" name="mothername" placeholder="Mother's name">
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
 
@@ -72,17 +72,17 @@
 
 
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="nationalNumber" placeholder="National Number">
+                                <input class="form-control" type="text" name="nationalNumber" placeholder="National number">
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
 
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="number" placeholder="phone number">
+                                <input class="form-control" type="text" name="number" placeholder="Phone number">
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
 
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="father" placeholder="father's job">
+                                <input class="form-control" type="text" name="father" placeholder="Father's job">
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
 

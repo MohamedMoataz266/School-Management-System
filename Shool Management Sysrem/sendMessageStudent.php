@@ -55,10 +55,6 @@ echo '</p>';
 ?>
  </div>
 
-
-
-
-
     <textarea placeholder="Type Message Here" name="M"></textarea><br><br><br>
     <input type="submit" name="sub" value="Send Message">
     </div>  
@@ -72,7 +68,7 @@ echo '</p>';
 <?php
    if(isset($_POST['sub'])){
       if(empty($_POST['M'])){
-         echo '<script>alert("ERROR U Do not Enter Message")</script>';
+         echo '<script>alert("Error, no message is inserted to be sent")</script>';
          return;
       }
       else{

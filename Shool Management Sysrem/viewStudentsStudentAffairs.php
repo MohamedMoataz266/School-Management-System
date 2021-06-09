@@ -30,7 +30,7 @@
    <br />
    <br />
    <br />
-   <h2 align="center">STUDENTS</h2><br />
+   <h2 align="center">Students</h2><br />
    <div class="form-group">
     <div class="row">
      <div class="col-md-10">
@@ -44,15 +44,15 @@
    <br />
    <div class="table-responsive">
     <div align="right">
-     <p><b>TotalRecords:- <span id="total_records"></span></b></p>
+     <p><b>TotalRecords: <span id="total_records"></span></b></p>
     </div>
     <div class="t">
     <table class="table table-hover">
      <thead>
       <tr>
-       <th>name</th>
-       <th>address</th>
-       <th>registrationNumber</th>
+       <th>Name</th>
+       <th>Address</th>
+       <th>Registration number</th>
       
       
       </tr>
@@ -103,7 +103,7 @@ $(document).ready(function(){
     }
     else
     {
-     html = '<tr><td colspan="5">No Data Found</td></tr>';
+     html = '<tr><td colspan="5">No Data has been found</td></tr>';
     }
     $('tbody').html(html);
    }

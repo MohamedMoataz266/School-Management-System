@@ -24,13 +24,13 @@
 					session_start();
 					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome<br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['email'];
 				?></h3>
-  				<a href="viewstudents.php">view students profile</a>
-				<a href="addQuestions.php">add assigments</a>
+  				<a href="viewstudents.php">View Students Profile</a>
+				<a href="addQuestions.php">Add assignments</a>
 				<a href="">add grades</a> 
-                <a href="addvideocourse.php">add video or link</a>
-				<a href="viewAnswers.php">view Answers</a>
+        <a href="addvideocourse.php">Add Video</a>
+				<a href="viewAnswers.php">View the questions' answers</a>
 				<a href="teacherMessageFrontEnd.php">Send Message</a>
-				<a href="viewMessageTeacher.php">View Messages
+				<a href="viewMessageTeacher.php">View Messages</a>
 				<?php
 				  include 'Chatting.php';
 				  $no = new Chatting();
@@ -42,7 +42,7 @@
 				?>
 				
 				</a>
-				<a href='logout.php'>LogOut</a>	
+				<a href='logout.php'>Log out</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
  </div>

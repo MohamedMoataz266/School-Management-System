@@ -28,7 +28,7 @@
 				<a href="">View grades</a> 
                 <a href="viewvideocourse.php">See Videos</a>
 				<a href="studentMessageFrontEnd.php">Send Message</a>
-				<a href="viewMessageStudent.php">View Messages
+				<a href="viewMessageStudent.php">View Messages</a>
 				<?php
 				  include 'Chatting.php';
 				  $no = new Chatting();
@@ -40,7 +40,7 @@
 				   }
 				?>
 				</a>
-				<a href='logout.php'>LogOut</a>	
+				<a href='logout.php'>Log out</a>	
 			</nav>
    <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
  </div>
