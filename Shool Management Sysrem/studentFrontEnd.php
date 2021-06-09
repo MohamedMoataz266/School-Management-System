@@ -22,7 +22,7 @@
 
   				<h3><?php  
 					session_start();
-					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome<br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['email'];
+					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Welcome <br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['name'];
 				?></h3>
   				<a href="assignments.php">Assignments</a>
 				<a href="">View grades</a> 

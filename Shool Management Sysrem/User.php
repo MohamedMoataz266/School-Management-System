@@ -67,11 +67,12 @@ public function logIn($email, $pass){
     
     else{
         session_start();  
-        $sql = mysqli_query($conn, "SELECT email, nationalNumber, user FROM Registration WHERE email='$email' 
+        $sql = mysqli_query($conn, "SELECT email, nationalNumber, user, firstName, secondName FROM Registration WHERE email='$email' 
         AND nationalNumber='$pass'");
         if($row = mysqli_fetch_assoc($sql)){
             if($row['email'] == $email){
             $_SESSION['email'] = $email;
+            $_SESSION['name'] = $row['firstName'].' '.$row['secondName'];
 
             if($row['user'] == 1){
                 header('Location: studentFrontEnd.php');
