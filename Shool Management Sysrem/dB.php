@@ -4,8 +4,4 @@
   }catch(Exception $ex){
       echo "Error, Failed to connect to database";
     }
- 
-
-
-
 ?>

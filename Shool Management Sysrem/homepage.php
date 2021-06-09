@@ -15,7 +15,7 @@
     <header>
     <div class="wrapper">
         <div class="logo">
-            <img src="Images/amoun.jpg" alt="">
+            <img src="Images/amoun.jpeg" alt="">
         </div>
 <ul class="nav-area">
 <li><a href="homepage.php">Home</a></li>
