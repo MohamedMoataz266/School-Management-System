@@ -1,46 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Admin</title>
-  <style>
-<?php include "Styles/homemenu.css"; ?>
-</style>
-<style>
-	body{
-		background-image: url('Images/banner_img.png');;
-	}
-	</style>
-</head>
+<link rel="stylesheet" type="text/css" href="Styles/homepage.css">
 
-<body> 
-<div class="content">	
- <div id="mainbox" onclick="openFunction()"><div class="session">&#9776;
- 					
-					</div>
-					</div>
-  <div id="menu" class="sidemenu">
-  				
-                <a href="homepage.php">Home</a>
-  	            <a href="logIn.php">Log In</a>
-				<a href="Registration.php">Sign Up</a>
-				<a href="normalLogIn.php">Already a user?</a>
-				
-				
-			</nav>
-   <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
- </div>
+<nav>
+    <input id="nav-toggle" type="checkbox">
+    <div class="logo"><strong>Welcome to Amoun</strong>&nbsp
+
+    <div class="logo">
+    <img src = "images/amoun.jpeg">
+    </div>
 </div>
-<script type="text/javascript">
- function openFunction(){
-  document.getElementById("menu").style.width="300px";
-  document.getElementById("mainbox").style.marginLeft="300px";
- }
-function closeFunction(){
- document.getElementById("menu").style.width="0px";
- document.getElementById("mainbox").style.marginLeft="0px";
+    <ul class="links">
+        <li><a href="homepage.php">Home</a></li>
+        <li><a href="logIn.php">LogIn</a></li>
+        <li><a href="registration.php">SignUp</a></li>
+    </ul>
+    <label for="nav-toggle" class="icon-burger">
+        <div class="line"></div>
+        
+    </label>
+</nav>
 
-}
-</script>
+<div class="container2">
+    
+    
+    
+</div>
 
-</body>
-</html>

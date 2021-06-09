@@ -1,56 +1,106 @@
-<!DOCTYPE html>
-<!--Code by Divinector (www.divinectorweb.com)-->
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Homepage</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
-</head>
-<style>
-    <?php 
-    include 'Styles/homepage.css';
-    ?>
-   </style>
-<body>
-    <header>
-    <div class="wrapper">
-        <div class="logo">
-            <img src="Images/amoun.jpeg" alt="">
-        </div>
-<ul class="nav-area">
-<li><a href="homepage.php">Home</a></li>
-<li><a href="Registration.php">Sign Up</a></li>
-<li><a href="logIn.php">Log In</a></li>
+<?php include "homemenu.php";?>
 
-</ul>
-</div>
-<div class="welcome-text">
-<h1> <span>Amoun Language School</span></h1>
+<?php
+//index.php
+$connect = mysqli_connect("localhost", "root", "", "school");
+function make_query($connect)
+{
+ $query = "SELECT * FROM banner ORDER BY banner_id ASC";
+ $result = mysqli_query($connect, $query);
+ return $result;
+}
+
+function make_slide_indicators($connect)
+{
+ $output = ''; 
+ $count = 0;
+ $result = make_query($connect);
+ while($row = mysqli_fetch_array($result))
+ {
+  if($count == 0)
+  {
+   $output .= '
+   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'" class="active"></li>
+   ';
+  }
+  else
+  {
+   $output .= '
+   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'"></li>
+   ';
+  }
+  $count = $count + 1;
+ }
+ return $output;
+}
+
+function make_slides($connect)
+{
+ $output = '';
+ $count = 0;
+ $result = make_query($connect);
+ while($row = mysqli_fetch_array($result))
+ {
+  if($count == 0)
+  {
+   $output .= '<div class="item active">';
+  }
+  else
+  {
+   $output .= '<div class="item">';
+  }
+  $output .= '
+   <img src="images/'.$row["banner_image"].'" alt="'.$row["banner_title"].'" />
+   <div class="carousel-caption">
+    <h3>'.$row["banner_title"].'</h3>
+   </div>
+  </div>
+  ';
+  $count = $count + 1;
+ }
+ return $output;
+}
+
+?>
+<!DOCTYPE html>
+<html>
+ <head>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="Styles/slideshow.css">
+ </head>
+ <body>
+  <br />
+  <label for="nav-toggle" class="icon-burger">
+        <div class="line">
+    
+  <div class="container">
+   
+   <br />
+   <div id="dynamic_slide_show" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+    <?php echo make_slide_indicators($connect); ?>
+    </ol>
+
+    <div class="carousel-inner">
+     <?php echo make_slides($connect); ?>
     </div>
-</header>
- 
-            
-                        <div class="full">
-                            <div class="picture">
-                                
-                             <img src="Images/unnamed.jpg" alt="#" />
-                             
-                         </div>
-                          <p>The stages prepare students from kindergarten to the end of high school.
-                          The joint school is keen on developing the Egyptian personality morally, morally, scientifically and psychologically.
-                            The school is interested in breaking out of stereotypes through its constant quest for renewal by introducing everything new in the educational process.
-                         School activity has a big side in the mind and conscience of Amoun Language Schools, as it always works to encourage multiple talents in various activities.</p>
-                        </div>
-                        <br><br>
-                         <div class="secondfull">
-                            <div class="secondpicture">
-                                
-                             <img src="Images/cbdc54feb9a9d3b062b99fd0b400ba5b.jpg" alt="#" />
-                             
-                         </div>
-                          <p> Address: 31 ش يحيى ابراهيم، Mohammed Mazhar, Zamalek, Giza Governorate</p>
-                            <a class="hvr-radial-out button-theme" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%3Fapi%3D1%26destination%3D30.061160272663%252C31.223843795102%26fbclid%3DIwAR2sA6smgGHOwQ8E-H_ApMJ810RMrxs2R5sZT8ziNlk80-FVki4JImbdLSk&h=AT3K02ogMd0MhyWv_tFLesLPa5yiiqz8xIdgAHwJScw4g6k81z3YQ7qcohRbHYkdAYZNkrN_GdSJjCEen7OrsN0zin6ZcS0HRORiP5MQs0jwjzGIbawTtr0bVQ8ULXylUAFoMg">get the location</a>
-                        </div>
-                 
-</body>
+    <a class="left carousel-control" href="#dynamic_slide_show" data-slide="prev">
+     <span class="glyphicon glyphicon-chevron-left"></span>
+     <span class="sr-only">Previous</span>
+    </a>
+
+    <a class="right carousel-control" href="#dynamic_slide_show" data-slide="next">
+     <span class="glyphicon glyphicon-chevron-right"></span>
+     <span class="sr-only">Next</span>
+    </a>
+
+   </div>
+  </div>
+  </div>
+</div>
+</label>
+ </body>
 </html>
