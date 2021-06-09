@@ -1,20 +1,22 @@
-<?php include "homemenu.php";?>
+<?php include "homemenu.php";
+  include 'dB.php';
+?>
 
 <?php
-//index.php
-$connect = mysqli_connect("localhost", "root", "", "school");
+
 function make_query($connect)
 {
+include 'dB.php';
  $query = "SELECT * FROM banner ORDER BY banner_id ASC";
- $result = mysqli_query($connect, $query);
+ $result = mysqli_query($conn, $query);
  return $result;
 }
 
-function make_slide_indicators($connect)
+function make_slide_indicators($conn)
 {
  $output = ''; 
  $count = 0;
- $result = make_query($connect);
+ $result = make_query($conn);
  while($row = mysqli_fetch_array($result))
  {
   if($count == 0)
@@ -34,11 +36,11 @@ function make_slide_indicators($connect)
  return $output;
 }
 
-function make_slides($connect)
+function make_slides($conn)
 {
  $output = '';
  $count = 0;
- $result = make_query($connect);
+ $result = make_query($conn);
  while($row = mysqli_fetch_array($result))
  {
   if($count == 0)
@@ -50,7 +52,7 @@ function make_slides($connect)
    $output .= '<div class="item">';
   }
   $output .= '
-   <img src="images/'.$row["banner_image"].'" alt="'.$row["banner_title"].'" />
+   <img src="Images/'.$row["banner_image"].'" alt="'.$row["banner_title"].'" />
    <div class="carousel-caption">
     <h3>'.$row["banner_title"].'</h3>
    </div>
@@ -81,11 +83,11 @@ function make_slides($connect)
    <br />
    <div id="dynamic_slide_show" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-    <?php echo make_slide_indicators($connect); ?>
+    <?php echo make_slide_indicators($conn); ?>
     </ol>
 
     <div class="carousel-inner">
-     <?php echo make_slides($connect); ?>
+     <?php echo make_slides($conn); ?>
     </div>
     <a class="left carousel-control" href="#dynamic_slide_show" data-slide="prev">
      <span class="glyphicon glyphicon-chevron-left"></span>

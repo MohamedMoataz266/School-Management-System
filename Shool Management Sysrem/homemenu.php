@@ -5,13 +5,13 @@
     <div class="logo"><strong>Welcome to Amoun</strong>&nbsp
 
     <div class="logo">
-    <img src = "images/amoun.jpeg">
+    <img src = "Images/amoun.jpeg">
     </div>
 </div>
     <ul class="links">
         <li><a href="homepage.php">Home</a></li>
         <li><a href="logIn.php">LogIn</a></li>
-        <li><a href="registration.php">SignUp</a></li>
+        <li><a href="Registration.php">SignUp</a></li>
     </ul>
     <label for="nav-toggle" class="icon-burger">
         <div class="line"></div>
