@@ -1,5 +1,6 @@
 <?php include "dB.php";
 include "teacherfrontEnd.php";
+session_start();
 ?>
 
 <head>
@@ -31,7 +32,7 @@ while($row = mysqli_fetch_array($result)){
    echo "From: ".$sender. "<br>"; 
    echo "Message: " .$message; 
 ?>
-  <br><a href="replyTeacher.php?<!?>=<?php echo $row["Sender"];?>">Reply</a>
+  <br><a href="sendMessageTeacher.php?!?=<?php echo $row["Sender"];?>">Reply</a>
 <?php 
 }
 ?>
