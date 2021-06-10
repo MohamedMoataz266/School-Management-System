@@ -19,6 +19,8 @@
             <li><a class='atr4'></a></li>
             <li><a class='atr5'></a></li>
             <li><a class='atr6'></a></li>
+            <li><a class='atr7'></a></li>
+            <li><a class='atr8'></a></li>
             
             
         </ul>

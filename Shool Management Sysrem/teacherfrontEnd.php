@@ -1,63 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Teacher</title>
-  <style>
-<?php include "Styles/t.css"; ?>
-</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src='Js/menu.js'></script>
 <style>
-	body{
-		background-color: #05243A;
+	img{
+		width: 60%;
+		height: 60%;
 	}
-	</style>
-</head>
-
-<body> 
-<div class="content">	
- <div id="mainbox" onclick="openFunction()"><div class="session">&#9776;
- 					
-					</div>
-					</div>
-  <div id="menu" class="sidemenu">
-
-				<h3><?php  
-					session_start();
-					echo '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWelcome<br>&nbsp&nbsp&nbsp&nbsp'.$_SESSION['email'];
-				?></h3>
-  				<a href="viewstudents.php">view students profile</a>
-				<a href="addQuestions.php">add assigments</a>
-				<a href="">add grades</a> 
-                <a href="addvideocourse.php">add video or link</a>
-				<a href="viewAnswers.php">view Answers</a>
-				<a href="teacherMessageFrontEnd.php">Send Message</a>
-				<a href="viewMessageTeacher.php">View Messages
-				<?php
-				  include 'Chatting.php';
-				  $no = new Chatting();
-				  if($no->getNumberOfMessages() > 0)
-				   echo '<strong>&nbsp&nbsp&nbsp&nbsp' .$no->getNumberOfMessages(). '</strong>';
-				   else{
-					 echo '';   
-				   }
-				?>
-				
-				</a>
-				<a href='logout.php'>LogOut</a>	
-			</nav>
-   <a href="#" class="closebtn" onclick="closeFunction()">&times;</a>
- </div>
-</div>
-<script type="text/javascript">
- function openFunction(){
-  document.getElementById("menu").style.width="300px";
-  document.getElementById("mainbox").style.marginLeft="300px";
- }
-function closeFunction(){
- document.getElementById("menu").style.width="0px";
- document.getElementById("mainbox").style.marginLeft="0px";
-
-}
-</script>
-
+</style>
+<?php include 'homemenu.php'; ?>
+<body onload='teacherMenu()'>
 </body>
-</html>
