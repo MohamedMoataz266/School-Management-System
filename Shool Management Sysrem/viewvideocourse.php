@@ -3,17 +3,20 @@
 <div class ="content"> 
 <div class = wrapper> 
 <head>
-  
+ 
 <title>delete</title>
-<style>
-        <?php include "Styles/deletevideocourse.css";
-        ?>
-    </style>
+
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    
 </head>
+<style>
+        <?php include "Styles/deletevideocourse.css";
+
+        ?>
+        
+    </style>
 <br>
 <body>
 <form method="POST" action="">
@@ -30,7 +33,7 @@
     <td><b>Course</b></td>
     <td><b>Course name</b></td>
     <td><b>Video</b></td>
-    <
+    
     
   
   </tr>
