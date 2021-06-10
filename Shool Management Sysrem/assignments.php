@@ -13,6 +13,7 @@ include "studentFrontEnd.php";
   <div class ="box">
     <div class="in">
     <?php
+    session_start();
       $res = mysqli_query($conn, "SELECT email FROM Answers");
       $resq = mysqli_query($conn, "SELECT question FROM addQuestions");
       $noQ=0;

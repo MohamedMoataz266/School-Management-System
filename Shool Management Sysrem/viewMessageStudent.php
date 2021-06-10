@@ -17,7 +17,7 @@ include "studentFrontEnd.php";
 
 <div class="mes">
  <?php
- 
+ session_start();
 $result = mysqli_query($conn, "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."' AND messageType= 'Delivered'");
 // output data of each row
 if(mysqli_num_rows($result) == 0){

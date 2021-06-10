@@ -2,6 +2,7 @@
 <?php include "dB.php"; 
 ob_start();
 include "studentFrontEnd.php";
+session_start();
  ?>
 
 <style>
