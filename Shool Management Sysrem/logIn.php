@@ -9,15 +9,17 @@
 </style>
 
 <!------ Include the above in your HEAD tag ---------->
-
+<body>
+<div class="logo">
+				<img src="Images/images.jpg" >
+</div>
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="Images/logo.jpg" alt="IMG">
+					<img src="Images/banner_img.png" alt="IMG">
 				</div>
-
-				<form class="login100-form validate-form" action="" method="POST">
+							<form class="login100-form validate-form" action="" method="POST">
 					<span class="login100-form-title">
 						Welcome To Amoun
 					</span>
@@ -52,6 +54,7 @@
 						</a>
 					</div>
 				</form>
+				<body>
 			</div>
 		</div>
 	</div>

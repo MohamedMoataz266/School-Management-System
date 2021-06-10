@@ -5,11 +5,7 @@
   <style>
 <?php include "Styles/t.css"; ?>
 </style>
-<style>
-	body{
-		background-image: url('Images/banner_img.png');
-	}
-	</style>
+
 </head>
 
 <body> 
