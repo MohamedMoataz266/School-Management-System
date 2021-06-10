@@ -5,7 +5,7 @@
     <body>
     <nav>
         <input id="nav-toggle" type="checkbox">
-        <div class="logo"><strong>Welcome to Amoun</strong>&nbsp
+        <div class="logo">Welcome &nbsp<strong class='ses'>to Amoun</strong>&nbsp
 
         <div class="logo">
         <img src = "Images/amoun.jpeg">
