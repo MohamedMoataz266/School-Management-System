@@ -1,3 +1,6 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src='Js/menu.js'></script>
+<?php include 'homemenu.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +27,7 @@
         ?>
     </style>
 </head>    
-<body>
+<body onload='homePage()'>
     <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
         <div class="wrapper wrapper--w780">
             <div class="card card-3">

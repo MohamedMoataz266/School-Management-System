@@ -1,3 +1,6 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src='Js/menu.js'></script>
+<?php include 'homemenu.php'; ?>
 <title>Log In</title>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="Js/logIn.js"></script>
@@ -9,10 +12,7 @@
 </style>
 
 <!------ Include the above in your HEAD tag ---------->
-<body>
-<div class="logo">
-				<img src="Images/images.jpg" >
-</div>
+<body onload='homePage()'>
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">

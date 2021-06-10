@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src='Js/menu.js'></script>
 <?php include "homemenu.php";
   include 'dB.php';
 ?>
@@ -73,7 +75,7 @@ function make_slides($conn)
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="Styles/slideshow.css">
  </head>
- <body>
+ <body onload='homePage()'>
   <br />
   <label for="nav-toggle" class="icon-burger">
         <div class="line">
