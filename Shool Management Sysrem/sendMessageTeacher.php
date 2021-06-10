@@ -18,7 +18,7 @@ session_start();
 <br><div class="wra">
 <h4>From:<input type="text" name="S" class='from' readonly value="<?php echo $_SESSION['email']; ?>">
       </h4>
-        <h4 class='to'>To:
+        <h4 class='tohead'>To:
    <input type="text" name="R" readonly value="<?php echo $_GET['!?'];?>">
     </h4>
   <div class="rec">
@@ -27,14 +27,25 @@ session_start();
  // output data of each row
  echo '<p class="send">';
 while($row = mysqli_fetch_array($result)){
-  echo $row['message']. '<br>';
+
+  ?>
+
+  <div class="message-blue">
+  <?php echo $row['message']; ?>
+  </div>
+ <?php
 }
 echo '</p>';
 $result = mysqli_query($conn, "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."'");
 // output data of each receiver
 echo '<p class="rece">';
 while($row = mysqli_fetch_array($result)){
- echo $row['message']. '<br>';
+  ?>
+  <div class="message-orange">
+  <?php echo $row['message']; ?>
+  </div>
+  <?php 
+  
 }
 echo '</p>';
 
