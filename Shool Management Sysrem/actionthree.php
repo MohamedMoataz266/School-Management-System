@@ -38,11 +38,13 @@ echo json_encode($data);
 ?>
 
 <?php
+include 'studentAffairs.php';
+$studentAffairs = new studentAffairs();
   if(isset($_POST['sub'])){
     if(isset($_POST['delete'])){
       foreach($_POST['delete'] as $dele){
-        mysqli_query($conn, "DELETE FROM Students WHERE ID = '" .$dele. "'");
-     }
+         $studentAffairs->removeStudent($dele);
+      }
    }  
       else{
          echo "ERROR U SHOULD SELECT USER TO DELETE IT";
