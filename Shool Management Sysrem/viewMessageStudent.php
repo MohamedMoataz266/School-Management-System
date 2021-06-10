@@ -31,7 +31,7 @@ while($row = mysqli_fetch_array($result)){
    echo "From: ".$sender. "<br>"; 
    echo "Message: " .$message; 
 ?>
-  <br><a href="replyStudent.php?<!?>=<?php echo $row["Sender"];?>">Reply</a>
+  <br><a href="sendMessageStudent.php?!?=<?php echo $row["Sender"];?>">Reply</a>
 <?php 
 }
 ?>

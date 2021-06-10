@@ -18,23 +18,10 @@ session_start();
 <br><div class="wra">
 
 
-<h4>From:
-   <input type="text" name="S" class='from' readonly value="<?php 
-     $result = mysqli_query($conn, "SELECT email FROM Registration WHERE email='".$_SESSION["email"]."'");
-      if($row = mysqli_fetch_array($result)){
-      echo $row['email'];
-      }
-      ?>
-      ">
+<h4>From:<input type="text" name="S" class='from' readonly value="<?php echo $_SESSION['email']; ?>">
       </h4>
         <h4 class='tohead'>To:
-   <input type="text" name="R" class= 'to' readonly value="<?php 
-      $result = mysqli_query($conn, "SELECT email FROM Registration WHERE ID='".$_GET['!?']."'-255");
-      if($row = mysqli_fetch_array($result)){
-      echo $row['email'];
-    }
-    ?>
-    ">
+   <input type="text" name="R" class= 'to' readonly value="<?php echo $_GET['!?']; ?>">
     </h4>
   <div class="rec">
   <?php
@@ -75,6 +62,7 @@ echo '</p>';
 
 
 <?php
+include 'Chatting.php';
    if(isset($_POST['sub'])){
       if(empty($_POST['M'])){
          echo '<script>alert("Error, no message is inserted to be sent")</script>';
@@ -84,6 +72,7 @@ echo '</p>';
         $message = new Chatting();
         $message->setData($_POST['S'], $_POST['R'], $_POST['M'], 'Delivered');
         $message->sendMessage();
+        $message->updateMessage();
       }
     
    }

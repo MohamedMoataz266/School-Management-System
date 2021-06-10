@@ -14,7 +14,5 @@ function studentMenu(){
         $(".atr4").replaceWith('<a href="studentMessageFrontEnd.php">Send Message</a>');
         $(".atr5").replaceWith('<a href="viewMessageStudent.php">View Messages</a>');
         $(".atr6").replaceWith('<a href="logout.php">Log Out</a>');
-        $(".ses").replaceWith('HI');
-        
     });
 }    

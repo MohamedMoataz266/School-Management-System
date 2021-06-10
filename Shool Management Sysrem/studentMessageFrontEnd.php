@@ -26,7 +26,7 @@ while($row = mysqli_fetch_array($result)){
   <?php
          echo "Email: " .$e. "<br>"; 
 ?>
-<a href="sendMessageStudent.php?!?=<?php echo $row["ID"]+255; ?>" class="u">Send Message</a>
+<a href="sendMessageStudent.php?!?=<?php echo $e; ?>" class="u">Send Message</a>
 <?php
 }
 ?>

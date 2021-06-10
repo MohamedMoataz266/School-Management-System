@@ -47,7 +47,7 @@ class Chatting{
     }
 public function updateMessage(){
         include 'dB.php';
-        $res = mysqli_query($conn, "UPDATE Chat SET messageType='Read' WHERE Sender='".$_GET['<!?>']."' AND Receiver='".$_SESSION['email']."'");
+        $res = mysqli_query($conn, "UPDATE Chat SET messageType='Read' WHERE Sender='".$_GET['!?']."' AND Receiver='".$_SESSION['email']."'");
    }
  public function getNumberOfMessages(){
         include 'dB.php';
