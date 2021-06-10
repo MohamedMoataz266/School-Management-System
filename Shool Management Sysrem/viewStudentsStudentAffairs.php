@@ -16,7 +16,7 @@
   body
   {
       color:white;
-      background-image: url('Images/banner_img.png');
+      background-color:#05243A;
   }
   .t{
     background-color: black;

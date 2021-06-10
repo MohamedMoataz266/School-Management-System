@@ -6,9 +6,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html, body
+{
+    
     height: 100%;
-    background-image: url('Images/banner_img.png')
+    background-color:#05243A;
+
     font-family: sans-serif;
 }
 
