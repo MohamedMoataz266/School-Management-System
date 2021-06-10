@@ -51,7 +51,7 @@ function personnelMenu(){
         $(".home").replaceWith('<a href="personal.php">Home</a>');
         $(".atr1").replaceWith('<a href="AddProfession.php">Add Teacher</a>');
         $(".atr2").replaceWith('<a href="removeteacher.php">Remove Teacher</a>');
-        $(".atr3").replaceWith('<a href="Viewteachers.php">View Teachers</a>');
+        $(".atr3").replaceWith('<a href="viewteachers.php">View Teachers</a>');
         $(".atr4").replaceWith('<a href="homepage.php">Log Out</a>');
     });
 }
