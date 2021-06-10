@@ -27,8 +27,8 @@ session_start();
       ?>
       ">
       </h4>
-        <h4 class='to'>To:
-   <input type="text" name="R" readonly value="<?php 
+        <h4 class='tohead'>To:
+   <input type="text" name="R" class= 'to' readonly value="<?php 
       $result = mysqli_query($conn, "SELECT email FROM Registration WHERE ID='".$_GET['!?']."'-255");
       if($row = mysqli_fetch_array($result)){
       echo $row['email'];
@@ -42,14 +42,22 @@ session_start();
  // output data of each sender
  echo '<p class="send">';
 while($row = mysqli_fetch_array($result)){
-  echo $row['message']. '<br>';
+  ?>
+  <div class="message-blue">
+  <?php echo $row['message'] ?>
+</div>
+ <?php
 }
 echo '</p>';
 $result = mysqli_query($conn, "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."'");
 // output data of each receiver
 echo '<p class="rece">';
 while($row = mysqli_fetch_array($result)){
- echo $row['message']. '<br>';
+  ?>
+  <div class="message-orange">
+ <?php echo $row['message'] ?> 
+  </div>
+  <?php
 }
 echo '</p>';
 
