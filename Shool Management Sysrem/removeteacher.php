@@ -80,7 +80,7 @@ $notes= $row['notes'];
                            echo "Insurance Date: " .$insuranceDate. "<br>";
                               echo "Insurance EndDate: " .$insuranceEndDate. "<br>";
                                 echo "System Role: " .$systemRole. "<br>";
-                                echo "System Role: " .$educationSystem. "<br>";
+                                echo "Education System: " .$educationSystem. "<br>";
                                  echo "Notes: " .$notes. "<br>";
                               
 

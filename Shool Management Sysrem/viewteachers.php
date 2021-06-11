@@ -87,7 +87,7 @@ $educationSystem= $row['educationSystem'];
 $notes= $row['notes'];
   ?>
   <br><br>
-  <td style="visibility:hidden;"><?= $id ?></td>
+  <td style="visibility:hidden; color: white;"><?= $id ?></td>
   <td><?=  $name ?></td>
   <td><?=  $code ?></td>
   <td><?=  $arabicName ?></td>
