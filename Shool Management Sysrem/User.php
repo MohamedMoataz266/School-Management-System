@@ -53,7 +53,7 @@ public function addUser($fN, $sN, $tN, $foN, $nN, $bD, $g, $t){
     else{
     mysqli_query($conn, "INSERT INTO Registration (firstName, secondName, thirdName, forthName, email, nationalNumber, birthDate, gender, user)
     VALUES
-    ('$this->firstName', '$this->secondName', '$this->thirdName', '$this->fourthName', '".$this->getEmail()."', '$this->nationalNumber', '$this->birthDate', '$this->gender', '$this->type')");
+    ('$this->firstName', '$this->secondName', '$this->thirdName', '$this->fourthName', '".$this->getEmail()."', '".md5($this->nationalNumber)."', '$this->birthDate', '$this->gender', '$this->type')");
     echo '<script>alert("Done, data have been saved successfully. You can log in now")</script>';
     header('Location:logIn.php');  
   }
@@ -68,7 +68,7 @@ public function logIn($email, $pass){
     else{
         session_start();  
         $sql = mysqli_query($conn, "SELECT email, nationalNumber, user, firstName, secondName FROM Registration WHERE email='$email' 
-        AND nationalNumber='$pass'");
+        AND nationalNumber= '".md5($pass)."'");
         if($row = mysqli_fetch_assoc($sql)){
             if($row['email'] == $email){
             $_SESSION['email'] = $email;
