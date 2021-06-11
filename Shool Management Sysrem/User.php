@@ -78,7 +78,7 @@ public function logIn($email, $pass){
                 header('Location: studentFrontEnd.php');
             }
            else if ($row['user'] == 2){
-            header('Location: teacherfrontEnd.php');
+            header('Location: teacherFrontEnd.php');
         }
            else if ($row['user'] == 3){
             header('Location: studentAffairesFrontEnd.php');
