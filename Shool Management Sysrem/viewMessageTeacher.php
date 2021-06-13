@@ -1,5 +1,5 @@
 <?php include "dB.php";
-include "teacherfrontEnd.php";
+include "teacherFrontEnd.php";
 session_start();
 ?>
 

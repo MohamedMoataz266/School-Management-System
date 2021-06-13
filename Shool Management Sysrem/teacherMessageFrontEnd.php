@@ -1,4 +1,4 @@
-<?php include "teacherfrontEnd.php"; ?>
+<?php include "teacherFrontEnd.php"; ?>
 <?php include "dB.php"; ?>
 <head>
 <title>Send Message</title>
