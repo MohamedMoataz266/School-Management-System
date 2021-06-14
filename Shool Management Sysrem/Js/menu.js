@@ -49,9 +49,9 @@ function studentAffairsMenu(){
 function personnelMenu(){
     $.get("homemenu.php", function(data){
         $(".home").replaceWith('<a href="personal.php">Home</a>');
-        $(".atr1").replaceWith('<a href="AddProfession.php">Add Teacher</a>');
-        $(".atr2").replaceWith('<a href="removeteacher.php">Remove Teacher</a>');
-        $(".atr3").replaceWith('<a href="viewteachers.php">View Teachers</a>');
+        $(".atr1").replaceWith('<a href="AddProfession.php">Add Employee</a>');
+        $(".atr2").replaceWith('<a href="removeteacher.php">Remove Employee</a>');
+        $(".atr3").replaceWith('<a href="viewteachers.php">View Employee</a>');
         $(".atr4").replaceWith('<a href="homepage.php">Log Out</a>');
     });
 }

@@ -1,128 +1,122 @@
 <?php include "personal.php"; ?>
-<?php include "dB.php"; ?>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>View Students</title>  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-typeahead.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-<div class ="content"> 
-<div class = wrapper> 
-<head>
-  
-<title>Send Message</title>
-<style>
-        <?php include "Styles/viewteachers.css";
-        ?>
-    </style>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   
-</head>
-<br>
-<body>
-<form method="POST" action="">
-<div class="register">
-  
+  <style>
+  .bootstrap-tagsinput {
+   width: 100%;
+  }
+  body
+  {
+      color:white;
+      background-color: #05243A;
+  }
+  .t{
+    background-color: black;
+  }
+  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th { 
+  background-color: black; } 
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <br />
+   <br />
+   <br />
+   <h2 align="center">EMPLOYEE</h2><br />
+   <div class="form-group">
+    <div class="row">
+     <div class="col-md-10">
+      <input type="text" id="tags" class="form-control" data-role="tagsinput" />
+     </div>
+     <div class="col-md-2">
+      <button type="button" name="search" class="btn btn-primary" id="search">Search</button>
+     </div>
+    </div>
+   </div>
+   <br />
+   <div class="table-responsive">
+    <div align="right">
+     <p><b>TotalRecords: <span id="total_records"></span></b></p>
+    </div>
+    <div class="t">
+    <table class="table table-hover">
+     <thead>
+      <tr>
+       <th>Name</th>
+       <th>code</th>
+       <th>nationalNumber</th>
+       <th>qualification</th>
 
-<br><br>
-<table class="table table-hover">
-  <tr>
-  
-   <td style="visibility:hidden;"><b>ID</b></td>
-   <td><b>Name</b></td>
-    <td><b>Code</b></td>
-<td><b>Name in Arabic</b></td>
-<td><b>Religion</b></td>
-<td><b>Nationality</b></td>
-<td><b>Gender</b></td>
-<td><b>BirthDate</b></td>
-<td><b>NationalNumber</b></td>
-<td><b>Foreginer Number</b></td>
-<td><b>Address</b></td>
-<td><b>Phone Number</b></td>
-<td><b>Qualification</b></td>
-<td><b>Graduation Year</b></td>
-<td><b>Graduation Grade</b></td>
-<td><b>Experienced Years</b></td>
-<td><b>Job</b></td>
-<td><b>Specialization</b></td>
-<td><b>Department</b></td>
-<td><b>Contract Date</b></td>
-<td><b>Insurance Number</b></td>
-<td><b>Insurance Date</b></td>
-<td><b>Insurance EndDate</b></td>
-<td><b>System Role</b></td>
-<td><b>Education System</b></td>
-<td><b>Notes</b></td>
-  
-  </tr>
-
-  <?php
-$result = mysqli_query($conn, "SELECT * FROM personnelAffairs");
-
-// output data of each row
-while($row = mysqli_fetch_array($result)){
-        $id = $row['ID'];  
- $name = $row['name'];
-  $code= $row['code'];
- $arabicName= $row['arabicName'];
-$religion= $row['religion'];
-$nationality= $row['nationality'];
-$gender= $row['gender'];
-$birthDate= $row['birthDate'];
-$nationalNumber= $row['nationalNumber'];
-$foreginerNumber= $row['foreginerNumber'];
-$address= $row['address'];
-$phoneNumber= $row['phoneNumber'];
-$qualification= $row['qualification'];
-$graduationYear= $row['graduationYear'];
-$graduationGrade= $row['graduationGrade'];
-$expYears= $row['expYears'];
-$job= $row['job'];
-$specialization= $row['specialization'];
-$department= $row['department'];
-$contractDate= $row['contractDate'];
-$insuranceNumber= $row['insuranceNumber'];
-$insuranceDate= $row['insuranceDate'];
-$insuranceEndDate= $row['insuranceEndDate'];
-$systemRole= $row['systemRole'];
-$educationSystem= $row['educationSystem'];
-$notes= $row['notes'];
-  ?>
-  <br><br>
-  <td style="visibility:hidden; color: white;"><?= $id ?></td>
-  <td><?=  $name ?></td>
-  <td><?=  $code ?></td>
-  <td><?=  $arabicName ?></td>
- <td><?=  $religion ?></td>
- <td><?= $nationality  ?></td>
- <td><?=  $gender ?></td>
- <td><?= $birthDate  ?></td>
- <td><?=   $nationalNumber ?></td>
- <td><?= $foreginerNumber  ?></td>
- <td><?=  $address ?></td>
- <td><?= $phoneNumber ?></td>
- <td><?= $qualification  ?></td>
- <td><?=   $graduationYear ?></td>
- <td><?=   $graduationGrade ?></td>
- <td><?=   $expYears ?></td>
- <td><?=   $job ?></td>
-  <td><?=   $specialization ?></td>
-    <td><?= $department   ?></td>
-     <td><?=   $contractDate ?></td>
-      <td><?=  $insuranceNumber  ?></td>
-       <td><?=  $insuranceDate ?></td>
-        <td><?=  $insuranceEndDate ?></td>
-          <td><?=  $systemRole ?></td>
-          <td><?=  $educationSystem ?></td>
-          <td><?=  $notes ?></td>
-
-
-</tr>
-<?php
-}
-?>
-</table>
+      </tr>
+     </thead>
+     <tbody>
+     </tbody>
+    </table>
 </div>
+   </div>
+  </div>
+  <div style="clear:both"></div>
+  <br />
+  
+  <br />
+  <br />
+  <br />
+ </body>
+</html>
 
-</form>
-</body>
-</div>
-</div>
+
+<script>
+$(document).ready(function(){
+ 
+ load_data();
+
+ function load_data(query)
+ {
+  $.ajax({
+   url:"actionfour.php",
+   method:"POST",
+   data:{query:query},
+   dataType:"json",
+   success:function(data)
+   {
+    $('#total_records').text(data.length);
+    var html = '';
+    if(data.length > 0)
+    {
+     for(var count = 0; count < data.length; count++)
+     {
+      html += '<tr>';
+      html += '<td>'+data[count].name+'</td>';
+      html += '<td>'+data[count].code+'</td>';
+      html += '<td>'+data[count].nationalNumber+'</td>';
+      html += '<td>'+data[count].qualification+'</td>';
+    
+    
+     
+     }
+    }
+    else
+    {
+     html = '<tr><td colspan="5">No data has been found</td></tr>';
+    }
+    $('tbody').html(html);
+   }
+  })
+ }
+
+ $('#search').click(function(){
+  var query = $('#tags').val();
+  load_data(query);
+ });
+
+});
+</script>
+
