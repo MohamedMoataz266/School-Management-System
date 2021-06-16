@@ -1,4 +1,5 @@
 <head>
+<title>Add Student</title>
 <style>
   <?php 
   include "Styles/AddStudent.css";

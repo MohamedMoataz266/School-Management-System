@@ -1,7 +1,7 @@
 <div class="wrapper">
 <?php include "dB.php"; 
   ob_start();
-include "teacherfrontEnd.php";
+include "teacherFrontEnd.php";
 session_start();
  ?>
 

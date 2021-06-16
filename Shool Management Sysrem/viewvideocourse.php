@@ -29,9 +29,7 @@
   
    <td style="visibility:hidden;"><b>ID</b></td>
    <td><b>Email</b></td>
-    <td><b>Instructor name</b></td>
     <td><b>Course</b></td>
-    <td><b>Course name</b></td>
     <td><b>Video</b></td>
     
     
@@ -45,9 +43,7 @@ $result = mysqli_query($conn, "SELECT * FROM addcoursevideo");
 while($row = mysqli_fetch_array($result)){
   $id = $row['ID'];  
   $email=$row['email'];
-  $instructorname=$row['instructorname'];
   $course=$row['course'];
-  $coursename=$row['coursename'];
   $video=$row['video'];
 
   $videoname=$row['videoname'];
@@ -56,9 +52,7 @@ while($row = mysqli_fetch_array($result)){
   <br><br>
   <td style="visibility:hidden;"><?= $id ?></td>
   <td><?= $email ?></td>
-  <td><?= $instructorname ?></td>
   <td><?= $course ?></td>
-  <td><?= $coursename ?></td>
   <td><?= "<a href='watch.php?ID=$id'>$video</a>"?> </td>
   
   

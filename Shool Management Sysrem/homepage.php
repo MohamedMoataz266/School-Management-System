@@ -105,6 +105,9 @@ function make_slides($conn)
   </div>
   </div>
 </div>
+
 </label>
+<?php include "footer.php"?>
  </body>
+
 </html>

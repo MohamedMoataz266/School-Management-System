@@ -2,7 +2,7 @@
    
 <?php include "Styles/addQuestions.css" ?> 
 </style>
-<div class="cc"><?php include "teacherfrontEnd.php"?></div>
+<div class="cc"><?php include "teacherFrontEnd.php"?></div>
 <div class="register">
 
 <form method="POST" action="">

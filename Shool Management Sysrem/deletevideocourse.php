@@ -1,4 +1,6 @@
-<?php include "dB.php"; ?>
+<?php include "dB.php"; 
+ob_start();
+?>
 <?php include "menuvideo.php"; ?>
 <div class ="content"> 
 <div class = wrapper> 
@@ -76,10 +78,12 @@ $videoname=$row['videoname'];
 </div>
 </div>
 <?php
+include 'Videos.php';
+$video= new videos();
   if(isset($_POST['sub'])){
     if(isset($_POST['delete'])){
       foreach($_POST['delete'] as $dele){
-        mysqli_query($conn, "DELETE FROM addcoursevideo WHERE ID = '" .$dele. "'");
+        $video->removeVideo($dele);
      }
    }  
       else{

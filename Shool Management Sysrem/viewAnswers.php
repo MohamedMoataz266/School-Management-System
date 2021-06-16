@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <?php include "teacherfrontEnd.php"?>
+  <?php include "teacherFrontEnd.php"?>
 <head>
   <title>View Answers</title>
 <style>
