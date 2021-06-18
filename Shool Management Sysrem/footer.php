@@ -1,13 +1,20 @@
+footer.php
+
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Responsive Footer Section | CodingNepal</title>
-    <link rel="stylesheet" href="Styles/footer.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
+  <style>
+<?php
+require_once "Styles/footer.css"
+?>
+  </style>
   <body>
    
     <footer>
@@ -22,13 +29,7 @@
 </li> <br>
          <li>   <p>The school is interested in breaking out stereotypes through its constant quest for renewal by introducing everything new into the educational process.
 </p></li>
-            <br>
-           <li> <p>The school is interested in breaking out stereotypes through its constant quest for renewal by introducing everything new into the educational process.
-</p></li>
-            <br>
-           <li> <p> School activity has a great aspect on the mind and conscience of the Amon School, as it always works to encourage multiple talents in various activities.
-
-</p></li>
+         
 </ol>
          
 
@@ -69,10 +70,10 @@
         </div>
       </div>
       <div class="bottom">
-        <center>
+      
           <span class="credit">Created By  Amoun language private language school | </span>
           <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
-        </center>
+      
       </div>
     </footer>
   </body>
