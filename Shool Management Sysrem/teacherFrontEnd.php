@@ -5,7 +5,11 @@
 		width: 60%;
 		height: 60%;
 	}
+	
+
+	
 </style>
 <?php include 'homemenu.php'; ?>
 <body onload='teacherMenu()'>
+	
 </body>

@@ -1,5 +1,5 @@
 <?php include "dB.php";
-include "teacherFrontEnd.php";
+include "homemenu.php";
 session_start();
 ?>
 
@@ -13,7 +13,7 @@ session_start();
     </style>
 </head>
 <br>
-
+<body onload='teacherMenu()'>
 <form method="POST" action="">
 
 <div class="mes">
@@ -39,3 +39,4 @@ while($row = mysqli_fetch_array($result)){
 </div>
 
 </form>
+</body>

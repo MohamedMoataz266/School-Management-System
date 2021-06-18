@@ -2,7 +2,8 @@
    
 <?php include "Styles/addQuestions.css" ?> 
 </style>
-<div class="cc"><?php include "teacherFrontEnd.php"?></div>
+<body onload='teacherMenu()'>
+<div class="cc"><?php include "homemenu.php"?></div>
 <div class="register">
 
 <form method="POST" action="">
@@ -22,7 +23,7 @@
 </script>
 </form>
 </div>
-
+</body>
 <?php 
  include "dB.php";
  include 'classAssignments.php';

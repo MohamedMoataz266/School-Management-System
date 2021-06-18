@@ -1,4 +1,4 @@
-<?php  include "teacherFrontEnd.php"; ?>
+<?php  include "homemenu.php"; ?>
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -25,7 +25,7 @@
   background-color: black; } 
   </style>
  </head>
- <body>
+ <body onload='teacherMenu()'>
   <div class="container">
    <br />
    <br />

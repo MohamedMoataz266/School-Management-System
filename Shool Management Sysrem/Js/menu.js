@@ -34,7 +34,7 @@ function videoMenu(){
         $(".home").replaceWith('<a href="teacherFrontEnd.php">Home</a>');
         $(".atr1").replaceWith('<a href="addvideo.php">Add Video</a>');
         $(".atr2").replaceWith('<a href="deletevideocourse.php">Delete Video</a>');
-        $(".atr3").replaceWith('<a href="">Update Video</a>');
+        $(".atr3").replaceWith('<a href="updatevideo.php">Update Video</a>');
     });
 }
 function studentAffairsMenu(){
@@ -43,7 +43,8 @@ function studentAffairsMenu(){
         $(".atr1").replaceWith('<a href="AddStudent.php">Add Student</a>');
         $(".atr2").replaceWith('<a href="removestudent.php">Remove Student</a>');
         $(".atr3").replaceWith('<a href="viewStudentsStudentAffairs.php">View Students</a>');
-        $(".atr4").replaceWith('<a href="homepage.php">Log Out</a>');
+        $(".atr4").replaceWith('<a href="updatestudent.php">Update Student</a>');
+        $(".atr5").replaceWith('<a href="homepage.php">Log Out</a>');
     });
 }
 function personnelMenu(){
@@ -52,7 +53,8 @@ function personnelMenu(){
         $(".atr1").replaceWith('<a href="AddProfession.php">Add Employee</a>');
         $(".atr2").replaceWith('<a href="removeteacher.php">Remove Employee</a>');
         $(".atr3").replaceWith('<a href="viewteachers.php">View Employee</a>');
-        $(".atr4").replaceWith('<a href="homepage.php">Log Out</a>');
+        $(".atr4").replaceWith('<a href="updateemployee.php">update Employee</a>');
+        $(".atr5").replaceWith('<a href="homepage.php">Log Out</a>');
     });
 }
 

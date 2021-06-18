@@ -1,5 +1,3 @@
-footer.php
-
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en" dir="ltr">

@@ -1,4 +1,4 @@
-<?php include "teacherFrontEnd.php"; ?>
+<?php include "homemenu.php"; ?>
 <?php include "dB.php"; ?>
 <head>
 <title>Send Message</title>
@@ -7,6 +7,7 @@
       <?php include "Styles/sendmessage.css";?>
     </style>
 </head>
+<body onload='teacherMenu()'>
 <div class="wrapper">
 <div class="main_container">
 <div class="item">  
@@ -37,3 +38,4 @@ while($row = mysqli_fetch_array($result)){
 </div>
 </div>
 </div>
+</body>

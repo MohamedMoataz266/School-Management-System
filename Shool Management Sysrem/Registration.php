@@ -91,8 +91,9 @@
 
     <!-- Main JS-->
     <script src="Js/registration.js"></script>
-
+<?php include"footer.php"?>
 </body>
+
 
 
 

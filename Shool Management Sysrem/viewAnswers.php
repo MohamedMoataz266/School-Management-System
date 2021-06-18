@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <?php include "teacherFrontEnd.php"?>
+  <?php include "homemenu.php"?>
 <head>
   <title>View Answers</title>
 <style>
   <?php include "Styles/viewAnswers.css"?>
 </style>
 </head>
-<body>
+<body onload='teacherMenu()'>
   <div class="register">
 <form method="POST" action="">
 <?php include "dB.php";

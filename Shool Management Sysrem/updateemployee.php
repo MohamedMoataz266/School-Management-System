@@ -1,4 +1,4 @@
-<?php include "studentAffairesFrontEnd.php"; ?>
+<?php include "personal.php"; ?>
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -40,7 +40,7 @@ $(document).ready(function(){
  function load_data(query)
  {
   $.ajax({
-   url:"sp.php",
+   url:"ue.php",
    method:"POST",
    data:{query:query},
    success:function(data)

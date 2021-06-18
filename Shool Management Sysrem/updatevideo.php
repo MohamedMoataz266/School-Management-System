@@ -1,4 +1,4 @@
-<?php include "studentAffairesFrontEnd.php"; ?>
+<?php include "menuvideo.php"; ?>
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -7,6 +7,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
   <style>
+  img
+    {
+      width: 30%;
+height: 60%;
+
+
+    }
   body
   {
     background-color: #05243A;
@@ -40,7 +47,7 @@ $(document).ready(function(){
  function load_data(query)
  {
   $.ajax({
-   url:"sp.php",
+   url:"uv.php",
    method:"POST",
    data:{query:query},
    success:function(data)

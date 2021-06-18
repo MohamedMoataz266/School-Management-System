@@ -5,7 +5,11 @@
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
 }
-
+img
+{
+width: 30%;
+height: 60%;
+}
 html, body
 {
     
