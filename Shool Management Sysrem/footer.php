@@ -29,6 +29,7 @@ require_once "Styles/footer.css"
 </li> <br>
          <li>   <p>The school is interested in breaking out stereotypes through its constant quest for renewal by introducing everything new into the educational process.
 </p></li>
+
          
 </ol>
          
