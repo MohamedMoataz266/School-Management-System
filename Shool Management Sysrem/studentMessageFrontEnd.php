@@ -1,5 +1,5 @@
 <html>
-<?php include "studentFrontEnd.php"; ?>
+<?php include "homemenu.php"; ?>
 <?php include "dB.php"; ?>
 <head>
 <title>Send Message</title>

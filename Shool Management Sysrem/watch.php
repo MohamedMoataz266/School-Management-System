@@ -1,4 +1,4 @@
-
+<html>
 
 <?php 
 include 'homemenu.php' ?>
@@ -16,6 +16,7 @@ if(isset($_GET['ID'])){
     echo "<h1>You are watching:".$video."</h1>";
     ?>
     <head>
+    <title>Video</title>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
@@ -43,7 +44,7 @@ if(isset($_GET['ID'])){
 ?>
 
 </body>
-
+</html>
 
 
 

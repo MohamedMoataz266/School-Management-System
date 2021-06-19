@@ -4,6 +4,7 @@ include "homemenu.php";
 ?>
 <html>
 <head>
+<title>Assignments</title>
 <script src='Js/menu.js'></script>
 </head>
 <style>

@@ -1,4 +1,6 @@
 <html>
+<head>
+<title>Chatting</title>
 <style>
  <?php include "Styles/message.css";?>
   </style>
@@ -9,7 +11,7 @@ ob_start();
  include "homemenu.php";
 session_start();
  ?>
-
+</head>
 <body onload='studentMenu()'>
 <div class="main_container">
 <div class="item"> 
