@@ -96,7 +96,7 @@ html, body {
 
 
 .btn-primary{
-    background-color: #6C757D;
+    background-color:white;
     outline: none;
     width: 65%;
     height: 40%;
@@ -105,6 +105,13 @@ html, body {
     box-shadow: none;
 }
 
+img
+    {
+      width: 30%;
+height: 60%;
+
+
+    }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
     background-color: #495056;
     outline: none !important;
