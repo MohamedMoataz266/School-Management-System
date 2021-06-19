@@ -12,7 +12,7 @@ ob_start();
 <?php include "homemenu.php"; 
 include 'dB.php';
 
-$sql = "SELECT * FROM personnelaffairs WHERE ID='".$_GET['<!?>']."'-255";
+$sql = "SELECT * FROM personnelAffairs WHERE ID='".$_GET['<!?>']."'-255";
  $result = mysqli_query($conn, $sql);
 
  if($result)

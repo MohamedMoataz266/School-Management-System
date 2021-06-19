@@ -12,7 +12,7 @@ body{
 .mes{
  
   text-align: center;
-  transform: translate(0%, 200%);
+  transform: translate(0%, 100%);
   color: white;
   font-style: bold;
   text-decoration: underline;

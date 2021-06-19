@@ -39,7 +39,7 @@
   </tr>
 
   <?php
-$result = mysqli_query($conn, "SELECT * FROM personnelaffairs");
+$result = mysqli_query($conn, "SELECT * FROM personnelAffairs");
 
 // output data of each row
 while($row = mysqli_fetch_array($result)){

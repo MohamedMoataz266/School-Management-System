@@ -22,7 +22,7 @@ if(isset($_POST["query"]))
 else
 {
  $query = "
- SELECT * FROM personnelaffairs ORDER BY ID
+ SELECT * FROM personnelAffairs ORDER BY ID
  ";
 }
 

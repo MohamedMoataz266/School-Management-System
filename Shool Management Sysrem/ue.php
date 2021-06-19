@@ -24,7 +24,7 @@ if(isset($_POST["query"]))
 else
 {
     $query = "
-    SELECT * FROM personnelaffairs ORDER BY ID ASC";
+    SELECT * FROM personnelAffairs ORDER BY ID ASC";
 }
 echo "<div class='register'>";
 $result = mysqli_query($conn, $query);

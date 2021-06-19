@@ -9,7 +9,7 @@ public function addProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $p
  private function checkProfession($id){
     include "dB.php";
     $flag = true;
-    $sql = mysqli_query($conn, "SELECT ID FROM personnelaffairs WHERE ID='".$id."'");
+    $sql = mysqli_query($conn, "SELECT ID FROM personnelAffairs WHERE ID='".$id."'");
     if(mysqli_num_rows($sql) > 0){
       return $flag; 
     }
@@ -19,7 +19,7 @@ public function addProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $p
  public function removeProfession($id){
     include "dB.php";
     if($this->checkProfession($id)){
-        mysqli_query($conn, "DELETE FROM personnelaffairs WHERE ID='$id'");
+        mysqli_query($conn, "DELETE FROM personnelAffairs WHERE ID='$id'");
         echo '<script>alert("Done, Employee has been removed successfully")</script>';
         return;
     }
@@ -30,7 +30,7 @@ public function addProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $p
   }  
   public function updateProfession($id,$eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $pN, $q, $gY, $gG, $expY, $j, $spec, $dep, $cDate, $iNo, $iDate, $iEDate, $sR, $eS, $notes){
     include 'dB.php';
-    mysqli_query($conn, "UPDATE personnelaffairs SET name ='$ed', 
+    mysqli_query($conn, "UPDATE personnelAffairs SET name ='$ed', 
                                                 code='$c', 
                                                  arabicName='$aN',
                                                   religion='$r',

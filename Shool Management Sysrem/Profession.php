@@ -122,7 +122,7 @@ private function validate(){
     if (strlen($this->phoneNumber) >= 12 || strlen($this->phoneNumber) <= 10){
         return $flag;
     }
-    $sql = mysqli_query($conn, "SELECT name, nationalNumber FROM personnelaffairs WHERE name='".$this->getName()."' OR nationalNumber='".$this->getNationalNumber()."'");
+    $sql = mysqli_query($conn, "SELECT name, nationalNumber FROM personnelAffairs WHERE name='".$this->getName()."' OR nationalNumber='".$this->getNationalNumber()."'");
     if(mysqli_num_rows($sql) > 0){
         echo '<script>alert("Error, data entry is not correct")</script>';
         return;
@@ -202,7 +202,7 @@ public function insertProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr,
                 return;
             }
        else{
-        mysqli_query($conn, "INSERT INTO personnelaffairs 
+        mysqli_query($conn, "INSERT INTO personnelAffairs 
             (name, code, 
             arabicName, religion, 
             nationality, gender, 
@@ -228,7 +228,7 @@ public function insertProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr,
  private function checkProfession($name, $nationalNumber){
     include "dB.php";
     $flag = true;
-    $sql = mysqli_query($conn, "SELECT name, nationalNumber FROM personnelaffairs WHERE name='".$name."' AND nationalNumber= '".$nationalNumber."'");
+    $sql = mysqli_query($conn, "SELECT name, nationalNumber FROM personnelAffairs WHERE name='".$name."' AND nationalNumber= '".$nationalNumber."'");
     if(mysqli_num_rows($sql) > 0){
       return $flag; 
     }
