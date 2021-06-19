@@ -33,26 +33,36 @@ $sql = "SELECT * FROM personnelaffairs WHERE ID='".$_GET['<!?>']."'-255";
                        
                         <form class="requires-validation" novalidate method= 'POST' action ="" >
 
+                            <label class="mb-3 mr-1" for="insdate">Full Name (till fourth name): </label>
                             <div class="col-md-12">
                                <input class="form-control" type="text" name="name" placeholder="Full Name (till fourth name)" value="<?php echo $row['name']; ?>" required>
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
+
+                               <label class="mb-3 mr-1" for="insdate">Code: </label>
                                <div class="col-md-12">
                                <input class="form-control" type="text" name="code" placeholder="Code" value="<?php echo $row['code']; ?>" required>
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
+
+                               <label class="mb-3 mr-1" for="insdate">Name in Arabic: </label>
                                <div class="col-md-12">
                                <input class="form-control" type="text" name="nameInArabic" placeholder="Name in Arabic" required value="<?php echo $row['arabicName']; ?>">
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
+
+                               <label class="mb-3 mr-1" for="insdate">Religion: </label>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="religion" placeholder="Religion" required value="religion" >
+                               <input class="form-control" type="text" name="religion" placeholder="Religion" required value="<?php echo $row['religion']; ?>" >
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="nationality" placeholder="Nationality" required value="nationality">
+
+                                <label class="mb-3 mr-1" for="insdate">Nationality: </label> <br>
+                               <input class="form-control" type="text" name="nationality" placeholder="Nationality" required value="<?php echo $row['nationality']; ?>">
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
+                               
                                <div class="col-md-12 mt-3">
                             <label class="mb-3 mr-1" for="gender">Gender: </label>
 
@@ -68,85 +78,112 @@ $sql = "SELECT * FROM personnelaffairs WHERE ID='".$_GET['<!?>']."'-255";
                                 
                             </div>
                                <br>
-                               <label class="mb-3 mr-1" for="dateofbirth"><b>Birth Date:</b></label>
+
+                               <label class="mb-3 mr-1" for="dateofbirth">Birth Date:</label>
                                <div class="col-md-12">
-                               <input class="form-control" type="date" name="dob" placeholder="Date of Birth in (dd/mm/yy)" value="birthDate" required>
+                               <input class="form-control" type="date" name="dob" placeholder="Date of Birth in (dd/mm/yy)" value="<?php echo $row['birthDate']; ?>" required>
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <br>
+
+                               <label class="mb-3 mr-1" for="insdate">National ID: </label>
                                <div class="col-md-12">
                                <input class="form-control" type="text" name="nationalNumber" placeholder="National ID" value="<?php echo $row['nationalNumber']; ?>" required>
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
+
+                               <label class="mb-3 mr-1" for="insdate">Foreigner ID: </label>
                                 <div class="col-md-12">
                                <input class="form-control" type="text" name="foreignerNumber" placeholder="Foreigner ID" value="<?php echo $row['foreginerNumber']; ?>" required>
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
 
+
+                               <label class="mb-3 mr-1" for="insdate">Address: </label>
                                <div class="col-md-12">
                                <input class="form-control" type="text" name="address" placeholder="Address" value="<?php echo $row['address']; ?>" required>
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
+
+                               <label class="mb-3 mr-1" for="insdate">Phone Number: </label>
                                <div class="col-md-12">
                                 <input class="form-control" type="text" name="phoneNumber" placeholder="Telephone" value="<?php echo $row['phoneNumber']; ?>" required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
+
+                                 <label class="mb-3 mr-1" for="insdate">Qualification: </label>
                                  <div class="col-md-12">
                                 <input class="form-control" type="text" name="qual" placeholder="Qualification" value="<?php echo $row['qualification']; ?>" required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
+
+                                 <label class="mb-3 mr-1" for="insdate">Graduation Year: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="gradyear" placeholder="Graduation Year" value ="<?php echo['graduationYear'];?>"required>
+                                <input class="form-control" type="text" name="gradyear" placeholder="Graduation Year" value ="<?php echo $row['graduationYear'];?>"required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
+
+                                 <label class="mb-3 mr-1" for="insdate">Graduation Grade: </label>
                                  <div class="col-md-12">
                                 <select class="form-control" type="text" name="gradgrade" placeholder="Graduation Grade" value="<?php echo $row['graduationGrade']; ?>"required>
-                                  <option value='Grade'>Role</option>
+                                  <option value='Grade'>Grade</option>
                                   <option value='Pass'>Pass</option>
                                   <option value='Good'>Good</option>
                                   <option value='Very Good'>Very Good</option>
                                   <option value='Excellent'>Excellent</option>
                                   </select>
                                  </div>
+
+                                 <label class="mb-3 mr-1" for="insdate">Experienced Years: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="expyears" placeholder="Experienced Years" value="<?php echo $row['expyears']; ?>" required>
+                                <input class="form-control" type="text" name="expyears" placeholder="Experienced Years" value="<?php echo $row['expYears']; ?>" required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
+
+                                 <label class="mb-3 mr-1" for="insdate">Job: </label>
                                  <div class="col-md-12">
                                 <input class="form-control" type="text" name="job" placeholder="Job" value="<?php echo $row['job']; ?>" required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
+
+                                 <label class="mb-3 mr-1" for="insdate">Specialization: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="specialization" placeholder="Specialization" value="<?php echo ['specialization'];?>" required>
+                                <input class="form-control" type="text" name="specialization" placeholder="Specialization" value="<?php echo $row['specialization'];?>" required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
+
+                                 <label class="mb-3 mr-1" for="insdate">Department: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="department" placeholder="Department" value ="<?php echo['department'];?>"required>
+                                <input class="form-control" type="text" name="department" placeholder="Department" value ="<?php echo $row['department'];?>"required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
+
                                  <label class="mb-3 mr-1" for="contractdate">Contract Date: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="date" name="contrDate" placeholder="Contract Date" value="<?php echo ['contractDate'];?>" required>
+                                <input class="form-control" type="date" name="contrDate" placeholder="Contract Date" value="<?php echo $row['contractDate'];?>" required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
+
+                                 <label class="mb-3 mr-1" for="insdate">Insurance Number: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="inNum" placeholder="Insurrance number" value="<?php echo ['insuranceNumber']; ?>"  required>
+                                <input class="form-control" type="text" name="inNum" placeholder="Insurrance number" value="<?php echo $row['insuranceNumber']; ?>"  required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
+
                                  <label class="mb-3 mr-1" for="insdate">Insurance Date: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="date" name="indate" placeholder="Insurrance Date" value="<?php echo['insuranceDate'];?>" required>
+                                <input class="form-control" type="date" name="indate" placeholder="Insurrance Date" value="<?php echo $row['insuranceDate'];?>" required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
                                  <label class="mb-3 mr-1" for="insdate">Insurance End Date: </label>
                                  <div class="col-md-12">
                                 <input class="form-control" type="date" name="inenddate" placeholder="Insurrance End Date"
-                                value="<?php echo ['insuranceEndDate'];?>" required>
+                                value="<?php echo $row['insuranceEndDate'];?>" required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
-                                 
+                                 <label class="mb-3 mr-1" for="insdate">System Role: </label>
                                  <div class="col-md-12">
-                                <select class="form-control" type="text" name="systemrole" placeholder="System Role" value="<?php echo['systemRole'];?>" required>
+                                <select class="form-control" type="text" name="systemrole" placeholder="System Role" value="<?php echo $row['systemRole'];?>" required>
                                   <option value='Select Role'>Role</option>
                                   <option value='directorgeneral'>Director General</option>
                                   <option value='schoolheadmaster'>School Headmaster</option>
@@ -169,15 +206,19 @@ $sql = "SELECT * FROM personnelaffairs WHERE ID='".$_GET['<!?>']."'-255";
                                   <option value='receptionist'>Receptionist</option>
                                   </select>
                                 </div>
+
+                                <label class="mb-3 mr-1" for="insdate">Education System: </label>
                                 <div class="col-md-12">
-                                <select class="form-control" type="text" name="educationSystem" placeholder="Education System" value="<?php echo['educationSystem']; ?>" required>
+                                <select class="form-control" type="text" name="educationSystem" placeholder="Education System" value="<?php echo $row['educationSystem']; ?>" required>
                                   <option value='education System'>Education System</option>
                                   <option value='alleducation'>All</option>
                                   <option value='default'>Default</option>
                                   </select>
                                 </div>
+
+                                <label class="mb-3 mr-1" for="insdate">Notes: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="notes" placeholder="Notes" value="<?php echo ['notes']?>" required>
+                                <input class="form-control" type="text" name="notes" placeholder="Notes" value="<?php echo $row['notes']?>" required>
                                  <!-- <div class="valid-feedback">Email field is valid!</div> -->
                                  </div>
 
