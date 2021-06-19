@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 07, 2021 at 02:10 AM
+-- Generation Time: Jun 19, 2021 at 10:41 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -60,7 +60,8 @@ INSERT INTO `addQuestions` (`ID`, `email`, `question`) VALUES
 (5, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'How R U ?'),
 (6, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'What is your favorite class ?'),
 (7, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Good Day ?'),
-(8, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'What is Your Opinion about school ?');
+(8, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'What is Your Opinion about school ?'),
+(9, '', 'How Old R U ?');
 
 -- --------------------------------------------------------
 
@@ -80,11 +81,43 @@ CREATE TABLE `Answers` (
 --
 
 INSERT INTO `Answers` (`ID`, `email`, `answer`) VALUES
-(26, 'MohamedMoatazKamelFouad@amounegypt.com', '20'),
-(27, 'MohamedMoatazKamelFouad@amounegypt.com', 'Fine'),
-(28, 'MohamedMoatazKamelFouad@amounegypt.com', 'History'),
-(29, 'MohamedMoatazKamelFouad@amounegypt.com', 'No'),
-(30, 'MohamedMoatazKamelFouad@amounegypt.com', 'Not Good');
+(31, 'MohamedMoatazKamelFouad@amounegypt.com', '20'),
+(32, 'MohamedMoatazKamelFouad@amounegypt.com', 'Fine'),
+(33, 'MohamedMoatazKamelFouad@amounegypt.com', 'History'),
+(34, 'MohamedMoatazKamelFouad@amounegypt.com', 'Yes'),
+(35, 'MohamedMoatazKamelFouad@amounegypt.com', 'Good'),
+(36, 'MohamedMoatazKamelFouad@amounegypt.com', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banner`
+--
+
+DROP TABLE IF EXISTS `banner`;
+CREATE TABLE `banner` (
+  `banner_id` int(11) NOT NULL,
+  `banner_title` varchar(200) NOT NULL,
+  `banner_image` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `banner`
+--
+
+INSERT INTO `banner` (`banner_id`, `banner_title`, `banner_image`) VALUES
+(1, 'Entrance', 'school1.jpg'),
+(2, 'Amoun students', 'school2.jpg'),
+(3, 'Amoun private school', 'school3.jpg'),
+(4, 'Play ground', 'School3.jpeg'),
+(5, 'Achievements', 'School4.jpeg'),
+(6, 'Kg classes', 'School5.jpeg'),
+(7, 'Baby class classes', 'School6.jpeg'),
+(8, 'Honored students', 'School7.jpeg'),
+(9, 'Honored students', 'School8.jpeg'),
+(10, 'Walkway', 'School9.jpeg'),
+(11, 'School gate', 'School10.jpeg'),
+(12, 'School historical building ', 'School11.jpeg');
 
 -- --------------------------------------------------------
 
@@ -106,23 +139,29 @@ CREATE TABLE `Chat` (
 --
 
 INSERT INTO `Chat` (`ID`, `Sender`, `Receiver`, `message`, `messageType`) VALUES
-(4, 'KareemEhabAbdelrazekDahab@amounegypt.com      ', 'MohamedMoatazKamelFouad@amounegypt.com    ', 'Hi Mohamed', 'Read'),
-(5, 'KareemEhabAbdelrazekDahab@amounegypt.com      ', 'MohamedMoatazKamelFouad@amounegypt.com    ', 'How R U ?', 'Read'),
-(6, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Hi Kareem', 'Read'),
-(8, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Iam fine', 'Read'),
-(9, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Tell me about your life', 'Read'),
-(14, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Every thing is ok ', 'Read'),
-(15, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Are U Okay ?', 'Read'),
-(16, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Yes bro', 'Read'),
-(17, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Hi ', 'Read'),
-(18, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'How R U ?', 'Read'),
-(19, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Fine', 'Read'),
-(20, 'KareemEhabAbdelrazekDahab@amounegypt.com      ', 'MohamedMoatazKamelFouad@amounegypt.com    ', 'Good', 'Read'),
-(21, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Test ?', 'Read'),
-(22, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Good Day OR NOT ?', 'Read'),
-(23, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Not', 'Read'),
-(24, 'KareemEhabAbdelrazekDahab@amounegypt.com      ', 'MohamedMoatazKamelFouad@amounegypt.com    ', 'Hi', 'Read'),
-(25, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Hi', 'Delivered');
+(27, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Hi How R U ?', 'Read'),
+(28, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Hi', 'Read'),
+(29, 'MohamedMoatazKamelFouad@amounegypt.com      ', 'KareemEhabAbdelrazekDahab@amounegypt.com    ', 'Good Day ?', 'Read'),
+(30, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Every Thing IS OK', 'Read'),
+(32, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'HI', 'Read'),
+(33, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Every thing is ok', 'Read'),
+(34, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Yes', 'Read'),
+(35, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Hi', 'Read'),
+(36, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'HI', 'Read'),
+(37, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'SaadKareemOmarHassan@amounegypt.com', 'hi Bro How R U ?', 'Delivered'),
+(38, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Good Morning Bro', 'Read'),
+(39, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'السلام عليكم', 'Read'),
+(40, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'كيف حالك ', 'Read'),
+(41, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'Ho', 'Read'),
+(42, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'HI', 'Read'),
+(43, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'He', 'Read'),
+(44, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'MOrning', 'Read'),
+(45, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'HEHE', 'Read'),
+(46, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'A5oya', 'Read'),
+(47, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'A5oya', 'Read'),
+(48, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'SaadKareemOmarHassan@amounegypt.com', 'HE', 'Delivered'),
+(49, 'MohamedMoatazKamelFouad@amounegypt.com', 'KareemEhabAbdelrazekDahab@amounegypt.com', 'Hi ', 'Read'),
+(50, 'KareemEhabAbdelrazekDahab@amounegypt.com', 'MohamedMoatazKamelFouad@amounegypt.com', 'HI', 'Delivered');
 
 -- --------------------------------------------------------
 
@@ -142,11 +181,11 @@ CREATE TABLE `grades` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personnelaffairs`
+-- Table structure for table `personnelAffairs`
 --
 
-DROP TABLE IF EXISTS `personnelaffairs`;
-CREATE TABLE `personnelaffairs` (
+DROP TABLE IF EXISTS `personnelAffairs`;
+CREATE TABLE `personnelAffairs` (
   `ID` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `code` varchar(10) NOT NULL,
@@ -176,13 +215,11 @@ CREATE TABLE `personnelaffairs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `personnelaffairs`
+-- Dumping data for table `personnelAffairs`
 --
 
-INSERT INTO `personnelaffairs` (`ID`, `name`, `code`, `arabicName`, `religion`, `nationality`, `gender`, `birthDate`, `nationalNumber`, `foreginerNumber`, `address`, `phoneNumber`, `qualification`, `graduationYear`, `graduationGrade`, `expYears`, `job`, `specialization`, `department`, `contractDate`, `insuranceNumber`, `insuranceDate`, `insuranceEndDate`, `systemRole`, `educationSystem`, `notes`) VALUES
-(1, 'KareemAliOmarHassan', '1258', 'كريم علي عمر حسن', 'Musilim', 'Egyption', 'Male', '10/6/1980', '21478639850123', 'K15963487', '22 masr elgdida street cairo', '01005423168', 'high education', '2015', '2.8', '5', 'Teacher', 'History', '.', '10/4/2021', '2145698', '10/4/2021', '10/4/2025', '.', '', '.'),
-(2, 'SaadAliOmarIbrahem', '12478', 'سعد علي عمر إبراهيم', 'Musilim', 'Egyption', 'Male', '10/6/1990', '14785236901254', 'D12547862', '10 nasr City Cairo', '01004231258', 'Accountant', '1990', '3.00', '2', 'studentAffairs', 'Employee', '.', '10/3/2021', '621478', '10/3/2021', '10/3/2025', '.', '', '.'),
-(3, 'MaiKamelOmarSaad', '12456', 'مي عمر كامل سعد', 'Musilim', 'Egyption', 'Female', '10/4/1995', '15698742365402', 'M12387456', '50 elmaadi street', '01002587631', 'Accountant', '2016', '3.4', '3', 'personnelAffairs', 'employee', '.', '5/5/2021', '1254252166', '5/5/2021', '5/5/2024', '.', '', '.');
+INSERT INTO `personnelAffairs` (`ID`, `name`, `code`, `arabicName`, `religion`, `nationality`, `gender`, `birthDate`, `nationalNumber`, `foreginerNumber`, `address`, `phoneNumber`, `qualification`, `graduationYear`, `graduationGrade`, `expYears`, `job`, `specialization`, `department`, `contractDate`, `insuranceNumber`, `insuranceDate`, `insuranceEndDate`, `systemRole`, `educationSystem`, `notes`) VALUES
+(1, 'KareemAliOmarHassan', '1258', 'كريم علي عمر حسن', 'Musilim', 'Egyption', 'Male', '10/6/1980', '21478639850123', 'K15963487', '22 masr elgdida street cairo', '01005423168', 'high education', '2015', '2.8', '5', 'Teacher', 'History', '.', '10/4/2021', '2145698', '10/4/2021', '10/4/2025', '.', '', '.');
 
 -- --------------------------------------------------------
 
@@ -198,7 +235,7 @@ CREATE TABLE `Registration` (
   `thirdName` varchar(30) NOT NULL,
   `forthName` varchar(30) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `nationalNumber` varchar(20) NOT NULL,
+  `nationalNumber` varchar(255) NOT NULL,
   `birthDate` varchar(15) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `user` int(5) DEFAULT NULL
@@ -209,10 +246,13 @@ CREATE TABLE `Registration` (
 --
 
 INSERT INTO `Registration` (`ID`, `firstName`, `secondName`, `thirdName`, `forthName`, `email`, `nationalNumber`, `birthDate`, `gender`, `user`) VALUES
-(65, 'Kareem', 'Ehab', 'Abdelrazek', 'Dahab', 'KareemEhabAbdelrazekDahab@amounegypt.com', '12345678912344', '6/11/1999', 'Male', 2),
-(66, 'Philip', 'George', 'Fayek', 'Barsoum', 'PhilipGeorgeFayekBarsoum@amounegypt.com', '12345678912303', '25/12/1999', 'Male', 3),
-(67, 'Saad', 'Kareem', 'Omar', 'Hassan', 'SaadKareemOmarHassan@amounegypt.com', '12589631204597', '06/08/2000', 'Male', 1),
-(70, 'Mohamed', 'Moataz', 'Kamel', 'Fouad', 'MohamedMoatazKamelFouad@amounegypt.com', '12345678912345', '6/8/2000', 'on', 1);
+(65, 'Kareem', 'Ehab', 'Abdelrazek', 'Dahab', 'KareemEhabAbdelrazekDahab@amounegypt.com', '653057a7b6525cace04ca92a5e65f33f', '6/11/1999', 'Male', 2),
+(66, 'Philip', 'George', 'Fayek', 'Barsoum', 'PhilipGeorgeFayekBarsoum@amounegypt.com', 'bc09d52c5087937b9c56fe9588e3f0cd', '25/12/1999', 'Male', 3),
+(67, 'Saad', 'Kareem', 'Omar', 'Hassan', 'SaadKareemOmarHassan@amounegypt.com', '75387cc14497476d8023b893a910ec71', '06/08/2000', 'Male', 1),
+(70, 'Mohamed', 'Moataz', 'Kamel', 'Fouad', 'MohamedMoatazKamelFouad@amounegypt.com', '0c433bffb79eee2842b108f59c2432a4', '6/8/2000', 'on', 1),
+(71, 'Ali', 'Hassan', 'Kamel', 'Hossam', 'AliHassanKamelHossam@amounegypt.com', 'b4b2c373c2b7599275e1db0ec27e075e', '6/7/1980', 'Male', 5),
+(72, 'Mohamed', 'Kareem', 'Ahmed', 'Ali', 'MohamedKareemAhmedAli@amounegypt.com', '046102ad344945872ec8f4a97a35794e', '1/2/1980', 'Male', 5),
+(75, 'Mohamed', 'Ali', 'Hassan', 'Ibraheem', 'MohamedAliHassanIbraheem@amounegypt.com', 'fd22f766e7514f3ad2804efdfeeb1040', '10/01/2003', 'Male', 1);
 
 -- --------------------------------------------------------
 
@@ -232,7 +272,7 @@ CREATE TABLE `Students` (
   `ageInOctober` varchar(255) NOT NULL,
   `motherName` varchar(100) NOT NULL,
   `address` varchar(100) NOT NULL,
-  `phoneNumber` varchar(15) NOT NULL,
+  `phoneNumber` varchar(20) NOT NULL,
   `fatherJob` varchar(50) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `nationalNumber` varchar(20) NOT NULL,
@@ -266,7 +306,8 @@ INSERT INTO `userType` (`ID`, `name`) VALUES
 (1, 'Student'),
 (2, 'Teacher'),
 (3, 'Student Affairs'),
-(4, 'Personnel Affairs');
+(4, 'Personnel Affairs'),
+(5, 'topAdmin');
 
 --
 -- Indexes for dumped tables
@@ -291,6 +332,12 @@ ALTER TABLE `Answers`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`banner_id`);
+
+--
 -- Indexes for table `Chat`
 --
 ALTER TABLE `Chat`
@@ -303,9 +350,9 @@ ALTER TABLE `grades`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `personnelaffairs`
+-- Indexes for table `personnelAffairs`
 --
-ALTER TABLE `personnelaffairs`
+ALTER TABLE `personnelAffairs`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -335,25 +382,31 @@ ALTER TABLE `userType`
 -- AUTO_INCREMENT for table `addcoursevideo`
 --
 ALTER TABLE `addcoursevideo`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `addQuestions`
 --
 ALTER TABLE `addQuestions`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `Answers`
 --
 ALTER TABLE `Answers`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT for table `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `Chat`
 --
 ALTER TABLE `Chat`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `grades`
@@ -362,28 +415,28 @@ ALTER TABLE `grades`
   MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `personnelaffairs`
+-- AUTO_INCREMENT for table `personnelAffairs`
 --
-ALTER TABLE `personnelaffairs`
+ALTER TABLE `personnelAffairs`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `Registration`
 --
 ALTER TABLE `Registration`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `Students`
 --
 ALTER TABLE `Students`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `userType`
 --
 ALTER TABLE `userType`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
