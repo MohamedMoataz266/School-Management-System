@@ -32,7 +32,7 @@ $sql = "SELECT * FROM addcoursevideo WHERE ID='".$_GET['<!?>']."'-255";
         <div class="form-holder">
             <div class="form-content">
                 <div class="form-items">
-                    <h3>update video</h3>
+                    <h3>Update video</h3>
                    
                     <form class="requires-validation" novalidate method='POST' action=''>
                        <div class="col-md-12">

@@ -1,4 +1,4 @@
-<?php include "personal.php";
+<?php include "homemenu.php";
  ob_start();
  ?>
 <?php include "dB.php";?>
@@ -19,7 +19,7 @@
    </style>
 </head>
 <br>
-<body>
+<body onload='personnelMenu()'>
 <form method="POST" action="">
 <div class="register">
   

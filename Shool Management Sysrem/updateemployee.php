@@ -1,28 +1,23 @@
-<?php include "personal.php"; ?>
+<?php include "homemenu.php"; ?>
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Webslesson Tutorial</title>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-  body
-  {
-    background-color: #05243A;
-    color: white;
-
-  }
+  <?php require_once "Styles/updateEmployee.css"; ?>
 </style>
  </head>
- <body>
+ <body onload='personnelMenu()'>
   <div class="container">
    <br />
    <h2 align="center">Search</h2><br />
    <div class="form-group">
     <div class="input-group">
      <span class="input-group-addon">Search</span>
-     <input type="text" name="search_text" id="search_text" placeholder="Search by Customer Details" class="form-control" />
+     <input type="text" name="search_text" id="search_text" placeholder="Search by employee Code, Name,National Number or Qualification" class="form-control" />
     </div>
    </div>
    <br />

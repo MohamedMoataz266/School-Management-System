@@ -1,4 +1,4 @@
-<?php include "personal.php"; ?>
+<?php include "homemenu.php"; ?>
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,22 +10,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <style>
-  .bootstrap-tagsinput {
-   width: 100%;
-  }
-  body
-  {
-      color:white;
-      background-color: #05243A;
-  }
-  .t{
-    background-color: black;
-  }
-  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th { 
-  background-color: black; } 
+    <?php require_once "Styles/viewTeacher.css"?>
+  
   </style>
  </head>
- <body>
+ <body onload='personnelMenu()'>
   <div class="container">
    <br />
    <br />

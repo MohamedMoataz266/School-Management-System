@@ -1,13 +1,14 @@
+<?php include "homemenu.php";?>
 <head>
 <style>
   <?php 
   include "Styles/addteacher.css";
   ob_start();
-  include "personal.php";
+  
   ?>
 </style>
 </head>
-<body>
+<body onload='personnelMenu()'>
     <div class="form-body">
         <div class="row">
             <div class="form-holder">

@@ -1,13 +1,15 @@
 <html>
 <head>
 
-<?php include "addteacher.css";
+<?php 
 ob_start();
 ?>
+<style>
+    <?php include "Styles/addteacher.css" ?>
+</style>
 
 
-
-<?php include "personal.php"; 
+<?php include "homemenu.php"; 
 include 'dB.php';
 
 $sql = "SELECT * FROM personnelaffairs WHERE ID='".$_GET['<!?>']."'-255";
@@ -23,13 +25,13 @@ $sql = "SELECT * FROM personnelaffairs WHERE ID='".$_GET['<!?>']."'-255";
 ?>
 
 </head>
-<body>
+<body onload='personnelMenu()'>
     <div class="form-body">
         <div class="row">
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3>Add Professions</h3>
+                        <h3>Update Professions</h3>
                        
                         <form class="requires-validation" novalidate method= 'POST' action ="" >
 

@@ -7,8 +7,8 @@
 }
 img
 {
-width: 30%;
-height: 60%;
+width: 2cm;
+height: 2cm;
 }
 html, body
 {
@@ -113,10 +113,11 @@ html, body
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
-    background-color: #495056;
+    background-color: #B0BBC5;
     outline: none !important;
     border: none !important;
      box-shadow: none;
+     transition: 0.7s;
 }
 
 .form-content textarea {
@@ -141,7 +142,7 @@ html, body
 .form-content textarea:hover, .form-content textarea:focus {
     border: 0;
     background-color: #ebeff8;
-    color: #8D8D8D;
+    color: #B0BBC5;
 }
 
 .mv-up{

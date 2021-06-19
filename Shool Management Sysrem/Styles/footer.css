@@ -112,7 +112,7 @@ footer{
 .right form .text{
   font-size: 1.0625rem;
   margin-bottom: 2px;
-  color: #656565;
+  color: #fff;
 }
 .right form .msg{
   margin-top: 10px;
@@ -134,19 +134,24 @@ footer{
 .right form .btn{
   margin-top: 10px;
 }
-.right form .btn button [type=submit]{
+.right form .btn button{
   height: 40px;
-  width: 100%;
+  width: 300%;
   border: none;
   outline: none;
-  background:#05243A;
+  background:white;
+  color: black;
   font-size: 1.0625rem;
   font-weight: 500;
   cursor: pointer;
   transition: .3s;
+  border-radius: 20px;
 }
-.right form .btn button:hover [type=submit]{
-  background: #000;
+button{
+  color:black;
+}
+.right form .btn button:hover {
+  background: #B0BBC5;
 }
 .bottom center{
   padding: 5px;

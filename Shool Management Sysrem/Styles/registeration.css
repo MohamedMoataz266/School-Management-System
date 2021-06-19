@@ -67,6 +67,11 @@ body {
 
 }
 
+img{
+  width: 2cm ;
+height: 2cm;
+}
+
 .wrapper--w960 {
   max-width: 960px;
 }

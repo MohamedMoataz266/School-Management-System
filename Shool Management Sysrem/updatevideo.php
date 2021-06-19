@@ -7,19 +7,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-  img
-    {
-      width: 30%;
-height: 60%;
-
-
-    }
-  body
-  {
-    background-color: #05243A;
-    color: white;
-
-  }
+  <?php require_once "Styles/updateVid.css" ?>
 </style>
  </head>
  <body>
@@ -29,7 +17,7 @@ height: 60%;
    <div class="form-group">
     <div class="input-group">
      <span class="input-group-addon">Search</span>
-     <input type="text" name="search_text" id="search_text" placeholder="Search by Customer Details" class="form-control" />
+     <input type="text" name="search_text" id="search_text" placeholder="Search by Course Name, Video Name or Video Title" class="form-control" />
     </div>
    </div>
    <br />

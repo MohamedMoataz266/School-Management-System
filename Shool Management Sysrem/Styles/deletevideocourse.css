@@ -71,8 +71,9 @@ color:white;
 .r input[type="submit"]:hover
 {
 cursor:pointer;
-background:#ffc107;
+background:#B0BBC5;
 color: #000;
+transition: 0.9s;
 
 } 
 

@@ -29,7 +29,7 @@ $sql = "SELECT * FROM Students WHERE ID='".$_GET['<!?>']."'-255";
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <h3>update Student</h3>
+                        <h3>Update Student</h3>
                        
                         <form class="requires-validation" novalidate method='POST' action=''>
 
