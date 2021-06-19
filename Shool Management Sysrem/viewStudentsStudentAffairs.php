@@ -13,6 +13,13 @@
   .bootstrap-tagsinput {
    width: 100%;
   }
+  img
+    {
+      width: 30%;
+height: 60%;
+
+
+    }
   body
   {
       color:white;

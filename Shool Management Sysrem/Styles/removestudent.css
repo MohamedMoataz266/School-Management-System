@@ -36,12 +36,17 @@ td
   background-color:#05243A;
 color:white;
 
-
 }
 .table{
   margin-top:20px;
 } 
+img
+    {
+      width: 30%;
+height: 60%;
 
+
+    }
 .r input[type="submit"]
 {
   border:none;
@@ -73,6 +78,6 @@ a{
 }
 
 a:hover{
-  background-color:white;
-  color:#4A99E0;
+  background-color:#05243A;
+  color:white;
 }

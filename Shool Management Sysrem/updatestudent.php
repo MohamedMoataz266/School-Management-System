@@ -13,6 +13,13 @@
     color: white;
 
   }
+  img
+    {
+      width: 30%;
+height: 60%;
+
+
+    }
 </style>
  </head>
  <body>

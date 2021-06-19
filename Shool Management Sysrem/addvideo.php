@@ -1,7 +1,13 @@
 <html>
 <head>
 <style>
+img
+    {
+      width: 30%;
+height: 60%;
 
+
+    }
 <?php include "Styles/addvideocourse.css";
 ob_start();
 
