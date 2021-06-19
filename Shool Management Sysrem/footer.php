@@ -79,7 +79,7 @@ require_once "Styles/footer.css"
       <div class="bottom">
       
           <span class="credit">Created By  Amoun language private language school | </span>
-          <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
+          <span class="far fa-copyright"></span><span> 2021 All rights reserved.</span>
       
       </div>
     </footer>
