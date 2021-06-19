@@ -1,15 +1,13 @@
 <?php include "dB.php"; ?>
-<?php include"studentFrontEnd.php"?>
+<?php include "homemenu.php";?>
 <div class ="content"> 
 <div class = wrapper> 
 <head>
- 
 <title>delete</title>
-
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   
+    <script src='Js/menu.js'></script>   
 </head>
 <style>
         <?php include "Styles/deletevideocourse.css";
@@ -18,7 +16,7 @@
         
     </style>
 <br>
-<body>
+<body onload='studentMenu()'>
 <form method="POST" action="">
 <div class="register">
   

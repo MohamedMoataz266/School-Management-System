@@ -1,5 +1,5 @@
 <?php include "dB.php";
-include "studentFrontEnd.php";
+ include "homemenu.php";
 ?>
 
 <head>
@@ -12,7 +12,7 @@ include "studentFrontEnd.php";
     </style>
 </head>
 <br>
-
+<body onload='studentMenu()'>
 <form method="POST" action="">
 
 <div class="mes">
@@ -38,3 +38,4 @@ while($row = mysqli_fetch_array($result)){
 </div>
 
 </form>
+</body>

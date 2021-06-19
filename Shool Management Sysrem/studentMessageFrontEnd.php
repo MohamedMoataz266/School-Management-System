@@ -1,3 +1,4 @@
+<html>
 <?php include "studentFrontEnd.php"; ?>
 <?php include "dB.php"; ?>
 <head>
@@ -6,7 +7,9 @@
     <style>
       <?php include "Styles/sendmessage.css";?>
     </style>
+    <script src='Js/menu.js'></script>
 </head>
+<body onload='studentMenu()'>
 <div class="wrapper">
 <div class="main_container">
 <div class="item">  
@@ -37,3 +40,5 @@ while($row = mysqli_fetch_array($result)){
 </div>
 </div>
 </div>
+</body>
+</html>

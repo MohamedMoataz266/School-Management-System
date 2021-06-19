@@ -1,10 +1,15 @@
 <?php 
  include "dB.php";
-include "studentFrontEnd.php";
+include "homemenu.php";
 ?>
+<html>
+<head>
+<script src='Js/menu.js'></script>
+</head>
 <style>
   <?php include "Styles/assignments.css"?>
 </style>
+<body onload='studentMenu()'>
 <form method="POST" action="">
 <div class="wrapper">
 <div class="main_container">
@@ -52,8 +57,8 @@ include "studentFrontEnd.php";
 
 
 </form>
-
-
+</body>
+</html>
 <?php 
   include 'classAssignments.php';
    if(isset($_POST['sub'])){

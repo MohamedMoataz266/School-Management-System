@@ -2,10 +2,14 @@
 <script src='Js/menu.js'></script>
 <style>
 	img{
-		width: 60%;
-		height: 60%;
+		width: 30%; height: 60%; 
 	}
 </style>
 <?php include 'homemenu.php'; ?>
 <body onload='studentMenu()'>
+<?php
+session_start();
+?>
+<h1>Welcome <?php echo $_SESSION['name']; ?></h1>
+
 </body>

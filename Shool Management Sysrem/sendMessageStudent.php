@@ -1,13 +1,16 @@
-<div class="wrapper">
-<?php include "dB.php"; 
-ob_start();
-include "studentFrontEnd.php";
-session_start();
- ?>
-
+<html>
 <style>
  <?php include "Styles/message.css";?>
   </style>
+
+<div class="wrapper">
+<?php include "dB.php"; 
+ob_start();
+ include "homemenu.php";
+session_start();
+ ?>
+
+<body onload='studentMenu()'>
 <div class="main_container">
 <div class="item"> 
 
@@ -59,8 +62,8 @@ echo '</p>';
   </div>
   </div>
   </form>
-
-
+</body>
+</html>
 <?php
 include 'Chatting.php';
    if(isset($_POST['sub'])){

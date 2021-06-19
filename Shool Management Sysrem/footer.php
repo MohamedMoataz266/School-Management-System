@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Responsive Footer Section | CodingNepal</title>
+    <title>Home Page</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +27,14 @@ require_once "Styles/footer.css"
 </li> <br>
          <li>   <p>The school is interested in breaking out stereotypes through its constant quest for renewal by introducing everything new into the educational process.
 </p></li>
+<br>
+         <li>   <p>This school was built on a historical insitution and it belonged to the government.
+</p></li>
+<br>
+
+<li>   <p>This school has supervised on multiple people who graduated and became famous doctors, engineers and actors like ahmed el saaa
+</p></li>
+<br>
 
          
 </ol>
