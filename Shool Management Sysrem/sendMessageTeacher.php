@@ -1,13 +1,19 @@
+<html>
+
 <div class="wrapper">
 <?php include "dB.php"; 
   ob_start();
-include "teacherFrontEnd.php";
+include "homemenu.php";
 session_start();
  ?>
-
+<head>
 <style>
  <?php include "Styles/message.css";?>
-  </style>
+  </style> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src='Js/menu.js'></script>
+</head>
+<body onload='teacherMenu()'>  
 <div class="main_container">
 <div class="item"> 
 
@@ -64,7 +70,8 @@ echo '</p>';
   </div>
   </div>
   </form>
-
+  </body>
+</html>
 
 <?php
 include 'Chatting.php';

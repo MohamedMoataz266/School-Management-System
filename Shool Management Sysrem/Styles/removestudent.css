@@ -4,6 +4,7 @@ body{
     background-color: #05243A;
    
     font-family: sans-serif;
+    overflow-x: hidden;
     
   }
   h1{
@@ -79,9 +80,5 @@ a{
 
 a:hover{
   background-color:#05243A;
-<<<<<<< HEAD
   color:white;
-=======
-  color:#4A99E0;
->>>>>>> f79932fbb9fa20b034c648d58f04196e23bdd3e0
 }

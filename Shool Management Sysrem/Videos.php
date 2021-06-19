@@ -10,7 +10,7 @@ public function setData($course, $videoName, $video){
     $this->video = $video;
    if($this->validateData()){
     echo '<script>alert("Error, Data Is Not Completed")</script>';
-    return;
+    die();
    }
 }
 private function validateData(){

@@ -1,14 +1,17 @@
+<?php include "homemenu.php"; ?>
 <head>
 <title>Add Student</title>
 <style>
   <?php 
   include "Styles/AddStudent.css";
   ob_start();
-  include "studentAffairesFrontEnd.php";
+
   ?>
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src='Js/menu.js'></script>
 </head>
-<body>
+<body onload='studentAffairsMenu()'>
 
     <div class="form-body">
         <div class="row">

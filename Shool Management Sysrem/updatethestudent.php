@@ -1,10 +1,10 @@
+<?php  include "homemenu.php"; ?>
 <head>
 <title>Add Student</title>
 <style>
   <?php 
   include "Styles/AddStudent.css";
   ob_start();
-  include "studentAffairesFrontEnd.php";
   ?>
 </style>
 <?php 
@@ -22,7 +22,7 @@ $sql = "SELECT * FROM Students WHERE ID='".$_GET['<!?>']."'-255";
 
 ?>
 </head>
-<body>
+<body onload='studentAffairsMenu()'>
 
     <div class="form-body">
         <div class="row">

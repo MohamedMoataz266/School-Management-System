@@ -1,4 +1,4 @@
-<?php include "studentAffairesFrontEnd.php";?>
+<?php include "homemenu.php";?>
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -32,7 +32,7 @@ height: 60%;
   background-color: black; } 
   </style>
  </head>
- <body>
+ <body onload='studentAffairsMenu()'>
   <div class="container">
    <br />
    <br />

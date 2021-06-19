@@ -1,4 +1,4 @@
-<?php include "studentAffairesFrontEnd.php";?>
+<?php include "homemenu.php";?>
 <?php include "dB.php";?>
 <html>
  <head>
@@ -17,7 +17,7 @@
    </style>
 </head>
 <br>
-<body>
+<body onload='studentAffairsMenu()'>
 <form method="POST" action="">
 <div class="register">
   
